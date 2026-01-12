@@ -1,5 +1,5 @@
 import { brazilFlag, euaFlag } from "@/assets";
-import { NavigationLink, RegionData } from "@/types";
+import { HeroBenefit, NavigationLink, RegionData } from "@/types";
 
 export const NavigationLinks: NavigationLink[] = [
   {
@@ -36,3 +36,18 @@ export const REGIONS: Record<string, RegionData> = {
     intlLocale: "en-US",
   },
 };
+
+export const HeroBenefits: HeroBenefit[] = [
+  {
+    description: "benefits.01.description",
+    subtitle: "benefits.01.subtitle",
+  },
+  {
+    description: "benefits.02.description",
+    subtitle: "benefits.02.subtitle",
+  },
+  {
+    description: "benefits.03.description",
+    subtitle: "benefits.03.subtitle",
+  },
+];
