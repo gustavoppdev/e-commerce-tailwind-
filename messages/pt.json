@@ -1,5 +1,21 @@
 {
-  "HomePage": {
-    "title": "oi world!"
+  "Layout": {
+    "NavigationLinks": {
+      "women": "Mulheres",
+      "men": "Homens",
+      "company": "Empresa",
+      "stores": "Lojas"
+    },
+    "Auth": {
+      "signIn": "Entrar",
+      "createAccount": "Criar uma Conta"
+    }
+  },
+  "Others": {
+    "CurrencyLanguageSwitcher": {
+      "changeLanguage": "Mudar Idioma",
+      "portuguese": "Português - BRL",
+      "english": "Inglês - USD"
+    }
   }
 }
