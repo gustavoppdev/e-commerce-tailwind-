@@ -20,5 +20,9 @@ export default auth((req) => {
 
 export const config = {
   // Mantemos o seu matcher original, ele é ótimo
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+  matcher: [
+    // Pula todas as pastas internas e arquivos estáticos
+    // E agora pula explicitamente a rota /studio
+    "/((?!api|_next|_vercel|studio|.*\\..*).*)",
+  ],
 };
