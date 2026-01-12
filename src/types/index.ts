@@ -19,3 +19,8 @@ export interface RegionData {
   flag: StaticImageData;
   intlLocale: string; // Útil para formatação (pt-BR vs en-US)
 }
+
+export type HeroBenefit = {
+  subtitle: TranslationKey;
+  description: TranslationKey;
+};

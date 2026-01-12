@@ -11,6 +11,28 @@
       "createAccount": "Criar uma Conta"
     }
   },
+  "Sections": {
+    "Hero": {
+      "headline": "Foco no que realmente importa",
+      "paragraph": "Gráficos e notificações não substituem o prazer e a clareza de organizar suas prioridades no papel.",
+      "ctaBtn": "Linha de Produtividade",
+      "altImage": "Visão aérea de uma pessoa organizada em sua mesa de trabalho, manuseando cartões de notas em um suporte de madeira, com um tablet e acessórios de escritório ao redor.",
+      "benefits": {
+        "01": {
+          "subtitle": "Baixe nosso app",
+          "description": "Ganhe um cupom exclusivo de R$ 25 OFF"
+        },
+        "02": {
+          "subtitle": "Troca sem pressa",
+          "description": "60 dias para devoluções gratuitas"
+        },
+        "03": {
+          "subtitle": "Assine nossa newsletter",
+          "description": "15% de desconto na sua primeira compra"
+        }
+      }
+    }
+  },
   "Others": {
     "CurrencyLanguageSwitcher": {
       "changeLanguage": "Mudar Idioma",

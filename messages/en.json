@@ -11,6 +11,28 @@
       "createAccount": "Create Account"
     }
   },
+  "Sections": {
+    "Hero": {
+      "headline": "Focus on what matters",
+      "paragraph": "All the charts, datepickers, and notifications in the world can't beat checking off some items on a paper card.",
+      "ctaBtn": "Shop Productivity",
+      "altImage": "Close-up aerial view of an organized person working at a wooden desk, handling note cards in a wooden holder, with a tablet and office accessories nearby.",
+      "benefits": {
+        "01": {
+          "subtitle": "Download the app",
+          "description": "Get an exclusive $5 off code"
+        },
+        "02": {
+          "subtitle": "Return when you're ready",
+          "description": "60 days of free returns"
+        },
+        "03": {
+          "subtitle": "Sign up for our newsletter",
+          "description": "15% off your first order"
+        }
+      }
+    }
+  },
   "Others": {
     "CurrencyLanguageSwitcher": {
       "changeLanguage": "Change Language",
