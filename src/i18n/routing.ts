@@ -7,7 +7,16 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: "pt",
 
-  pathnames: {},
+  pathnames: {
+    "/": {
+      pt: "/",
+      en: "/",
+    },
+    "/auth/login": {
+      pt: "/auth/login",
+      en: "/auth/login",
+    },
+  },
 });
 
 export type Pathnames = keyof typeof routing.pathnames;

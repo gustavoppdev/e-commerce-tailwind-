@@ -1,5 +1,21 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "Layout": {
+    "NavigationLinks": {
+      "women": "Women",
+      "men": "Men",
+      "company": "Company",
+      "stores": "Stores"
+    },
+    "Auth": {
+      "signIn": "Sign In",
+      "createAccount": "Create Account"
+    }
+  },
+  "Others": {
+    "CurrencyLanguageSwitcher": {
+      "changeLanguage": "Change Language",
+      "portuguese": "Portuguese - BRL",
+      "english": "English - USD"
+    }
   }
 }
