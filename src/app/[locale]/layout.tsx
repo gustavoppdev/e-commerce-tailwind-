@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { NavigationBar } from "@/components/layout/NavigationBar";
+import QueryProvider from "@/providers/QueryProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,7 +36,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider locale={locale}>
           <NavigationBar />
-          {children}
+          <QueryProvider>{children}</QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>
