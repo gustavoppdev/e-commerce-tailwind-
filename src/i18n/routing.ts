@@ -16,6 +16,14 @@ export const routing = defineRouting({
       pt: "/auth/login",
       en: "/auth/login",
     },
+    "/products": {
+      pt: "/produtos",
+      en: "/products",
+    },
+    "/products/[slug]": {
+      pt: "/produtos/[slug]",
+      en: "/products/[slug]",
+    },
   },
 });
 

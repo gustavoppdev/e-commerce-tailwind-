@@ -31,6 +31,10 @@
           "description": "15% off your first order"
         }
       }
+    },
+    "Trending": {
+      "headline": "Trending products",
+      "seeAllBtn": "See everything"
     }
   },
   "Others": {

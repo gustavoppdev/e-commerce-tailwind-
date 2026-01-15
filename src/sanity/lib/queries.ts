@@ -9,8 +9,15 @@ export const GET_PRODUCTS_QUERY =
     slug,
     price,
     category,
-    colors,
-    "imageUrl": image.asset->url
+    colors[] {
+      _key,
+      colorName,
+      colorHex,
+      "colorImageUrl": colorImage.asset->url,
+      "colorBlurDataURL": colorImage.asset->metadata.lqip
+    },
+    "imageUrl": image.asset->url,
+    "blurDataURL": image.asset->metadata.lqip
   }`);
 
 export const getProducts = async () => {

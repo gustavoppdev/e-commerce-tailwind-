@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import HeroBenefits from "./components/HeroBenefits";
+import Trending from "./components/Trending";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         <Hero />
         <HeroBenefits layout="mobile" />
       </div>
+      <Trending />
     </main>
   );
 };
