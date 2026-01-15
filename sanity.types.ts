@@ -195,7 +195,7 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: src\sanity\lib\queries.ts
 // Variable: GET_PRODUCTS_QUERY
-// Query: *[_type == "product"] | order(_createdAt desc) {    _id,    name,    slug,    price,    category,    colors,    "imageUrl": image.asset->url  }
+// Query: *[_type == "product"] | order(_createdAt desc) {    _id,    name,    slug,    price,    category,    colors[] {      _key,      colorName,      colorHex,      "colorImageUrl": colorImage.asset->url,      "colorBlurDataURL": colorImage.asset->metadata.lqip    },    "imageUrl": image.asset->url,    "blurDataURL": image.asset->metadata.lqip  }
 export type GET_PRODUCTS_QUERY_RESULT = Array<{
   _id: string;
   name: {
@@ -212,21 +212,23 @@ export type GET_PRODUCTS_QUERY_RESULT = Array<{
   } | null;
   category: "desk-and-office" | "self-improvement" | "travel" | null;
   colors: Array<{
-    colorName?: {
+    _key: string;
+    colorName: {
       pt?: string;
       en?: string;
-    };
-    colorHex?: string;
-    _type: "colorOption";
-    _key: string;
+    } | null;
+    colorHex: string | null;
+    colorImageUrl: null;
+    colorBlurDataURL: null;
   }> | null;
   imageUrl: string | null;
+  blurDataURL: string | null;
 }>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "product"] | order(_createdAt desc) {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors,\n    "imageUrl": image.asset->url\n  }': GET_PRODUCTS_QUERY_RESULT;
+    '*[_type == "product"] | order(_createdAt desc) {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      "colorImageUrl": colorImage.asset->url,\n      "colorBlurDataURL": colorImage.asset->metadata.lqip\n    },\n    "imageUrl": image.asset->url,\n    "blurDataURL": image.asset->metadata.lqip\n  }': GET_PRODUCTS_QUERY_RESULT;
   }
 }

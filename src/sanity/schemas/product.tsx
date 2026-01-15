@@ -79,7 +79,7 @@ export const product = {
             {
               name: "colorName",
               title: "Nome da Cor",
-              type: "object", // Transformamos em objeto para ter idiomas
+              type: "object",
               fields: [
                 { name: "pt", title: "Português", type: "string" },
                 { name: "en", title: "Inglês", type: "string" },
@@ -90,20 +90,39 @@ export const product = {
               title: "Código Hex (#000000)",
               type: "string",
             },
+            // --- NOVO CAMPO ADICIONADO AQUI ---
+            {
+              name: "colorImage",
+              title: "Imagem desta Cor",
+              type: "image",
+              options: {
+                hotspot: true, // Permite ajustar o foco da imagem
+              },
+            },
           ],
           preview: {
             select: {
-              title: "colorName.pt", // Mostra o nome em PT no painel
+              title: "colorName.pt",
               subtitle: "colorHex",
+              media: "colorImage", // Agora o painel do Sanity mostra a foto da cor se houver
             },
-            prepare({ title, subtitle }: { title: string; subtitle: string }) {
+            prepare({
+              title,
+              subtitle,
+              media,
+            }: {
+              title: string;
+              subtitle: string;
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              media: any;
+            }) {
               return {
                 title,
                 subtitle,
-                media: (
+                media: media || (
                   <div
                     style={{
-                      backgroundColor: subtitle,
+                      backgroundColor: subtitle || "#ccc", // Adicionado fallback de cor
                       width: "100%",
                       height: "100%",
                       borderRadius: "50%",
