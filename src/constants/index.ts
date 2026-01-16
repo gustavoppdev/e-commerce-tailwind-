@@ -5,7 +5,13 @@ import {
   selfImprovementImage,
   travelImage,
 } from "@/assets";
-import { Collection, HeroBenefit, NavigationLink, RegionData } from "@/types";
+import {
+  Collection,
+  HeroBenefit,
+  NavigationLink,
+  RegionData,
+  Testimonial,
+} from "@/types";
 
 export const NavigationLinks: NavigationLink[] = [
   {
@@ -91,5 +97,20 @@ export const CollectionsArray: Collection[] = [
     description: "list.travel.description",
     image: travelImage,
     key: "travel",
+  },
+];
+
+export const TestimonialsArray: Testimonial[] = [
+  {
+    quote: "list.01.quote",
+    author: "list.01.author",
+  },
+  {
+    quote: "list.02.quote",
+    author: "list.02.author",
+  },
+  {
+    quote: "list.03.quote",
+    author: "list.03.author",
   },
 ];

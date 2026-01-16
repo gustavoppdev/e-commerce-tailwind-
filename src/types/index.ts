@@ -31,3 +31,8 @@ export type Collection = {
   image: StaticImageData;
   key: string;
 };
+
+export type Testimonial = {
+  quote: TranslationKey;
+  author: TranslationKey;
+};

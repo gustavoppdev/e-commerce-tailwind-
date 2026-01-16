@@ -52,6 +52,28 @@
           "description": "Essenciais para o dia a dia"
         }
       }
+    },
+    "Sale": {
+      "headline": "Ganhe 25% de desconto em nossa liquidação única",
+      "paragraph": "A maioria dos nossos produtos são lançamentos limitados que não voltarão. Garanta seus itens favoritos enquanto durarem os estoques.",
+      "ctaBtn": "Acesse nossa liquidação única"
+    },
+    "Testimonials": {
+      "headline": "O que as pessoas estão dizendo?",
+      "list": {
+        "01": {
+          "quote": "Meu novo diário e canetas chegaram super rápido. A qualidade do papel é ainda melhor do que eu esperava, tornando minha rotina de escrita matinal muito mais inspiradora e profissional. Cliente muito satisfeita!",
+          "author": "Mariana Costa, Curitiba"
+        },
+        "02": {
+          "quote": "Precisei trocar uma caneca que chegou com um pequeno risco. Todo o processo de atendimento foi tão simples e amigável que acabei encomendando mais dois organizadores de mesa para o meu escritório.",
+          "author": "Camila Oliveira, Belo Horizonte"
+        },
+        "03": {
+          "quote": "Agora que estou redesenhando meu home office para o verão, provavelmente vou pedir mais alguns mousepads de couro e cadernos. É muito conveniente, o design minimalista é perfeito e eu sei que a qualidade premium sempre estará presente.",
+          "author": "Ricardo Souza, São Paulo"
+        }
+      }
     }
   },
   "Others": {

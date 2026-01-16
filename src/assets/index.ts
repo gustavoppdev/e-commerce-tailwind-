@@ -5,5 +5,15 @@ import heroImage from "./images/hero.webp";
 import deskAndOfficeImage from "./images/collection-desk-and-office.webp";
 import selfImprovementImage from "./images/collection-self-improvement.webp";
 import travelImage from "./images/collection-travel.webp";
+import saleImage from "./images/saleBackground.webp";
 
-export { tailwindLogo, brazilFlag, euaFlag, heroImage, deskAndOfficeImage, selfImprovementImage, travelImage };
+export {
+  tailwindLogo,
+  brazilFlag,
+  euaFlag,
+  heroImage,
+  deskAndOfficeImage,
+  selfImprovementImage,
+  travelImage,
+  saleImage,
+};

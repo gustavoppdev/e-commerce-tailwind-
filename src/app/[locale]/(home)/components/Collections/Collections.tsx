@@ -5,7 +5,7 @@ import CollectionCard from "./CollectionCard";
 export const Collections = () => {
   const t = useTranslations("Sections.Collections");
   return (
-    <section className="section-container py-10 lg:py-15 ">
+    <section className="section-container py-10 lg:py-15 2xl:py-25">
       <h2 className="text-2xl lg:text-3xl 2xl:text-4xl font-bold my-10">
         {t("headline")}
       </h2>

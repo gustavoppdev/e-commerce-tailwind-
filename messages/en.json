@@ -52,6 +52,28 @@
           "description": "Daily commute essentials"
         }
       }
+    },
+    "Sale": {
+      "headline": "Get 25% off during our one-time sale",
+      "paragraph": "Most of our products are limited releases that won't come back. Get your favorite items while they're in stock.",
+      "ctaBtn": "Get access to our one-time sale"
+    },
+    "Testimonials": {
+      "headline": "What are people saying?",
+      "list": {
+        "01": {
+          "quote": "My new journal and pens arrived super quickly. The paper quality is even better than I hoped it would be, making my morning writing routine much more inspiring and professional. Very happy customer!",
+          "author": "Sarah Peters, New Orleans"
+        },
+        "02": {
+          "quote": "I had to exchange a ceramic mug that arrived with a small scratch. The whole customer service process was so simple and friendly that I ended up ordering two more desk organizers for my office.",
+          "author": "Kelly McPherson, Chicago"
+        },
+        "03": {
+          "quote": "Now that I’m redesigning my home office for the summer, I’ll probably order a few more leather mousepads and notebooks. It’s just so convenient, the minimalist design is perfect, and I know the premium quality will always be there.",
+          "author": "Chris Paul, Phoenix"
+        }
+      }
     }
   },
   "Others": {
