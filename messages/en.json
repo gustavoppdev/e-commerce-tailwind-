@@ -35,6 +35,23 @@
     "Trending": {
       "headline": "Trending products",
       "seeAllBtn": "See everything"
+    },
+    "Collections": {
+      "headline": "Collections",
+      "list": {
+        "deskAndOffice": {
+          "title": "Desk and Office",
+          "description": "Work from home accessories"
+        },
+        "selfImprovement": {
+          "title": "Self Improvement",
+          "description": "Journals and note-taking"
+        },
+        "travel": {
+          "title": "Travel",
+          "description": "Daily commute essentials"
+        }
+      }
     }
   },
   "Others": {

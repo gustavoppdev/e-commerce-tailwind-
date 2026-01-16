@@ -28,7 +28,7 @@ const ProductCard = ({ product }: Props) => {
           blurDataURL={product?.imageUrl ?? ""}
           fill
           sizes="(max-width: 640px) calc(65vw - 1rem), (max-width: 768px) calc(40vw - 1rem), (max-width: 1024px) calc(30vw - 2.5rem), (max-width:1280px) 206px, (max-width:1536px) 250px, 314px"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover transition-all duration-300 group-hover:scale-105 group-hover:opacity-85"
         />
       </div>
       {/*  */}
