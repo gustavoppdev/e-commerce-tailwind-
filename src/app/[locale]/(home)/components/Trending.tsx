@@ -22,7 +22,7 @@ const Trending = () => {
   if (!isLoading && (!data || data.length === 0)) return null;
 
   return (
-    <section className="section-container py-10">
+    <section className="section-container py-10 lg:py-15">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl lg:text-3xl 2xl:text-4xl font-bold my-10">
           {t("headline")}

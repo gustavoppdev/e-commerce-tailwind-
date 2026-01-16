@@ -24,3 +24,10 @@ export type HeroBenefit = {
   subtitle: TranslationKey;
   description: TranslationKey;
 };
+
+export type Collection = {
+  title: TranslationKey;
+  description: TranslationKey;
+  image: StaticImageData;
+  key: string;
+};

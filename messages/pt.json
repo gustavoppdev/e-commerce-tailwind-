@@ -35,6 +35,23 @@
     "Trending": {
       "headline": "Produtos em alta",
       "seeAllBtn": "Ver mais produtos"
+    },
+    "Collections": {
+      "headline": "Coleções",
+      "list": {
+        "deskAndOffice": {
+          "title": "Escritório",
+          "description": "Acessórios para escritório"
+        },
+        "selfImprovement": {
+          "title": "Auto-Aperfeiçoamento",
+          "description": "Jornais e cadernos"
+        },
+        "travel": {
+          "title": "Viagem",
+          "description": "Essenciais para o dia a dia"
+        }
+      }
     }
   },
   "Others": {

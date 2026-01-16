@@ -1,3 +1,5 @@
+
+import { Collections } from "./components/Collections";
 import Hero from "./components/Hero";
 import HeroBenefits from "./components/HeroBenefits";
 import Trending from "./components/Trending";
@@ -11,6 +13,10 @@ const Home = () => {
         <HeroBenefits layout="mobile" />
       </div>
       <Trending />
+
+      <div className="bg-neutral-100">
+        <Collections />
+      </div>
     </main>
   );
 };
