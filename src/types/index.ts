@@ -36,3 +36,16 @@ export type Testimonial = {
   quote: TranslationKey;
   author: TranslationKey;
 };
+
+export type FooterLink = {
+  title: TranslationKey;
+  links: {
+    label: TranslationKey;
+    href: string;
+  }[];
+};
+
+export type FooterLinkBottom = {
+  label: string;
+  href: string;
+};

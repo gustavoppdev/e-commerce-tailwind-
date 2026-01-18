@@ -7,6 +7,7 @@ import { useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 // Components
 import { Button } from "@/components/ui/button";
@@ -16,12 +17,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+// Constants & Icons
 import { REGIONS } from "@/constants";
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
-export default function CurrencyLanguageSwitcher() {
-  const t = useTranslations("Others.CurrencyLanguageSwitcher");
+type Props = {
+  layout?: "normal" | "footer";
+};
+
+export default function CurrencyLanguageSwitcher({ layout = "normal" }: Props) {
+  const t = useTranslations("Others.currencyLanguageSwitcher");
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
@@ -50,9 +56,14 @@ export default function CurrencyLanguageSwitcher() {
             priority
           />
 
-          <span className="text-gray-600">{currentRegion.currency}</span>
-
-          <ChevronDown className="size-4 text-gray-400" />
+          {layout === "normal" ? (
+            <>
+              <span className="text-gray-600">{currentRegion.currency}</span>
+              <ChevronDown className="size-4 text-gray-400" />
+            </>
+          ) : (
+            t("change")
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -6,6 +6,8 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { NavigationBar } from "@/components/layout/NavigationBar";
 import QueryProvider from "@/providers/QueryProvider";
+import { Footer } from "@/components/layout/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,7 +38,11 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider locale={locale}>
           <NavigationBar />
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            {children}
+            <Footer />
+          </QueryProvider>
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>
