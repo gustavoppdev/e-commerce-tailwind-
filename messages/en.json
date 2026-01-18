@@ -9,6 +9,64 @@
     "Auth": {
       "signIn": "Sign In",
       "createAccount": "Create Account"
+    },
+    "Footer": {
+      "links": {
+        "01": {
+          "products": "Products",
+          "pens": "Writing Tools",
+          "journals": "Journals & Notebooks",
+          "deskObjects": "Desk Objects",
+          "mugs": "Drinkware",
+          "accessories": "Accessories"
+        },
+        "02": {
+          "company": "Company",
+          "whoWeAre": "About Us",
+          "sustainability": "Sustainability",
+          "press": "Press",
+          "careers": "Careers",
+          "terms": "Terms & Conditions",
+          "privacy": "Privacy"
+        },
+        "03": {
+          "customerService": "Customer Service",
+          "contact": "Contact Us",
+          "shipping": "Shipping & Delivery",
+          "returns": "Returns & Exchanges",
+          "warranty": "Warranty",
+          "securePayment": "Secure Payment",
+          "faq": "FAQ",
+          "findAStore": "Store Locator"
+        },
+        "04": {
+          "legal": "Legal",
+          "termsService": "Terms of Service",
+          "returnPolicy": "Return Policy",
+          "privacyPolicy": "Privacy Policy",
+          "shippingPolicy": "Shipping Policy"
+        }
+      },
+      "newsletter": {
+        "title": "Sign up for our newsletter",
+        "description": "The latest news, articles and resources, sent to your inbox weekly.",
+        "emailPlaceholder": "Enter your email",
+        "subscribeBtn": "Subscribe",
+        "successSubscribe": "Thank you for subscribing!",
+        "errorSubscribe": "Something went wrong. Please try again later."
+      },
+      "loyalty": {
+        "title": "Exclusive Benefits",
+        "description": "Already subscribed? Use the code sent to your email to ensure 10% discount on your first purchase. <emphasis>Redeem now</emphasis>"
+      },
+      "bottom": {
+        "rights": "© {currentYear} All rights reserved.",
+        "links": {
+          "01": "Accessibility",
+          "02": "Terms of Use",
+          "03": "Privacy Policy"
+        }
+      }
     }
   },
   "Sections": {
@@ -77,10 +135,16 @@
     }
   },
   "Others": {
-    "CurrencyLanguageSwitcher": {
+    "currencyLanguageSwitcher": {
       "changeLanguage": "Change Language",
       "portuguese": "Portuguese - BRL",
-      "english": "English - USD"
+      "english": "English - USD",
+      "change": "Change"
+    },
+    "errors": {
+      "newsletter": {
+        "invalidEmail": "Please enter a valid email address"
+      }
     }
   }
 }

@@ -9,6 +9,64 @@
     "Auth": {
       "signIn": "Entrar",
       "createAccount": "Criar uma Conta"
+    },
+    "Footer": {
+      "links": {
+        "01": {
+          "products": "Produtos",
+          "pens": "Canetas",
+          "journals": "Diários e Cadernos",
+          "deskObjects": "Objetos de Mesa",
+          "mugs": "Canecas",
+          "accessories": "Acessórios"
+        },
+        "02": {
+          "company": "A Empresa",
+          "whoWeAre": "Quem Somos",
+          "sustainability": "Sustentabilidade",
+          "press": "Imprensa",
+          "careers": "Carreiras",
+          "terms": "Termos e Condições",
+          "privacy": "Privacidade"
+        },
+        "03": {
+          "customerService": "Atendimento",
+          "contact": "Contato",
+          "shipping": "Envios e Entrega",
+          "returns": "Trocas e Devoluções",
+          "warranty": "Garantia",
+          "securePayment": "Pagamento Seguro",
+          "faq": "Dúvidas Frequentes",
+          "findAStore": "Nossas Lojas"
+        },
+        "04": {
+          "legal": "Jurídico",
+          "termsService": "Termos de Serviço",
+          "returnPolicy": "Política de Retorno",
+          "privacyPolicy": "Privacidade",
+          "shippingPolicy": "Política de Envio"
+        }
+      },
+      "newsletter": {
+        "title": "Assine nossa newsletter",
+        "description": "As últimas notícias, artigos e recursos, enviados à sua caixa de entrada semanalmente.",
+        "emailPlaceholder": "Digite seu e-mail",
+        "subscribeBtn": "Assinar",
+        "successSubscribe": "Obrigado por se inscrever!",
+        "errorSubscribe": "Algo deu errado. Por favor, tente novamente mais tarde."
+      },
+      "loyalty": {
+        "title": "Benefícios Exclusivos",
+        "description": "Já se inscreveu? Use o código enviado ao seu e-mail para garantir 10% de desconto na primeira compra. <emphasis>Resgatar agora</emphasis>"
+      },
+      "bottom": {
+        "rights": "© {currentYear} Todos os direitos reservados.",
+        "links": {
+          "01": "Acessibilidade",
+          "02": "Termos de Uso",
+          "03": "Política de Privacidade"
+        }
+      }
     }
   },
   "Sections": {
@@ -77,10 +135,16 @@
     }
   },
   "Others": {
-    "CurrencyLanguageSwitcher": {
+    "currencyLanguageSwitcher": {
       "changeLanguage": "Mudar Idioma",
       "portuguese": "Português - BRL",
-      "english": "Inglês - USD"
+      "english": "Inglês - USD",
+      "change": "Trocar"
+    },
+    "errors": {
+      "newsletter": {
+        "invalidEmail": "Por favor, insira um endereço de e-mail válido"
+      }
     }
   }
 }

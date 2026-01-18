@@ -6,6 +6,7 @@ import deskAndOfficeImage from "./images/collection-desk-and-office.webp";
 import selfImprovementImage from "./images/collection-self-improvement.webp";
 import travelImage from "./images/collection-travel.webp";
 import saleImage from "./images/saleBackground.webp";
+import loyaltyImage from "./images/loyaltyBackground.webp";
 
 export {
   tailwindLogo,
@@ -16,4 +17,5 @@ export {
   selfImprovementImage,
   travelImage,
   saleImage,
+  loyaltyImage,
 };

@@ -7,6 +7,7 @@ import {
 } from "@/assets";
 import {
   Collection,
+  FooterLinkBottom,
   HeroBenefit,
   NavigationLink,
   RegionData,
@@ -112,5 +113,59 @@ export const TestimonialsArray: Testimonial[] = [
   {
     quote: "list.03.quote",
     author: "list.03.author",
+  },
+];
+
+export const FooterLinks = [
+  {
+    title: "01.products",
+    links: [
+      { label: "01.pens", href: "/products/pens" },
+      { label: "01.journals", href: "/products/journals" },
+      { label: "01.deskObjects", href: "/products/desk-objects" },
+      { label: "01.mugs", href: "/products/mugs" },
+      { label: "01.accessories", href: "/products/accessories" },
+    ],
+  },
+  {
+    title: "02.company",
+    links: [
+      { label: "02.whoWeAre", href: "/about" },
+      { label: "02.sustainability", href: "/sustainability" },
+      { label: "02.press", href: "/press" },
+      { label: "02.careers", href: "/careers" },
+    ],
+  },
+  {
+    title: "03.customerService",
+    links: [
+      { label: "03.contact", href: "/contact" },
+      { label: "03.shipping", href: "/shipping-info" },
+      { label: "03.returns", href: "/returns-exchanges" },
+      { label: "03.faq", href: "/faq" },
+    ],
+  },
+  {
+    title: "04.legal",
+    links: [
+      { label: "04.termsService", href: "/legal/terms" },
+      { label: "04.privacyPolicy", href: "/legal/privacy" },
+      { label: "04.returnPolicy", href: "/legal/returns" },
+    ],
+  },
+];
+
+export const FooterLinksBottom: FooterLinkBottom[] = [
+  {
+    label: "links.01",
+    href: "#",
+  },
+  {
+    label: "links.02",
+    href: "#",
+  },
+  {
+    label: "links.03",
+    href: "#",
   },
 ];
