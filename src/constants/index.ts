@@ -10,6 +10,7 @@ import {
   FooterLinkBottom,
   HeroBenefit,
   NavigationLink,
+  RecentReview,
   RegionData,
   Testimonial,
 } from "@/types";
@@ -178,5 +179,29 @@ export const ProductBenefits = [
   {
     title: "02.title",
     description: "02.description",
+  },
+];
+
+export const RecentReviewsArray: RecentReview[] = [
+  {
+    rating: 5,
+    emphasis: "list.01.emphasis",
+    quote: ["list.01.quote1", "list.01.quote2"],
+    author: "list.01.author",
+    date: "list.01.date",
+  },
+  {
+    rating: 5,
+    emphasis: "list.02.emphasis",
+    quote: ["list.02.quote1", "list.02.quote2"],
+    author: "list.02.author",
+    date: "list.02.date",
+  },
+  {
+    rating: 4,
+    emphasis: "list.01.emphasis",
+    quote: ["list.03.quote1", "list.03.quote2"],
+    author: "list.03.author",
+    date: "list.03.date",
   },
 ];

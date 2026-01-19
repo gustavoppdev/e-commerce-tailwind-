@@ -54,3 +54,11 @@ export type FooterLinkBottom = {
 export type LocaleType = "pt" | "en";
 
 export type FullProduct = NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>;
+
+export type RecentReview = {
+  rating: number;
+  emphasis: TranslationKey;
+  quote: TranslationKey[];
+  author: TranslationKey;
+  date: TranslationKey;
+};

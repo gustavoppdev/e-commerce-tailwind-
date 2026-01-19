@@ -3,6 +3,7 @@ import { LocaleType } from "@/types";
 import { Metadata } from "next";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { notFound, redirect } from "next/navigation";
+import RecentReviews from "./components/RecentReviews";
 
 type Props = {
   params: {
@@ -81,6 +82,8 @@ const ProductPage = async ({ params }: Props) => {
   return (
     <main className="section-container mt-8 min-h-screen">
       <ProductDetails product={product} locale={locale} />
+
+      <RecentReviews />
     </main>
   );
 };

@@ -24,7 +24,7 @@ const ProductHeader = ({ product, locale, price, layout }: Props) => {
       )}
     >
       <div className="flex items-end justify-between font-medium">
-        <h1 className="text-xl pr-6">{product.name?.[locale]}</h1>
+        <h1 className="text-xl pr-2">{product.name?.[locale]}</h1>
 
         <p className="text-lg">{price}</p>
       </div>
