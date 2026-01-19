@@ -169,3 +169,14 @@ export const FooterLinksBottom: FooterLinkBottom[] = [
     href: "#",
   },
 ];
+
+export const ProductBenefits = [
+  {
+    title: "01.title",
+    description: "01.description",
+  },
+  {
+    title: "02.title",
+    description: "02.description",
+  },
+];

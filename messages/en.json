@@ -132,6 +132,33 @@
           "author": "Chris Paul, Phoenix"
         }
       }
+    },
+    "ProductPage": {
+      "productHeader": {
+        "seeAllReviewsBtn": "See all {reviewsCount} reviews"
+      },
+      "productDetails": {
+        "title": "Details"
+      },
+      "stock": {
+        "inStock": "In stock and ready to ship",
+        "remainingStock": "Only {stock} left in stock",
+        "outOfStock": "Out of stock"
+      },
+      "benefits": {
+        "01": {
+          "title": "Worldwide Shipping",
+          "description": "Shipping to over 50 countries with full tracking."
+        },
+        "02": {
+          "title": "Secure Payment",
+          "description": "Payments processed via Stripe with 256-bit encryption."
+        }
+      },
+      "general": {
+        "addCart": "Add to Cart",
+        "guarantee": "Lifetime Quality Guarantee"
+      }
     }
   },
   "Others": {

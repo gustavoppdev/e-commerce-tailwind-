@@ -132,6 +132,33 @@
           "author": "Ricardo Souza, São Paulo"
         }
       }
+    },
+    "ProductPage": {
+      "productHeader": {
+        "seeAllReviewsBtn": "Ver todas as {reviewsCount} avaliações"
+      },
+      "productDetails": {
+        "title": "Detalhes"
+      },
+      "stock": {
+        "inStock": "Em estoque e pronto para envio",
+        "remainingStock": "Apenas {stock} unidades restantes",
+        "outOfStock": "Esgotado"
+      },
+      "benefits": {
+        "01": {
+          "title": "Entrega Global",
+          "description": "Enviamos para mais de 50 países com rastreamento total."
+        },
+        "02": {
+          "title": "Pagamento Seguro",
+          "description": "Pagamentos processados via Stripe com criptografia de 256 bits."
+        }
+      },
+      "general": {
+        "addCart": "Adicionar ao Carrinho",
+        "guarantee": "Garantia Vitalícia de Qualidade"
+      }
     }
   },
   "Others": {

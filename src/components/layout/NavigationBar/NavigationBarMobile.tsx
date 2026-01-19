@@ -14,7 +14,7 @@ const NavigationBarMobile = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant={"ghost"} size={"icon-lg"}>
+        <Button variant={"ghost"} className="pl-0!">
           <MenuIcon className="size-6 text-gray-400" />
         </Button>
       </SheetTrigger>

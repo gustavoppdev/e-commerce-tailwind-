@@ -5,7 +5,7 @@ import { formatCurrency } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 
 type Props = {
-  product: GET_PRODUCTS_QUERY_RESULT[number];
+  product: NonNullable<GET_PRODUCTS_QUERY_RESULT[number]>;
 };
 
 const ProductCard = ({ product }: Props) => {
@@ -22,10 +22,12 @@ const ProductCard = ({ product }: Props) => {
     <li className="shrink-0 w-[65vw] sm:w-[40vw] md:w-[30vw] lg:w-full snap-start flex flex-col gap-4 items-center text-center relative group hover:-translate-y-1 transition-transform duration-300">
       <div className="relative aspect-square w-full bg-gray-100 overflow-hidden rounded-lg">
         <Image
-          src={product?.imageUrl ?? ""}
-          alt={product.name?.[locale] ?? ""}
+          src={product.colors?.[0].images?.[0].asset?.url ?? ""}
+          alt={product.name?.[locale] ?? "Product Image"}
           placeholder="blur"
-          blurDataURL={product?.imageUrl ?? ""}
+          blurDataURL={
+            product?.colors?.[0]?.images?.[0]?.asset?.metadata?.lqip ?? ""
+          }
           fill
           sizes="(max-width: 640px) calc(65vw - 1rem), (max-width: 768px) calc(40vw - 1rem), (max-width: 1024px) calc(30vw - 2.5rem), (max-width:1280px) 206px, (max-width:1536px) 250px, 314px"
           className="object-cover transition-all duration-300 group-hover:scale-105 group-hover:opacity-85"
