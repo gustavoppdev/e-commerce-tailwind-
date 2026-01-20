@@ -50,12 +50,6 @@ export const product = {
       ],
     },
     {
-      name: "image",
-      title: "Imagem do Produto",
-      type: "image",
-      options: { hotspot: true }, // Permite cortar a imagem no painel
-    },
-    {
       name: "category",
       title: "Categoria",
       type: "string",
@@ -68,9 +62,46 @@ export const product = {
       },
     },
     {
-      name: "colors",
-      title: "Cores Disponíveis",
+      name: "description",
+      title: "Descrição do Produto",
+      type: "object",
+      fields: [
+        {
+          name: "pt",
+          title: "Português",
+          type: "array",
+          of: [{ type: "string" }],
+        },
+        {
+          name: "en",
+          title: "Inglês",
+          type: "array",
+          of: [{ type: "string" }],
+        },
+      ],
+    },
+    {
+      name: "features",
+      title: "Destaques / Detalhes",
       type: "array",
+      description:
+        "Lista de características (ex: Madeira Sustentável, 50 cartões inclusos)",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "pt", title: "Português", type: "string" },
+            { name: "en", title: "Inglês", type: "string" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "colors",
+      title: "Cores e Variações",
+      type: "array",
+      validation: (Rule: Rule) =>
+        Rule.required().min(1).error("Adicione pelo menos uma variação."),
       of: [
         {
           type: "object",
@@ -90,21 +121,30 @@ export const product = {
               title: "Código Hex (#000000)",
               type: "string",
             },
-            // --- NOVO CAMPO ADICIONADO AQUI ---
             {
-              name: "colorImage",
-              title: "Imagem desta Cor",
-              type: "image",
-              options: {
-                hotspot: true, // Permite ajustar o foco da imagem
-              },
+              name: "images",
+              title: "Galeria desta Cor",
+              type: "array",
+              description: "A primeira imagem será a principal desta variação",
+              of: [
+                {
+                  type: "image",
+                  options: {
+                    hotspot: true,
+                  },
+                },
+              ],
+              validation: (Rule: Rule) =>
+                Rule.required()
+                  .min(1)
+                  .error("Adicione pelo menos uma imagem para esta cor."),
             },
           ],
           preview: {
             select: {
               title: "colorName.pt",
               subtitle: "colorHex",
-              media: "colorImage", // Agora o painel do Sanity mostra a foto da cor se houver
+              media: "images.0", // Pega a primeira imagem do array para o preview
             },
             prepare({
               title,
@@ -117,12 +157,12 @@ export const product = {
               media: any;
             }) {
               return {
-                title,
-                subtitle,
+                title: title || "Sem nome",
+                subtitle: subtitle || "Sem cor hex",
                 media: media || (
                   <div
                     style={{
-                      backgroundColor: subtitle || "#ccc", // Adicionado fallback de cor
+                      backgroundColor: subtitle || "#ccc",
                       width: "100%",
                       height: "100%",
                       borderRadius: "50%",
@@ -134,6 +174,18 @@ export const product = {
           },
         },
       ],
+    },
+    {
+      name: "rating",
+      title: "Avaliação (0 a 5)",
+      type: "number",
+      validation: (Rule: Rule) => Rule.min(0).max(5).precision(1),
+    },
+    {
+      name: "reviewsCount",
+      title: "Número de Avaliações",
+      type: "number",
+      validation: (Rule: Rule) => Rule.min(0),
     },
     {
       name: "stock",

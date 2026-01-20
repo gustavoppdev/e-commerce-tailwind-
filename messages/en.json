@@ -132,6 +132,62 @@
           "author": "Chris Paul, Phoenix"
         }
       }
+    },
+    "ProductPage": {
+      "productHeader": {
+        "seeAllReviewsBtn": "See all {reviewsCount} reviews"
+      },
+      "productDetails": {
+        "title": "Details"
+      },
+      "stock": {
+        "inStock": "In stock and ready to ship",
+        "remainingStock": "Only {stock} left in stock",
+        "outOfStock": "Out of stock"
+      },
+      "benefits": {
+        "01": {
+          "title": "Worldwide Shipping",
+          "description": "Shipping to over 50 countries with full tracking."
+        },
+        "02": {
+          "title": "Secure Payment",
+          "description": "Payments processed via Stripe with 256-bit encryption."
+        }
+      },
+      "general": {
+        "addCart": "Add to Cart",
+        "guarantee": "Lifetime Quality Guarantee"
+      }
+    },
+    "RecentReviews": {
+      "headline": "Recent Reviews",
+      "list": {
+        "01": {
+          "emphasis": "Exceeded all my expectations",
+          "quote1": "The attention to detail is what sets this apart. From the sustainable packaging to the actual product, you can tell everything was crafted with care.",
+          "quote2": "The quality is outstanding—it looks and feels even more premium in person. I've already recommended the store to several colleagues who value minimalist design.",
+          "author": "Marcus R.",
+          "date": "January 19, 2026"
+        },
+        "02": {
+          "emphasis": "Perfect balance of form and function",
+          "quote1": "I had a few questions about the materials and customer support was incredibly helpful and fast. Decided to go for it and I couldn't be happier.",
+          "quote2": "Delivery was surprisingly fast. The product has a timeless look that fits perfectly with my lifestyle, whether I'm at the office or traveling. Truly a versatile piece.",
+          "author": "Sarah J.",
+          "date": "January 14, 2026"
+        },
+        "03": {
+          "emphasis": "Built to last a lifetime",
+          "quote1": "It's rare to find products these days that actually feel durable. I've been using mine daily for weeks and it still looks brand new.",
+          "quote2": "If you're looking for something that combines durability with a clean, modern aesthetic, this is it. It's definitely worth the investment for the quality you get.",
+          "author": "David K.",
+          "date": "January 05, 2026"
+        }
+      }
+    },
+    "RelatedProducts": {
+      "headline": "Customers also purchased"
     }
   },
   "Others": {

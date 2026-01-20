@@ -132,6 +132,62 @@
           "author": "Ricardo Souza, São Paulo"
         }
       }
+    },
+    "ProductPage": {
+      "productHeader": {
+        "seeAllReviewsBtn": "Ver todas as {reviewsCount} avaliações"
+      },
+      "productDetails": {
+        "title": "Detalhes"
+      },
+      "stock": {
+        "inStock": "Em estoque e pronto para envio",
+        "remainingStock": "Apenas {stock} unidades restantes",
+        "outOfStock": "Esgotado"
+      },
+      "benefits": {
+        "01": {
+          "title": "Entrega Global",
+          "description": "Enviamos para mais de 50 países com rastreamento total."
+        },
+        "02": {
+          "title": "Pagamento Seguro",
+          "description": "Pagamentos processados via Stripe com criptografia de 256 bits."
+        }
+      },
+      "general": {
+        "addCart": "Adicionar ao Carrinho",
+        "guarantee": "Garantia Vitalícia de Qualidade"
+      }
+    },
+    "RecentReviews": {
+      "headline": "Avaliações Recentes",
+      "list": {
+        "01": {
+          "emphasis": "Superou todas as expectativas",
+          "quote1": "A atenção aos detalhes é o que diferencia esta marca. Da embalagem sustentável ao produto em si, percebe-se que tudo foi feito com muito cuidado.",
+          "quote2": "A qualidade é excepcional — o toque e o visual são ainda mais premium pessoalmente. Já recomendei a loja para vários colegas que valorizam design minimalista.",
+          "author": "Marcos R.",
+          "date": "19 de Janeiro de 2026"
+        },
+        "02": {
+          "emphasis": "Equilíbrio perfeito entre forma e função",
+          "quote1": "Tive algumas dúvidas sobre os materiais e o suporte ao cliente foi incrivelmente prestativo e rápido. Decidi comprar e não poderia estar mais satisfeito.",
+          "quote2": "A entrega foi surpreendentemente rápida. O produto tem um visual atemporal que se adapta perfeitamente ao meu estilo de vida, seja no escritório ou viajando.",
+          "author": "Sara J.",
+          "date": "14 de Janeiro de 2026"
+        },
+        "03": {
+          "emphasis": "Feito para durar a vida toda",
+          "quote1": "É raro encontrar produtos hoje em dia que realmente pareçam duráveis. Tenho usado o meu diariamente há semanas e continua como novo.",
+          "quote2": "Se você procura algo que combine durabilidade com uma estética limpa e moderna, é este o produto. Vale cada centavo pela qualidade que entrega.",
+          "author": "Davi K.",
+          "date": "05 de Janeiro de 2026"
+        }
+      }
+    },
+    "RelatedProducts": {
+      "headline": "Nossos clientes também compraram"
     }
   },
   "Others": {

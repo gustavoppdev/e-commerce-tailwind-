@@ -1,5 +1,6 @@
 import { Pathnames } from "@/i18n/routing";
 import { StaticImageData } from "next/image";
+import { GET_PRODUCT_BY_SLUG_QUERY_RESULT } from "../../sanity.types";
 
 export type TranslationKey = string;
 
@@ -48,4 +49,16 @@ export type FooterLink = {
 export type FooterLinkBottom = {
   label: string;
   href: string;
+};
+
+export type LocaleType = "pt" | "en";
+
+export type FullProduct = NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>;
+
+export type RecentReview = {
+  rating: number;
+  emphasis: TranslationKey;
+  quote: TranslationKey[];
+  author: TranslationKey;
+  date: TranslationKey;
 };

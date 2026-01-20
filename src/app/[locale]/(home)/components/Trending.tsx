@@ -15,7 +15,7 @@ const Trending = () => {
   const locale = useLocale();
   const t = useTranslations("Sections.Trending");
 
-  const { data, isLoading, isError } = useProducts(locale);
+  const { data, isLoading, isError } = useProducts(locale, 4);
 
   if (isError) return null;
 
@@ -36,11 +36,9 @@ const Trending = () => {
           ? Array.from({ length: 4 }).map((_, index) => (
               <ProductCardSkeleton key={index} />
             ))
-          : data
-              ?.slice(0, 4)
-              .map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
+          : data?.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
       </ul>
 
       <SeeAllButton styles="lg:hidden my-10" />

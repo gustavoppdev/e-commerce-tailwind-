@@ -10,7 +10,7 @@ import CurrencyLanguageSwitcher from "@/components/common/CurrencyLanguageSwitch
 const FooterBottom = () => {
   const t = useTranslations("Layout.Footer.bottom");
   return (
-    <div className="my-10 flex flex-col lg:flex-row justify-between gap-2 items-center text-muted-foreground">
+    <div className="my-10 flex flex-col lg:flex-row justify-between gap-2 items-center text-muted-foreground text-sm">
       <p className="hover:underline cursor-pointer">
         {t("rights", { currentYear: new Date().getFullYear() })}
       </p>

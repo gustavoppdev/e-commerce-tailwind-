@@ -25,7 +25,7 @@ export const Footer = () => {
         className="object-cover"
       />
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 my-15">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 my-15 text-sm">
         {FooterLinks.map((section, index) => (
           <ul key={index} className="flex flex-col gap-6">
             <li className="font-medium hover:underline cursor-pointer">

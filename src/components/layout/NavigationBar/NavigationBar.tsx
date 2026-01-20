@@ -17,7 +17,7 @@ export const NavigationBar = () => {
   const t = useTranslations("Layout");
   return (
     <header className="section-container">
-      <nav className="flex items-center justify-between  py-4 lg:py-8">
+      <nav className="flex items-center justify-between py-4 lg:py-8 border-b">
         <div className="flex items-center gap-2">
           <div className="lg:hidden">
             <NavigationBarMobile />

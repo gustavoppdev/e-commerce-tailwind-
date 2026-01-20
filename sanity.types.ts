@@ -38,23 +38,35 @@ export type Product = {
     brl?: number;
     usd?: number;
   };
-  image?: {
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
   category?: "desk-and-office" | "self-improvement" | "travel";
+  description?: {
+    pt?: Array<string>;
+    en?: Array<string>;
+  };
+  features?: Array<{
+    pt?: string;
+    en?: string;
+    _key: string;
+  }>;
   colors?: Array<{
     colorName?: {
       pt?: string;
       en?: string;
     };
     colorHex?: string;
+    images?: Array<{
+      asset?: SanityImageAssetReference;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }>;
     _type: "colorOption";
     _key: string;
   }>;
+  rating?: number;
+  reviewsCount?: number;
   stock?: number;
 };
 
@@ -195,7 +207,7 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: src\sanity\lib\queries.ts
 // Variable: GET_PRODUCTS_QUERY
-// Query: *[_type == "product"] | order(_createdAt desc) {    _id,    name,    slug,    price,    category,    colors[] {      _key,      colorName,      colorHex,      "colorImageUrl": colorImage.asset->url,      "colorBlurDataURL": colorImage.asset->metadata.lqip    },    "imageUrl": image.asset->url,    "blurDataURL": image.asset->metadata.lqip  }
+// Query: *[    _type == "product" &&     (!defined($excludeId) || _id != $excludeId) &&    (!defined($category) || category == $category)  ] | order(_createdAt desc) [$start...$end] {    _id,    name,    slug,    price,    category,    colors[] {      _key,      colorName,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip,            dimensions          }        }      }    },    description {      pt[],      en[]    },    features[] {      _key,      pt,      en    },    rating,    reviewsCount,  }
 export type GET_PRODUCTS_QUERY_RESULT = Array<{
   _id: string;
   name: {
@@ -218,17 +230,85 @@ export type GET_PRODUCTS_QUERY_RESULT = Array<{
       en?: string;
     } | null;
     colorHex: string | null;
-    colorImageUrl: null;
-    colorBlurDataURL: null;
+    images: Array<{
+      _key: string;
+      asset: {
+        url: string | null;
+        metadata: {
+          lqip: string | null;
+          dimensions: SanityImageDimensions | null;
+        } | null;
+      } | null;
+    }> | null;
   }> | null;
-  imageUrl: string | null;
-  blurDataURL: string | null;
+  description: {
+    pt: Array<string> | null;
+    en: Array<string> | null;
+  } | null;
+  features: Array<{
+    _key: string;
+    pt: string | null;
+    en: string | null;
+  }> | null;
+  rating: number | null;
+  reviewsCount: number | null;
 }>;
+
+// Source: src\sanity\lib\queries.ts
+// Variable: GET_PRODUCT_BY_SLUG_QUERY
+// Query: *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {    _id,    name,    slug,    price,    category,    colors[] {      _key,      colorName,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip, // O desfoque para o placeholder            dimensions // Útil para manter a proporção da imagem          }        }      }    },    description {      pt[],      en[]    },    features[] { _key, pt, en },    rating,    reviewsCount,    stock  }
+export type GET_PRODUCT_BY_SLUG_QUERY_RESULT = {
+  _id: string;
+  name: {
+    pt?: string;
+    en?: string;
+  } | null;
+  slug: {
+    pt?: Slug;
+    en?: Slug;
+  } | null;
+  price: {
+    brl?: number;
+    usd?: number;
+  } | null;
+  category: "desk-and-office" | "self-improvement" | "travel" | null;
+  colors: Array<{
+    _key: string;
+    colorName: {
+      pt?: string;
+      en?: string;
+    } | null;
+    colorHex: string | null;
+    images: Array<{
+      _key: string;
+      asset: {
+        url: string | null;
+        metadata: {
+          lqip: string | null;
+          dimensions: SanityImageDimensions | null;
+        } | null;
+      } | null;
+    }> | null;
+  }> | null;
+  description: {
+    pt: Array<string> | null;
+    en: Array<string> | null;
+  } | null;
+  features: Array<{
+    _key: string;
+    pt: string | null;
+    en: string | null;
+  }> | null;
+  rating: number | null;
+  reviewsCount: number | null;
+  stock: number | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "product"] | order(_createdAt desc) {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      "colorImageUrl": colorImage.asset->url,\n      "colorBlurDataURL": colorImage.asset->metadata.lqip\n    },\n    "imageUrl": image.asset->url,\n    "blurDataURL": image.asset->metadata.lqip\n  }': GET_PRODUCTS_QUERY_RESULT;
+    '*[\n    _type == "product" && \n    (!defined($excludeId) || _id != $excludeId) &&\n    (!defined($category) || category == $category)\n  ] | order(_createdAt desc) [$start...$end] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] {\n      _key,\n      pt,\n      en\n    },\n    rating,\n    reviewsCount,\n  }': GET_PRODUCTS_QUERY_RESULT;
+    '\n  *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip, // O desfoque para o placeholder\n            dimensions // \xDAtil para manter a propor\xE7\xE3o da imagem\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] { _key, pt, en },\n    rating,\n    reviewsCount,\n    stock\n  }\n': GET_PRODUCT_BY_SLUG_QUERY_RESULT;
   }
 }
