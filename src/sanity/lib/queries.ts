@@ -1,9 +1,13 @@
 import { defineQuery } from "next-sanity";
 import { client } from "./client";
+import { FullProduct } from "@/types";
 
 // 1. Definimos a query usando defineQuery (isso habilita o TypeGen)
-export const GET_PRODUCTS_QUERY =
-  defineQuery(`*[_type == "product"] | order(_createdAt desc) [$start...$end] {
+export const GET_PRODUCTS_QUERY = defineQuery(`*[
+    _type == "product" && 
+    (!defined($excludeId) || _id != $excludeId) &&
+    (!defined($category) || category == $category)
+  ] | order(_createdAt desc) [$start...$end] {
     _id,
     name,
     slug,
@@ -71,12 +75,21 @@ export const GET_PRODUCT_BY_SLUG_QUERY = defineQuery(`
   }
 `);
 
-export const getProducts = async (limit?: number) => {
+export const getProducts = async (
+  limit?: number,
+  excludeId?: string,
+  category?: FullProduct["category"],
+) => {
   const start = 0;
-  const end = limit || 100;
+  const end = limit || 10;
 
-  const products = await client.fetch(GET_PRODUCTS_QUERY, { start, end });
-  return products;
+  // Passamos as variáveis para o fetch
+  return await client.fetch(GET_PRODUCTS_QUERY, {
+    start,
+    end,
+    excludeId: excludeId || null,
+    category: category || null,
+  });
 };
 
 export const getProductBySlug = async (slug: string) => {

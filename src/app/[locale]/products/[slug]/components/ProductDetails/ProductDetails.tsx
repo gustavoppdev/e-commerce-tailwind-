@@ -3,6 +3,9 @@
 // React
 import { useState } from "react";
 
+// Next.Intl
+import { useTranslations } from "next-intl";
+
 // Types & Utils
 import { GET_PRODUCT_BY_SLUG_QUERY_RESULT } from "@/../sanity.types";
 import { formatCurrency } from "@/lib/utils";
@@ -20,7 +23,6 @@ import { Button } from "@/components/ui/button";
 
 // Icons
 import { ShieldCheck } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 type Props = {
   product: NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>;

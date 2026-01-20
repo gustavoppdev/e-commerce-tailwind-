@@ -1,9 +1,17 @@
-import { getProductBySlug } from "@/sanity/lib/queries";
-import { LocaleType } from "@/types";
+// Next
 import { Metadata } from "next";
-import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { notFound, redirect } from "next/navigation";
+
+// Sanity
+import { getProductBySlug } from "@/sanity/lib/queries";
+
+// Types
+import { LocaleType } from "@/types";
+
+// Components
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 import RecentReviews from "./components/RecentReviews";
+import RelatedProducts from "./components/RelatedProducts";
 
 type Props = {
   params: {
@@ -84,6 +92,8 @@ const ProductPage = async ({ params }: Props) => {
       <ProductDetails product={product} locale={locale} />
 
       <RecentReviews />
+
+      <RelatedProducts currentProductId={product._id} />
     </main>
   );
 };

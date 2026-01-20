@@ -1,10 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../sanity/lib/queries";
-import { GET_PRODUCTS_QUERY_RESULT } from "../../sanity.types";
+import { FullProduct } from "@/types";
 
-export function useProducts(locale: string, limit?: number) {
+export function useProducts(
+  locale: string,
+  limit?: number,
+  excludeId?: string,
+  category?: FullProduct["category"],
+) {
   return useQuery({
-    queryKey: ["products", locale, limit], // O locale agora faz parte da chave do cache!
-    queryFn: (): Promise<GET_PRODUCTS_QUERY_RESULT> => getProducts(limit), // Por enquanto a função busca tudo
+    queryKey: ["products", locale, limit, excludeId, category],
+    queryFn: () => getProducts(limit, excludeId, category),
   });
 }

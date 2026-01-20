@@ -207,7 +207,7 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: src\sanity\lib\queries.ts
 // Variable: GET_PRODUCTS_QUERY
-// Query: *[_type == "product"] | order(_createdAt desc) [$start...$end] {    _id,    name,    slug,    price,    category,    colors[] {      _key,      colorName,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip,            dimensions          }        }      }    },    description {      pt[],      en[]    },    features[] {      _key,      pt,      en    },    rating,    reviewsCount,  }
+// Query: *[    _type == "product" &&     (!defined($excludeId) || _id != $excludeId) &&    (!defined($category) || category == $category)  ] | order(_createdAt desc) [$start...$end] {    _id,    name,    slug,    price,    category,    colors[] {      _key,      colorName,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip,            dimensions          }        }      }    },    description {      pt[],      en[]    },    features[] {      _key,      pt,      en    },    rating,    reviewsCount,  }
 export type GET_PRODUCTS_QUERY_RESULT = Array<{
   _id: string;
   name: {
@@ -308,7 +308,7 @@ export type GET_PRODUCT_BY_SLUG_QUERY_RESULT = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "product"] | order(_createdAt desc) [$start...$end] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] {\n      _key,\n      pt,\n      en\n    },\n    rating,\n    reviewsCount,\n  }': GET_PRODUCTS_QUERY_RESULT;
+    '*[\n    _type == "product" && \n    (!defined($excludeId) || _id != $excludeId) &&\n    (!defined($category) || category == $category)\n  ] | order(_createdAt desc) [$start...$end] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] {\n      _key,\n      pt,\n      en\n    },\n    rating,\n    reviewsCount,\n  }': GET_PRODUCTS_QUERY_RESULT;
     '\n  *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    colors[] {\n      _key,\n      colorName,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip, // O desfoque para o placeholder\n            dimensions // \xDAtil para manter a propor\xE7\xE3o da imagem\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] { _key, pt, en },\n    rating,\n    reviewsCount,\n    stock\n  }\n': GET_PRODUCT_BY_SLUG_QUERY_RESULT;
   }
 }

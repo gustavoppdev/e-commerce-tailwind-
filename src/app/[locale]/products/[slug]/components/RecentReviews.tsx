@@ -1,8 +1,14 @@
-import { RecentReviewsArray } from "@/constants";
-import { cn } from "@/lib/utils";
-import { Star } from "lucide-react";
+// Next-Intl
 import { useTranslations } from "next-intl";
-import React from "react";
+
+// Constants
+import { RecentReviewsArray } from "@/constants";
+
+// Utils
+import { cn } from "@/lib/utils";
+
+// Icons
+import { Star } from "lucide-react";
 
 const RecentReviews = () => {
   const t = useTranslations("Sections.RecentReviews");
@@ -19,7 +25,11 @@ const RecentReviews = () => {
             {/* Rating & Quote */}
             <div className="flex flex-col items-start gap-4 xl:flex-row xl:justify-between flex-2">
               {/* Rating */}
-              <div className="flex items-center gap-2 xl:flex-1">
+              <div
+                className="flex items-center gap-2 xl:flex-1"
+                role="img"
+                aria-label={`${review.rating}/5 estrelas`}
+              >
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
