@@ -10,6 +10,7 @@ import {
   FooterLinkBottom,
   HeroBenefit,
   NavigationLink,
+  ProductFilterGroup,
   RecentReview,
   RegionData,
   Testimonial,
@@ -17,15 +18,15 @@ import {
 
 export const NavigationLinks: NavigationLink[] = [
   {
-    label: "NavigationLinks.women",
+    label: "NavigationLinks.home",
     href: "/",
   },
   {
-    label: "NavigationLinks.men",
-    href: "/",
+    label: "NavigationLinks.products",
+    href: "/products",
   },
   {
-    label: "NavigationLinks.company",
+    label: "NavigationLinks.about",
     href: "/",
   },
   {
@@ -205,3 +206,65 @@ export const RecentReviewsArray: RecentReview[] = [
     date: "list.03.date",
   },
 ];
+
+export const PRODUCT_FILTERS: ProductFilterGroup[] = [
+  {
+    id: "colors",
+    label: "list.colors.title",
+    options: [
+      { label: "list.colors.black", value: "black", hex: "#000000" },
+      {
+        label: "list.colors.aluminium",
+        value: "natural-aluminum",
+        hex: "#bcbcbc",
+      },
+      { label: "list.colors.amber", value: "amber", hex: "#ffba00" },
+      { label: "list.colors.natural", value: "natural", hex: "#c2582d" },
+      { label: "list.colors.white", value: "white", hex: "#fafafa" },
+    ],
+  },
+  {
+    id: "categories",
+    label: "list.categories.title",
+    options: [
+      { label: "list.categories.desk", value: "desk-and-office" },
+      { label: "list.categories.self", value: "self-improvement" },
+      { label: "list.categories.travel", value: "travel" },
+    ],
+  },
+  {
+    id: "materials",
+    label: "list.materials.title",
+    options: [
+      { label: "list.materials.wood", value: "wood" },
+      { label: "list.materials.leather", value: "leather" },
+      { label: "list.materials.metal", value: "metal" },
+      { label: "list.materials.paper", value: "paper" },
+      { label: "list.materials.glass", value: "glass" },
+    ],
+  },
+];
+
+// export const PRODUCT_FILTERS: ProductFilters = {
+//   categories: [
+//     { label: "Filters.categories.desk", value: "desk-and-office" },
+//     { label: "Filters.categories.self", value: "self-improvement" },
+//     { label: "Filters.categories.travel", value: "travel" },
+//   ],
+//   materials: [
+//     { label: "Filters.materials.wood", value: "wood" },
+//     { label: "Filters.materials.leather", value: "leather" },
+//     { label: "Filters.materials.metal", value: "metal" },
+//     { label: "Filters.materials.paper", value: "paper" },
+//     { label: "Filters.materials.glass", value: "glass" },
+//   ],
+//   colors: [
+//     { label: "Filters.colors.black", value: "black", hex: "#000000" }, //
+//     { label: "Filters.colors.aluminium", value: "aluminium", hex: "#bcbcbc" }, //
+//     { label: "Filters.colors.amber", value: "amber", hex: "#ffba00" }, //
+//     { label: "Filters.colors.natural", value: "natural", hex: "#c2582d" }, //
+//     // { label: "Filters.colors.white", value: "white", hex: "#FFFFFF" },
+//     // { label: "Filters.colors.grey", value: "grey", hex: "#808080" },
+//     // { label: "Filters.colors.darkTones", value: "darkTones", hex: "#0a0a0a" }, //
+//   ],
+// } as const;

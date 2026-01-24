@@ -62,6 +62,22 @@ export const product = {
       },
     },
     {
+      name: "material",
+      title: "Material Predominante",
+      type: "string",
+      options: {
+        list: [
+          { title: "Madeira Maciça", value: "wood" },
+          { title: "Couro Legítimo", value: "leather" },
+          { title: "Metal / Alumínio", value: "metal" },
+          { title: "Papel Premium", value: "paper" },
+          { title: "Vidro / Cerâmica", value: "glass" },
+        ],
+      },
+      validation: (Rule: Rule) =>
+        Rule.required().error("Selecione o material principal."),
+    },
+    {
       name: "description",
       title: "Descrição do Produto",
       type: "object",
@@ -115,6 +131,26 @@ export const product = {
                 { name: "pt", title: "Português", type: "string" },
                 { name: "en", title: "Inglês", type: "string" },
               ],
+            },
+            {
+              name: "colorValue",
+              title: "Valor Técnico (Slug)",
+              type: "slug",
+              description:
+                "Usado para filtros na URL. Ex: preto, marrom-escuro",
+              options: {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                source: (doc: any, options: any) => {
+                  // Busca o nome em inglês dentro do array de cores (lógica simplificada)
+                  // O 'options.parent' pega os campos do objeto atual onde o slug está
+                  return options.parent?.colorName?.en || "";
+                },
+                maxLength: 96,
+              },
+              validation: (Rule: Rule) =>
+                Rule.required().error(
+                  "Obrigatório para o funcionamento do filtro.",
+                ),
             },
             {
               name: "colorHex",

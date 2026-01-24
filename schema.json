@@ -156,6 +156,35 @@
         },
         "optional": true
       },
+      "material": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "wood"
+            },
+            {
+              "type": "string",
+              "value": "leather"
+            },
+            {
+              "type": "string",
+              "value": "metal"
+            },
+            {
+              "type": "string",
+              "value": "paper"
+            },
+            {
+              "type": "string",
+              "value": "glass"
+            }
+          ]
+        },
+        "optional": true
+      },
       "description": {
         "type": "objectAttribute",
         "value": {
@@ -249,6 +278,14 @@
                       "optional": true
                     }
                   }
+                },
+                "optional": true
+              },
+              "colorValue": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "inline",
+                  "name": "slug"
                 },
                 "optional": true
               },

@@ -23,6 +23,9 @@ const ProductColors = ({
   return (
     <div className="flex flex-col gap-2">
       <h3 className="font-medium ">{locale === "pt" ? "Cores" : "Colors"}</h3>
+      <p className="text-sm text-muted-foreground">
+        {selectedColor?.colorName?.[locale]}
+      </p>
 
       <div className="flex items-center justify-start gap-3">
         {product?.colors?.map((color) => {
@@ -32,8 +35,9 @@ const ProductColors = ({
             <button
               key={color._key}
               onClick={() => onColorChange(color)}
+              title={color.colorName?.[locale]}
               className={cn(
-                "relative size-10 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out",
+                "relative size-10 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out cursor-pointer",
                 "border-black/50",
                 isSelected ? "border-2" : "hover:border",
               )}
