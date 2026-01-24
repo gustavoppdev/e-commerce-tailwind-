@@ -1,5 +1,5 @@
 // Next.js & Next-Intl
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -13,10 +13,9 @@ type Props = {
 
 const CollectionCard = ({ collection }: Props) => {
   const t = useTranslations("Sections.Collections");
-  const locale = useLocale() as "pt" | "en";
 
-  const localizedSlug =
-    CATEGORY_SLUGS[collection.key as keyof typeof CATEGORY_SLUGS][locale];
+  const slug =
+    CATEGORY_SLUGS[collection.key as keyof typeof CATEGORY_SLUGS]["en"];
 
   return (
     <li className="flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300 relative">
@@ -36,7 +35,7 @@ const CollectionCard = ({ collection }: Props) => {
           <Link
             href={{
               pathname: "/products",
-              query: { category: localizedSlug },
+              query: { categories: slug },
             }}
             className="after:absolute after:inset-0"
           >

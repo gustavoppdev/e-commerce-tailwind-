@@ -20,7 +20,11 @@ const RelatedProducts = ({ currentProductId }: RelatedProps) => {
   const t = useTranslations("Sections.RelatedProducts");
   const locale = useLocale() as LocaleType;
 
-  const { data, isLoading, isError } = useProducts(locale, 4, currentProductId);
+  const { data, isLoading, isError } = useProducts({
+    locale,
+    limit: 4,
+    excludeId: currentProductId,
+  });
 
   if (isError) return null;
 

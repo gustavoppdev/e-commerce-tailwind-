@@ -1,9 +1,9 @@
 {
   "Layout": {
     "NavigationLinks": {
-      "women": "Mulheres",
-      "men": "Homens",
-      "company": "Empresa",
+      "home": "Início",
+      "products": "Produtos",
+      "about": "Sobre nós",
       "stores": "Lojas"
     },
     "Auth": {
@@ -188,6 +188,46 @@
     },
     "RelatedProducts": {
       "headline": "Nossos clientes também compraram"
+    },
+    "ProductsPage": {
+      "headline": "Lançamentos Recentes",
+      "paragraph": "Uma curadoria de itens essenciais projetados com foco na funcionalidade e longevidade. Design minimalista para elevar o seu espaço de trabalho e sua rotina.",
+      "search": {
+        "placeholder": "Pesquisar produtos..."
+      },
+      "filters": {
+        "title": "Filtros",
+        "description": "Filtre seus produtos",
+        "clearFilters": "Limpar Filtros",
+        "noResults": {
+          "title": "Nenhum produto encontrado",
+          "description": "Tente ajustar ou limpar os seus filtros."
+        },
+        "list": {
+          "categories": {
+            "title": "Categorias",
+            "desk": "Mesa e Escritório",
+            "self": "Auto-Aperfeiçoamento",
+            "travel": "Viagens"
+          },
+          "materials": {
+            "title": "Material",
+            "wood": "Madeira Maciça",
+            "leather": "Couro Legítimo",
+            "metal": "Metal / Alumínio",
+            "paper": "Papel Premium",
+            "glass": "Vidro / Cerâmica"
+          },
+          "colors": {
+            "title": "Cores",
+            "black": "Preto",
+            "aluminium": "Alumínio Natural",
+            "amber": "Âmbar",
+            "natural": "Natural",
+            "white": "Branco"
+          }
+        }
+      }
     }
   },
   "Others": {
@@ -201,6 +241,14 @@
       "newsletter": {
         "invalidEmail": "Por favor, insira um endereço de e-mail válido"
       }
+    }
+  },
+  "Metadata": {
+    "Products": {
+      "title": "Nossos Produtos",
+      "description": "Explore nossa curadoria de itens essenciais para escritório, viagens e estilo de vida. Design minimalista com garantia vitalícia.",
+      "ogTitle": "Loja Tailwind Store | Qualidade e Design",
+      "noIndex": false
     }
   }
 }

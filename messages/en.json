@@ -1,9 +1,9 @@
 {
   "Layout": {
     "NavigationLinks": {
-      "women": "Women",
-      "men": "Men",
-      "company": "Company",
+      "home": "Home",
+      "products": "Products",
+      "about": "About",
       "stores": "Stores"
     },
     "Auth": {
@@ -188,6 +188,46 @@
     },
     "RelatedProducts": {
       "headline": "Customers also purchased"
+    },
+    "ProductsPage": {
+      "headline": "New Arrivals",
+      "paragraph": "A curated collection of essentials designed with a focus on functionality and longevity. Minimalist design to elevate your workspace and daily routine.",
+      "search": {
+        "placeholder": "Search products..."
+      },
+      "filters": {
+        "title": "Filters",
+        "description": "Filter your products",
+        "clearFilters": "Clear Filters",
+        "noResults": {
+          "title": "No products found",
+          "description": "Try adjusting or clearing your filters."
+        },
+        "list": {
+          "categories": {
+            "title": "Categories",
+            "desk": "Desk & Office",
+            "self": "Self-Improvement",
+            "travel": "Travel"
+          },
+          "materials": {
+            "title": "Material",
+            "wood": "Solid Wood",
+            "leather": "Genuine Leather",
+            "metal": "Metal / Aluminum",
+            "paper": "Premium Paper",
+            "glass": "Glass / Ceramic"
+          },
+          "colors": {
+            "title": "Colors",
+            "black": "Black",
+            "aluminium": "Natural Aluminium",
+            "amber": "Amber",
+            "natural": "Natural",
+            "white": "White"
+          }
+        }
+      }
     }
   },
   "Others": {
@@ -201,6 +241,14 @@
       "newsletter": {
         "invalidEmail": "Please enter a valid email address"
       }
+    }
+  },
+  "Metadata": {
+    "Products": {
+      "title": "Our Products",
+      "description": "Explore our curated essentials for office, travel, and lifestyle. Minimalist design with a lifetime guarantee.",
+      "ogTitle": "Tailwind Store | Quality & Design",
+      "noIndex": false
     }
   }
 }

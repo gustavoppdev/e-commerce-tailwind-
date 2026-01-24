@@ -15,7 +15,7 @@ const Trending = () => {
   const locale = useLocale();
   const t = useTranslations("Sections.Trending");
 
-  const { data, isLoading, isError } = useProducts(locale, 4);
+  const { data, isLoading, isError } = useProducts({ locale, limit: 4 });
 
   if (isError) return null;
 

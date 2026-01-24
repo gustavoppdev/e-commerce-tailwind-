@@ -25,7 +25,7 @@ const Testimonials = () => {
             <Quote className="size-6 fill-neutral-300 text-neutral-300 scale-x-[-1]" />
 
             <div className="flex flex-col gap-6 flex-1">
-              <p className="text-muted-foreground text-lg flex-1">
+              <p className="text-muted-foreground leading-relaxed flex-1">
                 {t(testimonial.quote)}
               </p>
 
