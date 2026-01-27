@@ -15,6 +15,7 @@ import {
   RegionData,
   Testimonial,
 } from "@/types";
+import { ShieldCheck, Star, Zap } from "lucide-react";
 
 export const NavigationLinks: NavigationLink[] = [
   {
@@ -245,26 +246,20 @@ export const PRODUCT_FILTERS: ProductFilterGroup[] = [
   },
 ];
 
-// export const PRODUCT_FILTERS: ProductFilters = {
-//   categories: [
-//     { label: "Filters.categories.desk", value: "desk-and-office" },
-//     { label: "Filters.categories.self", value: "self-improvement" },
-//     { label: "Filters.categories.travel", value: "travel" },
-//   ],
-//   materials: [
-//     { label: "Filters.materials.wood", value: "wood" },
-//     { label: "Filters.materials.leather", value: "leather" },
-//     { label: "Filters.materials.metal", value: "metal" },
-//     { label: "Filters.materials.paper", value: "paper" },
-//     { label: "Filters.materials.glass", value: "glass" },
-//   ],
-//   colors: [
-//     { label: "Filters.colors.black", value: "black", hex: "#000000" }, //
-//     { label: "Filters.colors.aluminium", value: "aluminium", hex: "#bcbcbc" }, //
-//     { label: "Filters.colors.amber", value: "amber", hex: "#ffba00" }, //
-//     { label: "Filters.colors.natural", value: "natural", hex: "#c2582d" }, //
-//     // { label: "Filters.colors.white", value: "white", hex: "#FFFFFF" },
-//     // { label: "Filters.colors.grey", value: "grey", hex: "#808080" },
-//     // { label: "Filters.colors.darkTones", value: "darkTones", hex: "#0a0a0a" }, //
-//   ],
-// } as const;
+export const LoginBenefits = [
+  {
+    icon: Zap,
+    title: "benefits.list.01.title",
+    description: "benefits.list.01.description",
+  },
+  {
+    icon: Star,
+    title: "benefits.list.02.title",
+    description: "benefits.list.02.description",
+  },
+  {
+    icon: ShieldCheck,
+    title: "benefits.list.03.title",
+    description: "benefits.list.03.description",
+  },
+];

@@ -8,7 +8,35 @@
     },
     "Auth": {
       "signIn": "Entrar",
-      "createAccount": "Criar uma Conta"
+      "createAccount": "Criar uma Conta",
+      "logout": "Logout",
+      "orders": "Meus pedidos",
+      "loginPage": {
+        "headline": "Bem-vindo de volta!",
+        "description": "Acesse sua conta para gerenciar seus pedidos, salvar seus produtos favoritos e ter uma experiência personalizada.",
+        "loginWithGoogle": "Entrar com Google",
+        "benefits": {
+          "title": "Por que criar uma conta?",
+          "list": {
+            "01": {
+              "title": "Checkout Express",
+              "description": "Salve seus dados de entrega para compras em segundos."
+            },
+            "02": {
+              "title": "Lista de Desejos",
+              "description": "Acompanhe seus itens favoritos e receba notificações de descontos."
+            },
+            "03": {
+              "title": "Acesso Seguro",
+              "description": "Seus dados são protegidos por criptografia de ponta a ponta."
+            }
+          }
+        },
+        "privacyPolicy": "Privacidade",
+        "termsService": "Termos de Uso",
+        "help": "Ajuda",
+        "copyright": "© {year} Tailwind Store"
+      }
     },
     "Footer": {
       "links": {
@@ -249,6 +277,12 @@
       "description": "Explore nossa curadoria de itens essenciais para escritório, viagens e estilo de vida. Design minimalista com garantia vitalícia.",
       "ogTitle": "Loja Tailwind Store | Qualidade e Design",
       "noIndex": false
+    },
+    "Login": {
+      "title": "Acessar Conta | Tailwind Store",
+      "description": "Faça login em sua conta para gerenciar seus pedidos e acessar sua coleção personalizada.",
+      "ogTitle": "Login Seguro - Tailwind Store",
+      "noIndex": true
     }
   }
 }

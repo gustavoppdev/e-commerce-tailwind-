@@ -7,6 +7,8 @@ import selfImprovementImage from "./images/collection-self-improvement.webp";
 import travelImage from "./images/collection-travel.webp";
 import saleImage from "./images/saleBackground.webp";
 import loyaltyImage from "./images/loyaltyBackground.webp";
+import loginImage from "./images/loginImage.webp";
+import googleIcon from "./images/googleIcon.svg";
 
 export {
   tailwindLogo,
@@ -18,4 +20,6 @@ export {
   travelImage,
   saleImage,
   loyaltyImage,
+  loginImage,
+  googleIcon,
 };

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import CurrencyLanguageSwitcher from "@/components/common/CurrencyLanguageSwitcher";
 import SearchAndCart from "./SearchAndCart";
 import NavigationBarMobile from "./NavigationBarMobile";
+import AuthSection from "./AuthSection";
 
 // Assets & Constants
 import { tailwindLogo } from "@/assets";
@@ -34,7 +35,8 @@ export const NavigationBar = () => {
             {NavigationLinks.map((link) => (
               <li key={link.label}>
                 <Button variant={"link"} className="text-gray-500" asChild>
-                  <Link href={link.href}>{t(link.label)}</Link>
+                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                  <Link href={link.href as any}>{t(link.label)}</Link>
                 </Button>
               </li>
             ))}
@@ -44,17 +46,9 @@ export const NavigationBar = () => {
         {/*  */}
         <div className="flex items-center justify-between gap-2">
           <div className="hidden lg:flex items-center gap-2">
-            <Button variant={"link"} className="text-gray-600">
-              <Link href={"/auth/login"}>{t("Auth.signIn")}</Link>
-            </Button>
-            <span className="h-4 w-px block bg-gray-200 rounded"></span>
-            <Button variant={"link"} className="text-gray-600">
-              <Link href={"/auth/login"}>{t("Auth.createAccount")}</Link>
-            </Button>
+            <AuthSection />
 
-            <div>
-              <CurrencyLanguageSwitcher />
-            </div>
+            <CurrencyLanguageSwitcher />
           </div>
 
           {/* Pesquisa e carrinho */}
