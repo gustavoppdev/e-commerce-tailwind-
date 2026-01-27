@@ -8,7 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
-// Constants
+// Constants & Hooks
 import { PRODUCT_FILTERS } from "@/constants";
 import { useFilterParams } from "@/hooks/useFilterParams";
 

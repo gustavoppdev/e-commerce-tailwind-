@@ -8,7 +8,35 @@
     },
     "Auth": {
       "signIn": "Sign In",
-      "createAccount": "Create Account"
+      "createAccount": "Create Account",
+      "logout": "Log Out",
+      "orders": "My Orders",
+      "loginPage": {
+        "headline": "Welcome back!",
+        "description": "Sign in to manage your orders, save your favorite products, and enjoy a personalized shopping experience.",
+        "loginWithGoogle": "Sign in with Google",
+        "benefits": {
+          "title": "Why create an account?",
+          "list": {
+            "01": {
+              "title": "Express Checkout",
+              "description": "Save your shipping details and complete your purchase in seconds."
+            },
+            "02": {
+              "title": "Wishlist",
+              "description": "Keep track of your favorite items and get notified about price drops."
+            },
+            "03": {
+              "title": "Secure Access",
+              "description": "Your data is protected with industry-standard end-to-end encryption."
+            }
+          }
+        },
+        "privacyPolicy": "Privacy Policy",
+        "termsService": "Terms of Service",
+        "help": "Help Center",
+        "copyright": "© {year} Tailwind Store"
+      }
     },
     "Footer": {
       "links": {
@@ -249,6 +277,12 @@
       "description": "Explore our curated essentials for office, travel, and lifestyle. Minimalist design with a lifetime guarantee.",
       "ogTitle": "Tailwind Store | Quality & Design",
       "noIndex": false
+    },
+    "Login": {
+      "title": "Sign In | Tailwind Store",
+      "description": "Log in to your account to manage your orders and access your personalized collection.",
+      "ogTitle": "Secure Login - Tailwind Store",
+      "noIndex": true
     }
   }
 }

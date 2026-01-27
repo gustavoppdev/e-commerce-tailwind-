@@ -94,3 +94,9 @@ export type ProductFilterGroup =
   | FilterGroup<CategoryValue>
   | FilterGroup<MaterialValue>
   | FilterGroup<string>; // string para cores
+
+export type LoginBenefit = {
+  icon: React.ReactNode;
+  title: TranslationKey;
+  description: TranslationKey;
+};
