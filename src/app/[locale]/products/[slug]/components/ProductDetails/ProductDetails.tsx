@@ -22,7 +22,9 @@ import ProductStock from "./ProductStock";
 import { Button } from "@/components/ui/button";
 
 // Icons
-import { ShieldCheck } from "lucide-react";
+import { Loader2, ShieldCheck } from "lucide-react";
+import { useCart } from "@/hooks/useCart";
+import { toast } from "sonner";
 
 type Props = {
   product: NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>;
@@ -31,6 +33,8 @@ type Props = {
 
 const ProductDetails = ({ product, locale }: Props) => {
   const t = useTranslations("Sections.ProductPage.general");
+  const { addToCart } = useCart();
+  const [isLoading, setIsLoading] = useState(false);
   // 1. Estado para a cor selecionada (inicia com a primeira cor do array)
   const [selectedColor, setSelectedColor] = useState(product.colors?.[0]);
 
@@ -49,6 +53,23 @@ const ProductDetails = ({ product, locale }: Props) => {
     product.price?.[locale === "pt" ? "brl" : "usd"] ?? 0,
     locale,
   );
+
+  const handleAddToCart = async () => {
+    setIsLoading(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      addToCart({
+        id: product._id,
+        variantKey: selectedColor?._key ?? "",
+        quantity: 1,
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsLoading(false);
+      toast.success("Produto adicionado ao carrinho!");
+    }
+  };
 
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -88,8 +109,16 @@ const ProductDetails = ({ product, locale }: Props) => {
         <ProductStock stock={product.stock} />
 
         <div className="flex flex-col items-center justify-center gap-4">
-          <Button size={"lg"} className="lg:text-base h-14 w-full">
-            {t("addCart")}
+          <Button
+            size={"lg"}
+            className="lg:text-base h-14 w-full"
+            onClick={handleAddToCart}
+          >
+            {isLoading ? (
+              <Loader2 className="size-4 animate-spin" />
+            ) : (
+              t("addCart")
+            )}
           </Button>
           <p className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
             <ShieldCheck className="size-4 text-emerald-600" />

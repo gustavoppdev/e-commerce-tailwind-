@@ -85,6 +85,7 @@ export const GET_CART_PRODUCTS_QUERY = defineQuery(`
   *[_type == "product" && _id in $ids] {
     _id,
     name,
+    slug,
     price,
     stock,
     colors[] {

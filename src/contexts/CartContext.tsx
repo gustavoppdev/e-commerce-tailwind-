@@ -1,9 +1,10 @@
+"use client";
+
 import React, { createContext, useState, useEffect, useMemo } from "react";
 
-// 1. Definição dos Tipos
 export type CartItem = {
-  id: string; // ID do produto no Sanity
-  variantKey: string; // O _key da cor selecionada no Sanity
+  id: string;
+  variantKey: string;
   quantity: number;
 };
 
@@ -13,7 +14,8 @@ interface CartContextType {
   removeFromCart: (id: string, variantKey: string) => void;
   updateQuantity: (id: string, variantKey: string, quantity: number) => void;
   clearCart: () => void;
-  totalItems: number; // Apenas a contagem física de itens
+  totalItems: number;
+  isLoaded: boolean; // Útil para evitar flashes na UI
 }
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -21,39 +23,44 @@ export const CartContext = createContext<CartContextType | undefined>(
 );
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  // Inicializamos com um array vazio para evitar erros de hidratação no Next.js
-  const [cart, setCart] = useState<CartItem[]>(() => {
-    // Verificamos se estamos no navegador (Client-side)
-    if (typeof window !== "undefined") {
-      const savedCart = localStorage.getItem("tailwind-store-cart");
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // 1. Carrega do LocalStorage apenas uma vez após montar
+  useEffect(() => {
+    const savedCart = localStorage.getItem("tailwind-store-cart");
+    if (savedCart) {
       try {
-        return savedCart ? JSON.parse(savedCart) : [];
-      } catch (error) {
-        console.error("Erro ao carregar o carrinho:", error);
-        return [];
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setCart(JSON.parse(savedCart));
+      } catch (e) {
+        console.error("Erro ao carregar carrinho", e);
       }
     }
-    return [];
-  });
-  2;
-  // 2. Sincronização: Apenas SALVAMOS no localStorage quando o cart mudar
-  useEffect(() => {
-    localStorage.setItem("tailwind-store-cart", JSON.stringify(cart));
-  }, [cart]);
+    setIsLoaded(true);
+  }, []);
 
-  // 4. Funções de Manipulação
+  // 2. Salva no LocalStorage sempre que o cart mudar (após carregado)
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("tailwind-store-cart", JSON.stringify(cart));
+    }
+  }, [cart, isLoaded]);
+
   const addToCart = (newItem: CartItem) => {
     setCart((prev) => {
-      // Verifica se o item com o mesmo ID E a mesma variante já existe
       const existingItemIndex = prev.findIndex(
         (item) =>
           item.id === newItem.id && item.variantKey === newItem.variantKey,
       );
 
       if (existingItemIndex > -1) {
-        const updatedCart = [...prev];
-        updatedCart[existingItemIndex].quantity += newItem.quantity;
-        return updatedCart;
+        // CORREÇÃO: Cria um novo array E um novo objeto para o item atualizado
+        return prev.map((item, index) =>
+          index === existingItemIndex
+            ? { ...item, quantity: item.quantity + newItem.quantity }
+            : item,
+        );
       }
 
       return [...prev, newItem];
@@ -69,10 +76,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const updateQuantity = (id: string, variantKey: string, quantity: number) => {
-    if (quantity <= 0) {
-      removeFromCart(id, variantKey);
-      return;
-    }
+    if (quantity <= 0) return removeFromCart(id, variantKey);
 
     setCart((prev) =>
       prev.map((item) =>
@@ -85,7 +89,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const clearCart = () => setCart([]);
 
-  // 5. Helpers derivados (Uso de useMemo para performance)
   const totalItems = useMemo(
     () => cart.reduce((acc, item) => acc + item.quantity, 0),
     [cart],
@@ -100,6 +103,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         updateQuantity,
         clearCart,
         totalItems,
+        isLoaded,
       }}
     >
       {children}

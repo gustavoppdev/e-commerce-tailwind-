@@ -263,3 +263,14 @@ export const LoginBenefits = [
     description: "benefits.list.03.description",
   },
 ];
+
+export const FREE_DELIVERY_THRESHOLD = {
+  pt: 260,
+  en: 50,
+};
+
+export const TAX_RATE = 0.03; // Ex: 5%
+export const DELIVERY_COST = {
+  standard: 25, // Valor fixo se não for grátis
+  express: 35,
+};

@@ -256,6 +256,26 @@
           }
         }
       }
+    },
+    "CartPage": {
+      "headline": "Your Cart",
+      "paragraph": "Review your selected items before completing your purchase. Quality guaranteed in every detail.",
+      "orderSummary": {
+        "title": "Order Summary",
+        "subtotal": "Subtotal",
+        "taxes": "Estimated Taxes",
+        "deliveryFee": "Standard Shipping",
+        "free": "Free",
+        "total": "Total",
+        "checkoutBtn": "Proceed to Checkout",
+        "missingForFree": "Add {amount} more to get Free Shipping!",
+        "loginToCheckout": "Log in to continue"
+      },
+      "cartEmpty": {
+        "title": "Your cart is empty",
+        "description": "It looks like you haven't added anything yet. Explore our collection and find essential items for your daily life.",
+        "button": "Start shopping"
+      }
     }
   },
   "Others": {
@@ -277,6 +297,12 @@
       "description": "Explore our curated essentials for office, travel, and lifestyle. Minimalist design with a lifetime guarantee.",
       "ogTitle": "Tailwind Store | Quality & Design",
       "noIndex": false
+    },
+    "Cart": {
+      "title": "Your Cart | Tailwind Store",
+      "description": "Review your items, manage quantities, and securely complete your purchase.",
+      "ogTitle": "Checkout - Tailwind Store",
+      "noIndex": true
     },
     "Login": {
       "title": "Sign In | Tailwind Store",
