@@ -81,6 +81,28 @@ export const GET_PRODUCT_BY_SLUG_QUERY = defineQuery(`
   }
 `);
 
+export const GET_CART_PRODUCTS_QUERY = defineQuery(`
+  *[_type == "product" && _id in $ids] {
+    _id,
+    name,
+    slug,
+    price,
+    stock,
+    colors[] {
+      _key,
+      colorName,
+      colorValue,
+      colorHex,
+      images[0] { // Pegamos apenas a primeira imagem para o carrinho
+        asset-> {
+          url,
+          metadata { lqip, dimensions }
+        }
+      }
+    }
+  }
+`);
+
 // 2. AS FUNÇÕES (Lógica de execução)
 export const getProducts = async (
   limit?: number,
@@ -113,4 +135,10 @@ export const getProducts = async (
 
 export const getProductBySlug = async (slug: string) => {
   return await client.fetch(GET_PRODUCT_BY_SLUG_QUERY, { slug });
+};
+
+export const getCartProducts = async (ids: string[]) => {
+  if (!ids || ids.length === 0) return [];
+
+  return await client.fetch(GET_CART_PRODUCTS_QUERY, { ids });
 };

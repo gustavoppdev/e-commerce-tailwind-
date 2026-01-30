@@ -135,7 +135,7 @@ export const product = {
             {
               name: "colorValue",
               title: "Valor Técnico (Slug)",
-              type: "slug",
+              type: "string",
               description:
                 "Usado para filtros na URL. Ex: preto, marrom-escuro",
               options: {

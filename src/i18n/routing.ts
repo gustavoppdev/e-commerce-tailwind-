@@ -24,6 +24,14 @@ export const routing = defineRouting({
       pt: "/produtos/[slug]",
       en: "/products/[slug]",
     },
+    "/cart": {
+      pt: "/carrinho",
+      en: "/cart",
+    },
+    "/checkout": {
+      pt: "/checkout",
+      en: "/checkout",
+    },
   },
 });
 

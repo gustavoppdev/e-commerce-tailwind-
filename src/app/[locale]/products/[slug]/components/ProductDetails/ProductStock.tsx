@@ -4,12 +4,13 @@ import { useTranslations } from "next-intl";
 
 type Props = {
   stock: FullProduct["stock"];
+  styles?: string;
 };
 
-const ProductStock = ({ stock }: Props) => {
+const ProductStock = ({ stock, styles }: Props) => {
   const t = useTranslations("Sections.ProductPage.stock");
   return (
-    <div className="flex items-center gap-2 text-sm">
+    <div className={cn("flex items-center gap-2 text-sm", styles)}>
       {(stock ?? 0) > 0 ? (
         <>
           <div

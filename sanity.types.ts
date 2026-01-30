@@ -54,7 +54,7 @@ export type Product = {
       pt?: string;
       en?: string;
     };
-    colorValue?: Slug;
+    colorValue?: string;
     colorHex?: string;
     images?: Array<{
       asset?: SanityImageAssetReference;
@@ -232,7 +232,7 @@ export type GET_PRODUCTS_QUERY_RESULT = Array<{
       pt?: string;
       en?: string;
     } | null;
-    colorValue: Slug | null;
+    colorValue: string | null;
     colorHex: string | null;
     images: Array<{
       _key: string;
@@ -283,7 +283,7 @@ export type GET_PRODUCT_BY_SLUG_QUERY_RESULT = {
       pt?: string;
       en?: string;
     } | null;
-    colorValue: Slug | null;
+    colorValue: string | null;
     colorHex: string | null;
     images: Array<{
       _key: string;
@@ -310,11 +310,50 @@ export type GET_PRODUCT_BY_SLUG_QUERY_RESULT = {
   stock: number | null;
 } | null;
 
+// Source: src\sanity\lib\queries.ts
+// Variable: GET_CART_PRODUCTS_QUERY
+// Query: *[_type == "product" && _id in $ids] {    _id,    name,    slug,    price,    stock,    colors[] {      _key,      colorName,      colorValue,      colorHex,      images[0] { // Pegamos apenas a primeira imagem para o carrinho        asset-> {          url,          metadata { lqip, dimensions }        }      }    }  }
+export type GET_CART_PRODUCTS_QUERY_RESULT = Array<{
+  _id: string;
+  name: {
+    pt?: string;
+    en?: string;
+  } | null;
+  slug: {
+    pt?: Slug;
+    en?: Slug;
+  } | null;
+  price: {
+    brl?: number;
+    usd?: number;
+  } | null;
+  stock: number | null;
+  colors: Array<{
+    _key: string;
+    colorName: {
+      pt?: string;
+      en?: string;
+    } | null;
+    colorValue: string | null;
+    colorHex: string | null;
+    images: {
+      asset: {
+        url: string | null;
+        metadata: {
+          lqip: string | null;
+          dimensions: SanityImageDimensions | null;
+        } | null;
+      } | null;
+    } | null;
+  }> | null;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[\n    _type == "product" && \n    (!defined($excludeId) || _id != $excludeId) &&\n    \n    // Verifica se a categoria do produto est\xE1 na lista enviada\n    (!defined($categories) || category in $categories) &&\n    \n    // Verifica se o material do produto est\xE1 na lista enviada\n    (!defined($materials) || material in $materials) &&\n    \n    // L\xF3gica para Cores: Verifica intersec\xE7\xE3o entre arrays\n    (!defined($colors) || count(colors[][colorValue.current in $colors]) > 0) &&\n\n    // L\xF3gica de busca textual\n    (!defined($search) || name.pt match $search + "*" || name.en match $search + "*" || name.pt match "*" + $search + "*" || name.en match "*" + $search + "*")\n  ] | order(_createdAt desc) [$start...$end] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    material,\n    colors[] {\n      _key,\n      colorName,\n      colorValue,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description,\n    features,\n    rating,\n    reviewsCount,\n  }': GET_PRODUCTS_QUERY_RESULT;
     '\n  *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    material,\n    colors[] {\n      _key,\n      colorName,\n      colorValue,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] { _key, pt, en },\n    rating,\n    reviewsCount,\n    stock\n  }\n': GET_PRODUCT_BY_SLUG_QUERY_RESULT;
+    '\n  *[_type == "product" && _id in $ids] {\n    _id,\n    name,\n    slug,\n    price,\n    stock,\n    colors[] {\n      _key,\n      colorName,\n      colorValue,\n      colorHex,\n      images[0] { // Pegamos apenas a primeira imagem para o carrinho\n        asset-> {\n          url,\n          metadata { lqip, dimensions }\n        }\n      }\n    }\n  }\n': GET_CART_PRODUCTS_QUERY_RESULT;
   }
 }

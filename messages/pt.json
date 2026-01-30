@@ -256,6 +256,26 @@
           }
         }
       }
+    },
+    "CartPage": {
+      "headline": "Seu Carrinho",
+      "paragraph": "Revise os produtos selecionados antes de finalizar sua compra. Qualidade garantida em cada detalhe.",
+      "orderSummary": {
+        "title": "Resumo do Pedido",
+        "subtotal": "Subtotal",
+        "taxes": "Impostos estimados",
+        "deliveryFee": "Frete Padrão",
+        "free": "Grátis",
+        "total": "Total",
+        "checkoutBtn": "Continuar para o pagamento",
+        "missingForFree": "Adicione {amount} para Frete Grátis!",
+        "loginToCheckout": "Faça login para continuar"
+      },
+      "cartEmpty": {
+        "title": "Seu carrinho está vazio",
+        "description": "Parece que você ainda não adicionou nada. Explore nossa coleção e encontre itens essenciais para o seu dia a dia.",
+        "button": "Começar a comprar"
+      }
     }
   },
   "Others": {
@@ -277,6 +297,12 @@
       "description": "Explore nossa curadoria de itens essenciais para escritório, viagens e estilo de vida. Design minimalista com garantia vitalícia.",
       "ogTitle": "Loja Tailwind Store | Qualidade e Design",
       "noIndex": false
+    },
+    "Cart": {
+      "title": "Seu Carrinho | Tailwind Store",
+      "description": "Revise seus itens, escolha as quantidades e finalize sua compra com segurança.",
+      "ogTitle": "Finalizar Compra - Tailwind Store",
+      "noIndex": true
     },
     "Login": {
       "title": "Acessar Conta | Tailwind Store",

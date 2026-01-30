@@ -8,6 +8,7 @@ import { NavigationBar } from "@/components/layout/NavigationBar";
 import QueryProvider from "@/providers/QueryProvider";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { CartProvider } from "@/contexts/CartContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,12 +38,14 @@ export default async function RootLayout({ children, params }: Props) {
     <html lang={locale}>
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider locale={locale}>
-          <NavigationBar />
-          <QueryProvider>
-            {children}
-            <Footer />
-          </QueryProvider>
-          <Toaster />
+          <CartProvider>
+            <NavigationBar />
+            <QueryProvider>
+              {children}
+              <Footer />
+            </QueryProvider>
+            <Toaster />
+          </CartProvider>
         </NextIntlClientProvider>
       </body>
     </html>
