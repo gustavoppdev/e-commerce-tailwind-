@@ -100,3 +100,56 @@ export type LoginBenefit = {
   title: TranslationKey;
   description: TranslationKey;
 };
+
+export type DeliveryMethods = "standard" | "express";
+
+export type DeliveryMethodType = {
+  key: DeliveryMethods;
+  title: TranslationKey;
+  description: TranslationKey;
+  price: {
+    pt: number;
+    en: number;
+  };
+};
+
+export type CountriesType = "brazil" | "unitedStates" | "canada";
+
+export type StatesType = {
+  [key in CountriesType]: Record<string, string>;
+};
+
+// 3. Tipos para o Histórico de Pedidos
+export type OrderStatus = "processing" | "shipped" | "delivered" | "cancelled";
+
+export interface OrderItem {
+  id: string;
+  quantity: number;
+  variantKey: string;
+  name?: string;
+  price?: number;
+  slug?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  image?: any; // Mantendo any por enquanto para evitar dependencias complexas do Sanity aqui
+  colorName?: string;
+  subtotal: number;
+}
+
+export interface Order {
+  id: string; // ID único do pedido (UUID)
+  date: string; // Data em formato ISO
+  items: OrderItem[];
+  total: number;
+  subtotal: number;
+  deliveryFee: number;
+  taxes: number;
+  status: OrderStatus;
+  shippingAddress: {
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+  };
+  paymentMethod: string;
+}

@@ -10,10 +10,10 @@ import { Button } from "@/components/ui/button";
 import { useCartDetails } from "@/hooks/useCartDetails";
 
 // Utils & Constants
-import { DELIVERY_COST, FREE_DELIVERY_THRESHOLD, TAX_RATE } from "@/constants";
 import { formatCurrency } from "@/lib/utils";
 import { Session } from "next-auth";
 import { Link } from "@/i18n/navigation";
+import FreeShippingProgress from "@/components/common/FreeShippingProgress";
 
 type Props = {
   session: Session | null;
@@ -21,22 +21,16 @@ type Props = {
 
 const CartOrderSummary = ({ session }: Props) => {
   const locale = useLocale() as "pt" | "en";
-  const { cartTotal, isEmpty } = useCartDetails();
+  const { cartSubtotal, isEmpty, taxes, getDeliveryCost } = useCartDetails();
   const t = useTranslations("Sections.CartPage.orderSummary");
 
-  // Cálculos de Negócio
-  const taxes = cartTotal * TAX_RATE;
+  const deliveryFee = getDeliveryCost("standard");
 
-  // Regra de Frete Grátis baseada no locale e subtotal
-  const threshold = FREE_DELIVERY_THRESHOLD[locale];
-  const isFreeDelivery = cartTotal >= threshold;
-  const deliveryFee = isFreeDelivery ? 0 : DELIVERY_COST.standard;
-
-  const orderTotal = cartTotal + taxes + deliveryFee;
+  const orderTotal = cartSubtotal + taxes + deliveryFee;
 
   // Estrutura para o Loop de UI
   const orderDetails = [
-    { label: "subtotal", value: cartTotal },
+    { label: "subtotal", value: cartSubtotal },
     { label: "taxes", value: taxes },
     { label: "deliveryFee", value: deliveryFee, isShipping: true },
   ];
@@ -73,7 +67,6 @@ const CartOrderSummary = ({ session }: Props) => {
           className="w-full h-12 text-base shadow-sm"
           size="lg"
           disabled={isEmpty || !session}
-          asChild
         >
           <Link href={"/checkout"}>
             {session ? t("checkoutBtn") : t("loginToCheckout")}
@@ -81,13 +74,7 @@ const CartOrderSummary = ({ session }: Props) => {
         </Button>
 
         {/* Progresso para frete grátis */}
-        {!isFreeDelivery && (
-          <p className="text-xs text-center text-neutral-500">
-            {t("missingForFree", {
-              amount: formatCurrency(threshold - cartTotal, locale),
-            })}
-          </p>
-        )}
+        <FreeShippingProgress cartSubtotal={cartSubtotal} locale={locale} />
       </div>
     </div>
   );

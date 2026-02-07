@@ -268,13 +268,82 @@
         "free": "Grátis",
         "total": "Total",
         "checkoutBtn": "Continuar para o pagamento",
-        "missingForFree": "Adicione {amount} para Frete Grátis!",
+        "missingForFree": "Adicione mais {amount} para ter Frete Grátis!",
         "loginToCheckout": "Faça login para continuar"
       },
       "cartEmpty": {
         "title": "Seu carrinho está vazio",
         "description": "Parece que você ainda não adicionou nada. Explore nossa coleção e encontre itens essenciais para o seu dia a dia.",
         "button": "Começar a comprar"
+      }
+    },
+    "CheckoutPage": {
+      "shippingInformation": "Informações de entrega",
+      "deliveryMethod": "Método de envio",
+      "payment": "Pagamento",
+      "autofill": "Autopreencher",
+      "form": {
+        "firstName": "Nome",
+        "lastName": "Sobrenome",
+        "address": "Endereço",
+        "complement": "Apartamento, bloco, etc. (Opcional)",
+        "city": "Cidade",
+        "country": "País",
+        "state": "Estado",
+        "zipCode": "CEP / Código Postal",
+        "phone": "Telefone",
+        "cardNumber": "Número do cartão",
+        "cardName": "Nome no cartão",
+        "cardExpiry": "Data de validade (MM/AA)",
+        "cardCvc": "CVC",
+        "creditCard": "Cartão de Crédito",
+        "paypal": "Paypal",
+        "eTransfer": "Transferência Bancária"
+      },
+      "formErrors": {
+        "firstNameMin": "O nome deve ter pelo menos 2 caracteres",
+        "lastNameMin": "O sobrenome deve ter pelo menos 2 caracteres",
+        "addressMin": "Por favor, insira um endereço válido",
+        "cityMin": "Nome da cidade muito curto",
+        "stateInvalid": "Por favor, selecione um estado",
+        "zipCodeMin": "Código postal inválido",
+        "phoneMin": "Insira um número de telefone válido",
+        "cardNumberInvalid": "Número de cartão inválido",
+        "cardNameMin": "Insira o nome completo impresso no cartão",
+        "cardExpiryInvalid": "Data inválida (MM/AA)",
+        "cardCvcMin": "CVC inválido",
+        "required": "Este campo é obrigatório"
+      },
+      "deliveryMethods": {
+        "standard": {
+          "title": "Padrão",
+          "description": "4-10 dias úteis"
+        },
+        "express": {
+          "title": "Expresso",
+          "description": "2-5 dias úteis"
+        }
+      },
+      "countries": {
+        "brazil": "Brasil",
+        "unitedStates": "Estados Unidos",
+        "canada": "Canadá",
+        "country": "País"
+      },
+      "states": {
+        "label": "Estado",
+        "placeholder": "Selecione um estado...",
+        "search": "Procurar estado...",
+        "empty": "Nenhum estado encontrado."
+      },
+      "orderSummary": {
+        "headline": "Resumo do Pedido",
+        "subtotal": "Subtotal",
+        "taxes": "Impostos Estimados",
+        "deliveryFee": "Frete",
+        "free": "Grátis",
+        "total": "Total",
+        "confirmOrderBtn": "Confirmar Pedido"
       }
     }
   },
@@ -308,6 +377,12 @@
       "title": "Acessar Conta | Tailwind Store",
       "description": "Faça login em sua conta para gerenciar seus pedidos e acessar sua coleção personalizada.",
       "ogTitle": "Login Seguro - Tailwind Store",
+      "noIndex": true
+    },
+    "Checkout": {
+      "title": "Finalizar Compra Seguro | Tailwind Store",
+      "description": "Complete seu pedido com segurança. Insira seus dados de entrega e pagamento para garantir seus itens essenciais.",
+      "ogTitle": "Checkout Seguro - Tailwind Store",
       "noIndex": true
     }
   }
