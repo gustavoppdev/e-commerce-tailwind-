@@ -12,8 +12,9 @@ const Loyalty = () => {
     <div className="py-12 px-6 lg:py-15 relative grid place-content-center text-center rounded-lg overflow-hidden text-white hover:opacity-90 transition-opacity duration-300 cursor-pointer">
       <Image
         src={loyaltyImage}
-        alt="(max-width: 640px) calc(100vw - 1rem), (max-width: 768px) 608px, (max-width: 1024px) 688px, (max-width: 1280px) 452px, (max-width: 1536px) 540px, 668px"
+        alt=""
         fill
+        sizes="(max-width: 640px) calc(100vw - 1rem), (max-width: 768px) 608px, (max-width: 1024px) 688px, (max-width: 1280px) 452px, (max-width: 1536px) 540px, 668px"
         placeholder="blur"
         className="object-cover z-0"
       />

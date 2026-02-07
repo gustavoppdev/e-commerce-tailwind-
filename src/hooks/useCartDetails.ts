@@ -2,6 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { getCartProducts } from "@/sanity/lib/queries";
 import { useLocale } from "next-intl";
 import { useCart } from "./useCart";
+import {
+  DeliveryMethodsArray,
+  FREE_DELIVERY_THRESHOLD,
+  TAX_RATE,
+} from "@/constants";
+import { DeliveryMethods } from "@/types";
 
 export const useCartDetails = () => {
   const { cart } = useCart();
@@ -48,14 +54,34 @@ export const useCartDetails = () => {
   });
 
   // 3. Cálculos globais
-  const cartTotal = items.reduce(
+  const cartSubtotal = items.reduce(
     (acc: number, item: { subtotal: number }) => acc + item.subtotal,
     0,
   );
 
+  // Cálculos de Negócio
+  const taxes = cartSubtotal * TAX_RATE;
+
+  // Regra de Frete Grátis baseada no locale e subtotal
+  const threshold = FREE_DELIVERY_THRESHOLD[locale];
+  const isFreeDelivery = cartSubtotal >= threshold;
+
+  const getDeliveryCost = (key: DeliveryMethods) => {
+    const deliveryCost =
+      DeliveryMethodsArray.find((method) => method.key === key)?.price[
+        locale
+      ] ?? 0;
+
+    const deliveryFee = isFreeDelivery ? 0 : deliveryCost;
+
+    return deliveryFee;
+  };
+
   return {
     items, // Array completo com dados do Sanity + Contexto
-    cartTotal, // Valor total financeiro
+    cartSubtotal,
+    taxes,
+    getDeliveryCost,
     isLoading: isLoading && productIds.length > 0,
     isEmpty: cart.length === 0,
     ...query,

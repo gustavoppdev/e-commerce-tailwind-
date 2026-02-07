@@ -7,12 +7,16 @@ import {
 } from "@/assets";
 import {
   Collection,
+  CountriesType,
+  DeliveryMethodType,
   FooterLinkBottom,
   HeroBenefit,
+  LocaleType,
   NavigationLink,
   ProductFilterGroup,
   RecentReview,
   RegionData,
+  StatesType,
   Testimonial,
 } from "@/types";
 import { ShieldCheck, Star, Zap } from "lucide-react";
@@ -270,7 +274,129 @@ export const FREE_DELIVERY_THRESHOLD = {
 };
 
 export const TAX_RATE = 0.03; // Ex: 5%
-export const DELIVERY_COST = {
-  standard: 25, // Valor fixo se não for grátis
-  express: 35,
+
+export const DeliveryMethodsArray: DeliveryMethodType[] = [
+  {
+    key: "standard",
+    title: "standard.title",
+    description: "standard.description",
+    price: {
+      pt: 50,
+      en: 10,
+    },
+  },
+  {
+    key: "express",
+    title: "express.title",
+    description: "express.description",
+    price: {
+      pt: 130,
+      en: 25,
+    },
+  },
+];
+
+export const COUNTRIES_ARRAY: CountriesType[] = [
+  "brazil",
+  "unitedStates",
+  "canada",
+];
+
+export const STATES_BY_COUNTRY: StatesType = {
+  brazil: {
+    AC: "Acre",
+    AL: "Alagoas",
+    AP: "Amapá",
+    AM: "Amazonas",
+    BA: "Bahia",
+    CE: "Ceará",
+    DF: "Distrito Federal",
+    ES: "Espírito Santo",
+    GO: "Goiás",
+    MA: "Maranhão",
+    MT: "Mato Grosso",
+    MS: "Mato Grosso do Sul",
+    MG: "Minas Gerais",
+    PA: "Pará",
+    PB: "Paraíba",
+    PR: "Paraná",
+    PE: "Pernambuco",
+    PI: "Piauí",
+    RJ: "Rio de Janeiro",
+    RN: "Rio Grande do Norte",
+    RS: "Rio Grande do Sul",
+    RO: "Rondônia",
+    RR: "Roraima",
+    SC: "Santa Catarina",
+    SP: "São Paulo",
+    SE: "Sergipe",
+    TO: "Tocantins",
+  },
+  unitedStates: {
+    AL: "Alabama",
+    AK: "Alaska",
+    AZ: "Arizona",
+    AR: "Arkansas",
+    CA: "California",
+    CO: "Colorado",
+    CT: "Connecticut",
+    DE: "Delaware",
+    FL: "Florida",
+    GA: "Georgia",
+    HI: "Hawaii",
+    ID: "Idaho",
+    IL: "Illinois",
+    IN: "Indiana",
+    IA: "Iowa",
+    KS: "Kansas",
+    KY: "Kentucky",
+    LA: "Louisiana",
+    ME: "Maine",
+    MD: "Maryland",
+    MA: "Massachusetts",
+    MI: "Michigan",
+    MN: "Minnesota",
+    MS: "Mississippi",
+    MO: "Missouri",
+    MT: "Montana",
+    NE: "Nebraska",
+    NV: "Nevada",
+    NH: "New Hampshire",
+    NJ: "New Jersey",
+    NM: "New Mexico",
+    NY: "New York",
+    NC: "North Carolina",
+    ND: "North Dakota",
+    OH: "Ohio",
+    OK: "Oklahoma",
+    OR: "Oregon",
+    PA: "Pennsylvania",
+    RI: "Rhode Island",
+    SC: "South Carolina",
+    SD: "South Dakota",
+    TN: "Tennessee",
+    TX: "Texas",
+    UT: "Utah",
+    VT: "Vermont",
+    VA: "Virginia",
+    WA: "Washington",
+    WV: "West Virginia",
+    WI: "Wisconsin",
+    WY: "Wyoming",
+  },
+  canada: {
+    AB: "Alberta",
+    BC: "British Columbia",
+    MB: "Manitoba",
+    NB: "New Brunswick",
+    NL: "Newfoundland and Labrador",
+    NS: "Nova Scotia",
+    ON: "Ontario",
+    PE: "Prince Edward Island",
+    QC: "Quebec",
+    SK: "Saskatchewan",
+  },
 };
+
+export const LOCALES_ARRAY: LocaleType[] = ["pt", "en"];
+

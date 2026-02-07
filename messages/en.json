@@ -276,6 +276,75 @@
         "description": "It looks like you haven't added anything yet. Explore our collection and find essential items for your daily life.",
         "button": "Start shopping"
       }
+    },
+    "CheckoutPage": {
+      "shippingInformation": "Shipping information",
+      "deliveryMethod": "Delivery method",
+      "payment": "Payment",
+      "autofill": "Autofill",
+      "form": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "address": "Address",
+        "complement": "Apartment, suite, etc. (Optional)",
+        "city": "City",
+        "country": "Country",
+        "state": "State / Province",
+        "zipCode": "Postal code",
+        "phone": "Phone",
+        "cardNumber": "Card number",
+        "cardName": "Name on card",
+        "cardExpiry": "Expiration date (MM/YY)",
+        "cardCvc": "CVC",
+        "creditCard": "Credit Card",
+        "paypal": "Paypal",
+        "eTransfer": "E-Transfer"
+      },
+      "formErrors": {
+        "firstNameMin": "First name must be at least 2 characters",
+        "lastNameMin": "Last name must be at least 2 characters",
+        "addressMin": "Please enter a valid address",
+        "cityMin": "City name is too short",
+        "stateInvalid": "Please select a state",
+        "zipCodeMin": "Invalid postal code",
+        "phoneMin": "Please enter a valid phone number",
+        "cardNumberInvalid": "Invalid card number",
+        "cardNameMin": "Enter the full name on the card",
+        "cardExpiryInvalid": "Invalid date (MM/YY)",
+        "cardCvcMin": "Invalid CVC",
+        "required": "This field is required"
+      },
+      "deliveryMethods": {
+        "standard": {
+          "title": "Standard",
+          "description": "4-10 business days"
+        },
+        "express": {
+          "title": "Express",
+          "description": "2-5 business days"
+        }
+      },
+      "countries": {
+        "brazil": "Brazil",
+        "unitedStates": "United States",
+        "canada": "Canada",
+        "country": "Country"
+      },
+      "states": {
+        "label": "State / Province",
+        "placeholder": "Select a state...",
+        "search": "Search state...",
+        "empty": "No states found."
+      },
+      "orderSummary": {
+        "headline": "Order Summary",
+        "subtotal": "Subtotal",
+        "taxes": "Estimated Taxes",
+        "deliveryFee": "Shipping",
+        "free": "Free",
+        "total": "Total",
+        "confirmOrderBtn": "Confirm Order"
+      }
     }
   },
   "Others": {
@@ -308,6 +377,12 @@
       "title": "Sign In | Tailwind Store",
       "description": "Log in to your account to manage your orders and access your personalized collection.",
       "ogTitle": "Secure Login - Tailwind Store",
+      "noIndex": true
+    },
+    "Checkout": {
+      "title": "Secure Checkout | Tailwind Store",
+      "description": "Complete your order securely. Enter your shipping and payment details to secure your essential items.",
+      "ogTitle": "Secure Checkout - Tailwind Store",
       "noIndex": true
     }
   }
