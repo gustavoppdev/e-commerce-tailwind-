@@ -49,14 +49,12 @@ const CartProduct = ({ item, locale, price, layout = "cart" }: Props) => {
           }}
         >
           <Image
-            src={item.image?.images?.asset?.url ?? ""}
-            alt={item.name ?? ""}
+            src={item.image?.asset?.url ?? ""}
+            alt={item.name?.[locale] ?? ""}
             fill
             sizes="(max-width: 1024px) 96px, 144px"
-            placeholder={
-              item.image?.images?.asset?.metadata?.lqip ? "blur" : "empty"
-            }
-            blurDataURL={item.image?.images?.asset?.metadata?.lqip ?? ""}
+            placeholder={item.image?.asset?.metadata?.lqip ? "blur" : "empty"}
+            blurDataURL={item.image?.asset?.metadata?.lqip ?? ""}
             priority
             fetchPriority="high"
             className="object-cover"
@@ -75,7 +73,7 @@ const CartProduct = ({ item, locale, price, layout = "cart" }: Props) => {
               },
             }}
           >
-            {item.name}
+            {item.name?.[locale]}
           </Link>
         </p>
         <p className="text-muted-foreground text-sm">

@@ -12,7 +12,7 @@ import EmptyCart from "@/components/common/EmptyCart";
 import FreeShippingProgress from "@/components/common/FreeShippingProgress";
 
 // Types & Constants
-import { DeliveryMethods, LocaleType } from "@/types";
+import { DeliveryMethods, LocaleType, OrderDetailsType } from "@/types";
 
 // Utils & Schemas
 import { formatCurrency } from "@/lib/utils";
@@ -23,6 +23,7 @@ import { useFormContext } from "react-hook-form";
 
 // Icons
 import { Loader2 } from "lucide-react";
+import OrderSummaryDetails from "@/components/common/OrderSummaryDetails";
 
 type Props = {
   onSubmit: (data: CheckoutSchema) => void;
@@ -41,7 +42,7 @@ const CheckoutOrderSummary = ({ onSubmit, deliveryType }: Props) => {
 
   const total = cartSubtotal + taxes + deliveryFee;
 
-  const orderDetails = [
+  const orderDetails: OrderDetailsType[] = [
     { label: "subtotal", value: cartSubtotal },
     { label: "taxes", value: taxes },
     { label: "deliveryFee", value: deliveryFee, isShipping: true },
@@ -80,28 +81,11 @@ const CheckoutOrderSummary = ({ onSubmit, deliveryType }: Props) => {
           </ul>
         )}
 
-        <div className="p-4">
-          {orderDetails.map((detail) => (
-            <div
-              key={detail.label}
-              className="flex justify-between text-sm items-center py-3"
-            >
-              <span className="capitalize">{t(detail.label)}</span>
-              <span className="font-medium">
-                {detail.isShipping && detail.value === 0 ? (
-                  <span className="text-green-600">{t("free")}</span>
-                ) : (
-                  formatCurrency(detail.value, locale)
-                )}
-              </span>
-            </div>
-          ))}
-
-          <div className="flex justify-between items-center pt-6 mt-4 mb-2 border-t">
-            <span className="font-medium">{t("total")}</span>
-            <span className="font-medium">{formatCurrency(total, locale)}</span>
-          </div>
-        </div>
+        <OrderSummaryDetails
+          orderDetails={orderDetails}
+          locale={locale}
+          total={total}
+        />
 
         <div className="border-t p-4">
           <Button
