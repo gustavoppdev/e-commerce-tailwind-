@@ -85,8 +85,8 @@ export const useCheckout = (): UseCheckoutReturn => {
           name: item.name,
           price: item.price,
           slug: item.slug,
-          image: item.image,
-          colorName: item.colorName?.[locale] ?? "",
+          image: item.image ?? null,
+          colorName: item.colorName,
           subtotal: item.subtotal,
         })),
         total,
@@ -101,7 +101,18 @@ export const useCheckout = (): UseCheckoutReturn => {
           zipCode: data.zipCode,
           country: data.country,
         },
-        paymentMethod: data.payment.method,
+        paymentMethod: {
+          method: data.payment.method,
+          endingIn:
+            data.payment.method === "creditCard"
+              ? data.payment.cardNumber.slice(-4)
+              : "",
+          cardExpiry:
+            data.payment.method === "creditCard" ? data.payment.cardExpiry : "",
+        },
+        orderLocale: data.locale,
+        firstName: data.firstName,
+        lastName: data.lastName,
       };
 
       saveOrder(newOrder);

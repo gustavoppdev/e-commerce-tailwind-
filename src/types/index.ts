@@ -1,6 +1,7 @@
 import { Pathnames } from "@/i18n/routing";
 import { StaticImageData } from "next/image";
 import {
+  GET_CART_PRODUCTS_QUERY_RESULT,
   GET_PRODUCT_BY_SLUG_QUERY_RESULT,
   GET_PRODUCTS_QUERY_RESULT,
 } from "../../sanity.types";
@@ -126,12 +127,17 @@ export interface OrderItem {
   id: string;
   quantity: number;
   variantKey: string;
-  name?: string;
+  name?: NonNullable<GET_CART_PRODUCTS_QUERY_RESULT>[number]["name"];
   price?: number;
   slug?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  image?: any; // Mantendo any por enquanto para evitar dependencias complexas do Sanity aqui
-  colorName?: string;
+  image:
+    | NonNullable<
+        NonNullable<GET_CART_PRODUCTS_QUERY_RESULT>[number]["colors"]
+      >[number]["images"]
+    | null;
+  colorName?: NonNullable<
+    NonNullable<GET_CART_PRODUCTS_QUERY_RESULT>[number]["colors"]
+  >[number]["colorName"];
   subtotal: number;
 }
 
@@ -151,5 +157,18 @@ export interface Order {
     zipCode: string;
     country: string;
   };
-  paymentMethod: string;
+  paymentMethod: {
+    method: string;
+    endingIn: string;
+    cardExpiry: string;
+  };
+  orderLocale: LocaleType;
+  firstName: string;
+  lastName: string;
 }
+
+export type OrderDetailsType = {
+  label: TranslationKey;
+  value: number;
+  isShipping?: boolean;
+};

@@ -345,6 +345,18 @@
         "total": "Total",
         "confirmOrderBtn": "Confirm Order"
       }
+    },
+    "SuccessPage": {
+      "introduction": "Payment successful",
+      "headline": "Thanks for ordering",
+      "paragraph": "We appreciate your order, we’re currently processing it. So hang tight and we’ll send you confirmation very soon!",
+      "trackingNumber": "Tracking number",
+      "quantity": "Quantity",
+      "shippingAddress": "Shipping Address",
+      "paymentMethod": "Payment Method",
+      "endingWith": "Ending with",
+      "expires": "Expires",
+      "continueShopping": "Continue shopping"
     }
   },
   "Others": {
@@ -383,6 +395,12 @@
       "title": "Secure Checkout | Tailwind Store",
       "description": "Complete your order securely. Enter your shipping and payment details to secure your essential items.",
       "ogTitle": "Secure Checkout - Tailwind Store",
+      "noIndex": true
+    },
+    "Success": {
+      "title": "Order Confirmed | Tailwind Store",
+      "description": "Thank you for your purchase! Your order has been received and is being processed.",
+      "ogTitle": "Purchase Successful - Tailwind Store",
       "noIndex": true
     }
   }

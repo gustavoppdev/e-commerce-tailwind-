@@ -5,6 +5,7 @@ const STORAGE_KEY = "tailwind-store-order-history";
 
 interface UseOrderHistoryReturn {
   orders: Order[];
+  lastOrder: Order | null;
   saveOrder: (order: Order) => void;
   clearHistory: () => void;
   isLoading: boolean;
@@ -52,6 +53,7 @@ export const useOrderHistory = (): UseOrderHistoryReturn => {
 
   return {
     orders,
+    lastOrder: orders[0] || null,
     saveOrder,
     clearHistory,
     isLoading,

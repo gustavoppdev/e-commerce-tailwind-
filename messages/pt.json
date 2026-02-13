@@ -345,6 +345,18 @@
         "total": "Total",
         "confirmOrderBtn": "Confirmar Pedido"
       }
+    },
+    "SuccessPage": {
+      "introduction": "Pagamento realizado com sucesso",
+      "headline": "Obrigado pelo seu pedido",
+      "paragraph": "Agradecemos pela sua compra! Seu pedido já está sendo processado por nossa equipe. Em breve você receberá uma confirmação no seu e-mail.",
+      "trackingNumber": "Número de rastreio",
+      "quantity": "Quantidade",
+      "shippingAddress": "Endereço de Entrega",
+      "paymentMethod": "Método de Pagamento",
+      "endingWith": "Final com",
+      "expires": "Expira em",
+      "continueShopping": "Continuar comprando"
     }
   },
   "Others": {
@@ -383,6 +395,12 @@
       "title": "Finalizar Compra Seguro | Tailwind Store",
       "description": "Complete seu pedido com segurança. Insira seus dados de entrega e pagamento para garantir seus itens essenciais.",
       "ogTitle": "Checkout Seguro - Tailwind Store",
+      "noIndex": true
+    },
+    "Success": {
+      "title": "Pedido Confirmado | Tailwind Store",
+      "description": "Obrigado pela sua compra! Seu pedido foi recebido e já está sendo processado.",
+      "ogTitle": "Compra Realizada com Sucesso - Tailwind Store",
       "noIndex": true
     }
   }

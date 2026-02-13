@@ -40,10 +40,10 @@ export const useCartDetails = () => {
 
     return {
       ...cartItem,
-      name: product?.name?.[locale],
+      name: product?.name,
       price: product?.price?.[locale === "pt" ? "brl" : "usd"],
       slug: product?.slug?.[locale]?.current,
-      image: selectedVariant,
+      image: selectedVariant?.images,
       colorName: selectedVariant?.colorName,
       stock: product?.stock,
       // Subtotal do item (preço * quantidade)

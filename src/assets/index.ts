@@ -9,6 +9,7 @@ import saleImage from "./images/saleBackground.webp";
 import loyaltyImage from "./images/loyaltyBackground.webp";
 import loginImage from "./images/loginImage.webp";
 import googleIcon from "./images/googleIcon.svg";
+import confirmationPageImage from "./images/confirmation-page.webp";
 
 export {
   tailwindLogo,
@@ -22,4 +23,5 @@ export {
   loyaltyImage,
   loginImage,
   googleIcon,
+  confirmationPageImage,
 };
