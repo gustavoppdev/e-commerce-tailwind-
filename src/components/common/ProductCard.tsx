@@ -1,17 +1,20 @@
-"use client";
-
+// Next.js & Next-Intl
 import Image from "next/image";
-import { GET_PRODUCTS_QUERY_RESULT } from "../../../sanity.types";
-import { useLocale } from "next-intl";
-import { formatCurrency } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+
+// Tipos & Utils
+import { GET_PRODUCTS_QUERY_RESULT } from "@/../sanity.types";
+import { LocaleType } from "@/types";
+import { formatCurrency } from "@/lib/utils";
 
 type Props = {
   product: NonNullable<GET_PRODUCTS_QUERY_RESULT[number]>;
 };
 
 const ProductCard = ({ product }: Props) => {
-  const locale = useLocale() as "pt" | "en";
+  const locale = useLocale() as LocaleType;
+  const tAlt = useTranslations("Others.alt");
 
   // Pegamos a primeira cor (ou a cor prioritária)
   const firstColor = product?.colors?.[0];
@@ -30,7 +33,7 @@ const ProductCard = ({ product }: Props) => {
         {/* Imagem Principal */}
         <Image
           src={mainImage?.asset?.url ?? ""}
-          alt={product.name?.[locale] ?? "Product Image"}
+          alt={product.name?.[locale] ?? tAlt("productImage")}
           placeholder="blur"
           blurDataURL={mainImage?.asset?.metadata?.lqip ?? ""}
           fill
@@ -44,7 +47,7 @@ const ProductCard = ({ product }: Props) => {
         {hasHoverImage && (
           <Image
             src={hoverImage?.asset?.url ?? ""}
-            alt={`${product.name?.[locale]} alternate view`}
+            alt={product.name?.[locale] ?? tAlt("productImage")}
             fill
             sizes="(max-width: 640px) calc(65vw - 1rem), (max-width: 768px) calc(40vw - 1rem), (max-width: 1024px) calc(30vw - 2.5rem), (max-width:1280px) 206px, (max-width:1536px) 250px, 314px"
             className="object-cover transition-all duration-500 scale-105 group-hover:scale-100 opacity-0 group-hover:opacity-100 z-10"

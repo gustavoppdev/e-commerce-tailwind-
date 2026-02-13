@@ -370,6 +370,9 @@
       "newsletter": {
         "invalidEmail": "Por favor, insira um endereço de e-mail válido"
       }
+    },
+    "alt": {
+      "productImage": "Imagem do produto"
     }
   },
   "Metadata": {

@@ -2,11 +2,12 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
-// Components
+// Componentes
 import { Button } from "@/components/ui/button";
 
 const Sale = () => {
   const t = useTranslations("Sections.Sale");
+
   return (
     <div className="flex flex-col gap-4 lg:gap-6 text-center items-center py-20 relative z-20">
       <h2 className="font-bold text-4xl lg:text-5xl">{t("headline")}</h2>

@@ -1,7 +1,8 @@
-import { Collections } from "./components/Collections";
-import Hero from "./components/Hero";
+// Componentes
 import HeroBenefits from "./components/HeroBenefits";
+import Hero from "./components/Hero";
 import Trending from "./components/Trending";
+import { Collections } from "./components/Collections";
 import { ConversionSection } from "./components/ConversionSection";
 
 const Home = () => {

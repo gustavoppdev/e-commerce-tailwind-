@@ -21,6 +21,7 @@ import {
 } from "@/types";
 import { ShieldCheck, Star, Zap } from "lucide-react";
 
+// Navbar
 export const NavigationLinks: NavigationLink[] = [
   {
     label: "NavigationLinks.home",
@@ -40,6 +41,23 @@ export const NavigationLinks: NavigationLink[] = [
   },
 ];
 
+// HeroBenefits
+export const HeroBenefits: HeroBenefit[] = [
+  {
+    description: "benefits.01.description",
+    subtitle: "benefits.01.subtitle",
+  },
+  {
+    description: "benefits.02.description",
+    subtitle: "benefits.02.subtitle",
+  },
+  {
+    description: "benefits.03.description",
+    subtitle: "benefits.03.subtitle",
+  },
+];
+
+// CurrencyLanguageSwitcher
 export const REGIONS: Record<string, RegionData> = {
   pt: {
     label: "Português",
@@ -57,6 +75,7 @@ export const REGIONS: Record<string, RegionData> = {
   },
 };
 
+// CollectionCard
 export const CATEGORY_SLUGS = {
   "desk-and-office": {
     pt: "mesa-e-escritorio",
@@ -72,21 +91,7 @@ export const CATEGORY_SLUGS = {
   },
 } as const;
 
-export const HeroBenefits: HeroBenefit[] = [
-  {
-    description: "benefits.01.description",
-    subtitle: "benefits.01.subtitle",
-  },
-  {
-    description: "benefits.02.description",
-    subtitle: "benefits.02.subtitle",
-  },
-  {
-    description: "benefits.03.description",
-    subtitle: "benefits.03.subtitle",
-  },
-];
-
+// Collections
 export const CollectionsArray: Collection[] = [
   {
     title: "list.deskAndOffice.title",
@@ -399,4 +404,3 @@ export const STATES_BY_COUNTRY: StatesType = {
 };
 
 export const LOCALES_ARRAY: LocaleType[] = ["pt", "en"];
-

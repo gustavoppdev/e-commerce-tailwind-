@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
-// Constants & Types
+// Constantes & Tipos
 import { CATEGORY_SLUGS } from "@/constants";
 import { Collection } from "@/types";
 

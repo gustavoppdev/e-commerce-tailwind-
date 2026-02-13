@@ -3,7 +3,7 @@
 // Next-Intl
 import { useLocale, useTranslations } from "next-intl";
 
-// Components
+// Componentes
 import ProductCard from "@/components/common/ProductCard";
 import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
 import SeeAllButton from "@/components/common/SeeAllButton";
