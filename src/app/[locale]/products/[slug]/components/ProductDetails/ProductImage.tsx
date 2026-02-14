@@ -1,4 +1,7 @@
+// Next.js
 import Image from "next/image";
+
+// Utils & Tipos
 import { cn } from "@/lib/utils";
 import { FullProduct } from "@/types";
 
@@ -44,7 +47,7 @@ const ProductImage = ({
       {/* Galeria de Miniaturas (Thumbnails) */}
       {colorImages.length > 1 && (
         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-          {colorImages.map((img) => {
+          {colorImages.map((img, index) => {
             const isSelected = activeImage._key === img._key;
 
             return (
@@ -60,7 +63,7 @@ const ProductImage = ({
               >
                 <Image
                   src={img.asset?.url ?? ""}
-                  alt="Thumbnail"
+                  alt={`Thumbnail ${index + 1}`}
                   fill
                   sizes="76px"
                   className="object-cover"

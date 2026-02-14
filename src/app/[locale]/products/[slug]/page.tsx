@@ -1,19 +1,21 @@
-// Next
+// Next.js
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { redirect } from "@/i18n/navigation";
 
 // Sanity
 import { getProductBySlug } from "@/sanity/lib/queries";
 
-// Types
+// Tipos
 import { LocaleType } from "@/types";
 
-// Components
+// Componentes
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import RecentReviews from "./components/RecentReviews";
 import RelatedProducts from "./components/RelatedProducts";
+
+// Utils
 import { constructMetadata } from "@/lib/seo";
-import { redirect } from "@/i18n/navigation";
 
 type Props = {
   params: {
@@ -40,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     canonicalPath: `/products/${slug}`,
     alternatePaths: {
-      pt: `/products/${product.slug?.pt?.current}`,
+      pt: `/produtos/${product.slug?.pt?.current}`,
       en: `/products/${product.slug?.en?.current}`,
     },
   });

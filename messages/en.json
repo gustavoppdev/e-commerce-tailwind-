@@ -168,6 +168,9 @@
       "productDetails": {
         "title": "Details"
       },
+      "productDescription": {
+        "title": "Description"
+      },
       "stock": {
         "inStock": "In stock and ready to ship",
         "remainingStock": "Only {stock} left in stock",
@@ -185,6 +188,7 @@
       },
       "general": {
         "addCart": "Add to Cart",
+        "addCartSuccess": "Product added to cart!",
         "guarantee": "Lifetime Quality Guarantee"
       }
     },
@@ -372,7 +376,8 @@
       }
     },
     "alt": {
-      "productImage": "Product Image"
+      "productImage": "Product Image",
+      "ratingStars": "Rating: {rating} out of 5 stars"
     }
   },
   "Metadata": {

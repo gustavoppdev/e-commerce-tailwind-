@@ -1,5 +1,8 @@
+// Utils & Tipos
 import { cn } from "@/lib/utils";
 import { FullProduct } from "@/types";
+
+// Next-Intl
 import { useTranslations } from "next-intl";
 
 type Props = {

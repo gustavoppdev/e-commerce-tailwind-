@@ -35,8 +35,8 @@ const SimpleProductCard = ({
   const activeColorFilters = searchParams.get("colors")?.split(",") || [];
 
   const sortedColors = [...(product.colors || [])].sort((a, b) => {
-    const aValue = a.colorValue?.current || "";
-    const bValue = b.colorValue?.current || "";
+    const aValue = a.colorValue || "";
+    const bValue = b.colorValue || "";
 
     const aIsActive = activeColorFilters.includes(aValue);
     const bIsActive = activeColorFilters.includes(bValue);

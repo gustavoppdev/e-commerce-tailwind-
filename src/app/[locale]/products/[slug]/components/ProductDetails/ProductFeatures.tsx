@@ -1,3 +1,4 @@
+// Tipos & Next-Intl
 import { FullProduct, LocaleType } from "@/types";
 import { useTranslations } from "next-intl";
 

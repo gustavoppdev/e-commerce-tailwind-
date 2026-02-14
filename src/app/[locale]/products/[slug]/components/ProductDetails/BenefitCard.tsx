@@ -1,10 +1,8 @@
 // Next-Intl
 import { useTranslations } from "next-intl";
 
-// Icons
+// Icones e Constantes
 import { Globe, CircleDollarSign } from "lucide-react";
-
-// Constants
 import { ProductBenefits } from "@/constants";
 
 const BenefitCard = () => {

@@ -11,6 +11,7 @@ import SimpleProductCard from "@/components/common/SimpleProductCard";
 
 // Types
 import { LocaleType } from "@/types";
+import SimpleProductCardSkeleton from "@/components/common/SimpleProductCardSkeleton";
 
 type RelatedProps = {
   currentProductId?: string;
@@ -35,13 +36,17 @@ const RelatedProducts = ({ currentProductId }: RelatedProps) => {
       <h2 className="font-medium text-xl">{t("headline")}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {data?.map((product) => (
-          <SimpleProductCard
-            key={product._id}
-            product={product}
-            locale={locale}
-          />
-        ))}
+        {isLoading
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <SimpleProductCardSkeleton key={index} />
+            ))
+          : data?.map((product) => (
+              <SimpleProductCard
+                key={product._id}
+                product={product}
+                locale={locale}
+              />
+            ))}
       </div>
     </section>
   );
