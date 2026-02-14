@@ -18,8 +18,7 @@ const ProductCard = ({ product }: Props) => {
 
   // Pegamos a primeira cor (ou a cor prioritária)
   const firstColor = product?.colors?.[0];
-  const colorName =
-    firstColor?.colorName?.[locale as keyof typeof firstColor.colorName];
+  const colorName = firstColor?.colorName?.[locale];
   const price = product.price?.[locale === "pt" ? "brl" : "usd"];
 
   // Verificamos se há uma segunda imagem disponível para o efeito de hover

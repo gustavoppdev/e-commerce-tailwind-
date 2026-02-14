@@ -1,11 +1,8 @@
-"use client";
-
 // Next.js & Next-Intl
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
 
-// Types & Utils
+// Tipos & Utils
 import { LocaleType } from "@/types";
 import { GET_PRODUCTS_QUERY_RESULT } from "@/../sanity.types";
 import { formatCurrency } from "@/lib/utils";
@@ -16,11 +13,16 @@ const sizesRelatedProducts =
 const sizesProductList =
   "(max-width: 640px) calc(100vw - 1rem), (max-width: 768px) 608px, (max-width: 1024px) 324px, (max-width: 1280px) 329px, (max-width: 1536px) 250px, 314px";
 
+type ProductColor = NonNullable<
+  NonNullable<GET_PRODUCTS_QUERY_RESULT>[number]["colors"]
+>[number];
+
 type Props = {
   product: NonNullable<GET_PRODUCTS_QUERY_RESULT>[number];
   locale: LocaleType;
   layout?: "relatedProducts" | "productList";
   priority?: boolean;
+  selectedColor?: ProductColor;
 };
 
 const SimpleProductCard = ({
@@ -28,27 +30,11 @@ const SimpleProductCard = ({
   locale,
   layout = "relatedProducts",
   priority = false,
+  selectedColor,
 }: Props) => {
-  const searchParams = useSearchParams();
-
-  // 1. Lógica de ordenação baseada no filtro de cores da URL
-  const activeColorFilters = searchParams.get("colors")?.split(",") || [];
-
-  const sortedColors = [...(product.colors || [])].sort((a, b) => {
-    const aValue = a.colorValue || "";
-    const bValue = b.colorValue || "";
-
-    const aIsActive = activeColorFilters.includes(aValue);
-    const bIsActive = activeColorFilters.includes(bValue);
-
-    if (aIsActive && !bIsActive) return -1;
-    if (!aIsActive && bIsActive) return 1;
-    return 0;
-  });
-
-  // A cor selecionada será a primeira do array (já priorizada pelo filtro)
-  const selectedColor = sortedColors[0];
-  const hasMultipleImages = (selectedColor?.images?.length ?? 0) > 1;
+  // 1. Usamos a cor selecionada passada como prop, ou a primeira cor disponível
+  const displayColor = selectedColor || product.colors?.[0];
+  const hasMultipleImages = (displayColor?.images?.length ?? 0) > 1;
 
   const colors = product.colors || [];
 
@@ -63,10 +49,10 @@ const SimpleProductCard = ({
       <div className="relative aspect-3/4 w-full rounded-lg overflow-hidden bg-secondary/20">
         {/* Imagem Principal */}
         <Image
-          src={selectedColor?.images?.[0]?.asset?.url ?? ""}
+          src={displayColor?.images?.[0]?.asset?.url ?? ""}
           alt={product.name?.[locale] ?? ""}
           placeholder="blur"
-          blurDataURL={selectedColor?.images?.[0]?.asset?.metadata?.lqip ?? ""}
+          blurDataURL={displayColor?.images?.[0]?.asset?.metadata?.lqip ?? ""}
           priority={priority}
           fetchPriority={priority ? "high" : "low"}
           fill
@@ -85,7 +71,7 @@ const SimpleProductCard = ({
         {/* Segunda Imagem (Hover) - Opcional se houver mais de uma foto */}
         {hasMultipleImages && (
           <Image
-            src={selectedColor?.images?.[1]?.asset?.url ?? ""}
+            src={displayColor?.images?.[1]?.asset?.url ?? ""}
             alt={product.name?.[locale] ?? ""}
             fill
             sizes={

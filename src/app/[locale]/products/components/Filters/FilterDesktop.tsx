@@ -3,12 +3,12 @@
 // Next-Intl
 import { useTranslations } from "next-intl";
 
-// Components
+// Componentes
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
-// Constants & Hooks
+// Constantes & Hooks
 import { PRODUCT_FILTERS } from "@/constants";
 import { useFilterParams } from "@/hooks/useFilterParams";
 
