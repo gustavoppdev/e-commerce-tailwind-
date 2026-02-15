@@ -207,9 +207,9 @@ export type AllSanitySchemaTypes =
 
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
-// Source: src\sanity\lib\queries.ts
+// Source: src/sanity/lib/queries.ts
 // Variable: GET_PRODUCTS_QUERY
-// Query: *[    _type == "product" &&     (!defined($excludeId) || _id != $excludeId) &&        // Verifica se a categoria do produto está na lista enviada    (!defined($categories) || category in $categories) &&        // Verifica se o material do produto está na lista enviada    (!defined($materials) || material in $materials) &&        // Lógica para Cores: Verifica intersecção entre arrays    (!defined($colors) || count(colors[][colorValue.current in $colors]) > 0) &&    // Lógica de busca textual    (!defined($search) || name.pt match $search + "*" || name.en match $search + "*" || name.pt match "*" + $search + "*" || name.en match "*" + $search + "*")  ] | order(_createdAt desc) [$start...$end] {    _id,    name,    slug,    price,    category,    material,    colors[] {      _key,      colorName,      colorValue,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip,            dimensions          }        }      }    },    description,    features,    rating,    reviewsCount,  }
+// Query: *[    _type == "product" &&     (!defined($excludeId) || _id != $excludeId) &&        // Verifica se a categoria do produto está na lista enviada    (!defined($categories) || category in $categories) &&        // Verifica se o material do produto está na lista enviada    (!defined($materials) || material in $materials) &&        // Lógica para Cores: Verifica intersecção entre arrays    (!defined($colors) || count(colors[][colorValue.current in $colors]) > 0) &&    // Lógica de busca textual    (!defined($search) || name.pt match $search + "*" || name.en match $search + "*" || name.pt match "*" + $search + "*" || name.en match "*" + $search + "*")  ] | order(_createdAt desc) [$start...$end] {    _id,    name,    slug,    price,    category,    material,    colors[] {      _key,      colorName,      "colorValue": colorValue.current,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip,            dimensions          }        }      }    },    description,    features,    rating,    reviewsCount,  }
 export type GET_PRODUCTS_QUERY_RESULT = Array<{
   _id: string;
   name: {
@@ -232,7 +232,7 @@ export type GET_PRODUCTS_QUERY_RESULT = Array<{
       pt?: string;
       en?: string;
     } | null;
-    colorValue: string | null;
+    colorValue: null;
     colorHex: string | null;
     images: Array<{
       _key: string;
@@ -258,7 +258,7 @@ export type GET_PRODUCTS_QUERY_RESULT = Array<{
   reviewsCount: number | null;
 }>;
 
-// Source: src\sanity\lib\queries.ts
+// Source: src/sanity/lib/queries.ts
 // Variable: GET_PRODUCT_BY_SLUG_QUERY
 // Query: *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {    _id,    name,    slug,    price,    category,    material,    colors[] {      _key,      colorName,      colorValue,      colorHex,      images[] {        _key,        asset-> {          url,          metadata {            lqip,            dimensions          }        }      }    },    description {      pt[],      en[]    },    features[] { _key, pt, en },    rating,    reviewsCount,    stock  }
 export type GET_PRODUCT_BY_SLUG_QUERY_RESULT = {
@@ -310,7 +310,7 @@ export type GET_PRODUCT_BY_SLUG_QUERY_RESULT = {
   stock: number | null;
 } | null;
 
-// Source: src\sanity\lib\queries.ts
+// Source: src/sanity/lib/queries.ts
 // Variable: GET_CART_PRODUCTS_QUERY
 // Query: *[_type == "product" && _id in $ids] {    _id,    name,    slug,    price,    stock,    colors[] {      _key,      colorName,      colorValue,      colorHex,      images[0] { // Pegamos apenas a primeira imagem para o carrinho        asset-> {          url,          metadata { lqip, dimensions }        }      }    }  }
 export type GET_CART_PRODUCTS_QUERY_RESULT = Array<{
@@ -352,7 +352,7 @@ export type GET_CART_PRODUCTS_QUERY_RESULT = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[\n    _type == "product" && \n    (!defined($excludeId) || _id != $excludeId) &&\n    \n    // Verifica se a categoria do produto est\xE1 na lista enviada\n    (!defined($categories) || category in $categories) &&\n    \n    // Verifica se o material do produto est\xE1 na lista enviada\n    (!defined($materials) || material in $materials) &&\n    \n    // L\xF3gica para Cores: Verifica intersec\xE7\xE3o entre arrays\n    (!defined($colors) || count(colors[][colorValue.current in $colors]) > 0) &&\n\n    // L\xF3gica de busca textual\n    (!defined($search) || name.pt match $search + "*" || name.en match $search + "*" || name.pt match "*" + $search + "*" || name.en match "*" + $search + "*")\n  ] | order(_createdAt desc) [$start...$end] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    material,\n    colors[] {\n      _key,\n      colorName,\n      colorValue,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description,\n    features,\n    rating,\n    reviewsCount,\n  }': GET_PRODUCTS_QUERY_RESULT;
+    '*[\n    _type == "product" && \n    (!defined($excludeId) || _id != $excludeId) &&\n    \n    // Verifica se a categoria do produto est\xE1 na lista enviada\n    (!defined($categories) || category in $categories) &&\n    \n    // Verifica se o material do produto est\xE1 na lista enviada\n    (!defined($materials) || material in $materials) &&\n    \n    // L\xF3gica para Cores: Verifica intersec\xE7\xE3o entre arrays\n    (!defined($colors) || count(colors[][colorValue.current in $colors]) > 0) &&\n\n    // L\xF3gica de busca textual\n    (!defined($search) || name.pt match $search + "*" || name.en match $search + "*" || name.pt match "*" + $search + "*" || name.en match "*" + $search + "*")\n  ] | order(_createdAt desc) [$start...$end] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    material,\n    colors[] {\n      _key,\n      colorName,\n      "colorValue": colorValue.current,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description,\n    features,\n    rating,\n    reviewsCount,\n  }': GET_PRODUCTS_QUERY_RESULT;
     '\n  *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {\n    _id,\n    name,\n    slug,\n    price,\n    category,\n    material,\n    colors[] {\n      _key,\n      colorName,\n      colorValue,\n      colorHex,\n      images[] {\n        _key,\n        asset-> {\n          url,\n          metadata {\n            lqip,\n            dimensions\n          }\n        }\n      }\n    },\n    description {\n      pt[],\n      en[]\n    },\n    features[] { _key, pt, en },\n    rating,\n    reviewsCount,\n    stock\n  }\n': GET_PRODUCT_BY_SLUG_QUERY_RESULT;
     '\n  *[_type == "product" && _id in $ids] {\n    _id,\n    name,\n    slug,\n    price,\n    stock,\n    colors[] {\n      _key,\n      colorName,\n      colorValue,\n      colorHex,\n      images[0] { // Pegamos apenas a primeira imagem para o carrinho\n        asset-> {\n          url,\n          metadata { lqip, dimensions }\n        }\n      }\n    }\n  }\n': GET_CART_PRODUCTS_QUERY_RESULT;
   }

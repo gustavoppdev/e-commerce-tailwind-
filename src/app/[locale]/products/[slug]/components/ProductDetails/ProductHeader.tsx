@@ -1,8 +1,13 @@
+// Tipos & Utils
 import { GET_PRODUCT_BY_SLUG_QUERY_RESULT } from "@/../sanity.types";
 import { LocaleType } from "@/types";
 import { cn } from "@/lib/utils";
-import { Star } from "lucide-react";
+
+// Next-Intl
 import { useTranslations } from "next-intl";
+
+// Icones
+import { Star } from "lucide-react";
 
 type Props = {
   product: NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>;
@@ -13,6 +18,7 @@ type Props = {
 
 const ProductHeader = ({ product, locale, price, layout }: Props) => {
   const t = useTranslations("Sections.ProductPage.productHeader");
+  const tAlt = useTranslations("Others.alt");
   const rating = product.rating ?? 0;
   const reviewsCount = product.reviewsCount ?? 0;
 
@@ -30,14 +36,14 @@ const ProductHeader = ({ product, locale, price, layout }: Props) => {
       </div>
 
       <div className="flex items-center gap-3.5 sm:gap-4">
-        {/* Rating */}
+        {/* Avaliação */}
         <div className="flex items-center gap-2">
           <span className="text-sm">{rating.toFixed(1)}</span>
 
           <div
             className="flex items-center gap-1"
             role="img"
-            aria-label={`Rating: ${rating} out of 5 stars`}
+            aria-label={tAlt("ratingStars", { rating: rating })}
           >
             {/* Lógica das 5 estrelas */}
             {Array.from({ length: 5 }).map((_, index) => (

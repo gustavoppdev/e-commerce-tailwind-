@@ -1,4 +1,3 @@
-// src/hooks/use-filter-params.ts
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
@@ -38,13 +37,6 @@ export const useFilterParams = () => {
   };
 
   const clearFilters = () => {
-    // Criamos um novo objeto URLSearchParams vazio
-    // Isso remove TODOS os parâmetros da URL
-    // const params = new URLSearchParams();
-
-    // Se quiseres manter algum parâmetro específico (como o idioma/locale),
-    // podes preservá-lo aqui antes do push.
-
     router.push(pathname, { scroll: false });
   };
 

@@ -1,8 +1,8 @@
+// Tipos & Utils
 import { GET_PRODUCT_BY_SLUG_QUERY_RESULT } from "@/../sanity.types";
 import { LocaleType } from "@/types";
 import { cn } from "@/lib/utils";
 
-// Definimos o tipo de uma única cor para facilitar
 type ColorOption = NonNullable<
   NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>["colors"]
 >[number];
@@ -22,7 +22,7 @@ const ProductColors = ({
 }: Props) => {
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="font-medium ">{locale === "pt" ? "Cores" : "Colors"}</h3>
+      <h2 className="font-medium ">{locale === "pt" ? "Cores" : "Colors"}</h2>
       <p className="text-sm text-muted-foreground">
         {selectedColor?.colorName?.[locale]}
       </p>

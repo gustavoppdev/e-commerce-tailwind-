@@ -35,7 +35,6 @@ export const useOrderHistory = (): UseOrderHistoryReturn => {
       const updatedOrders = [newOrder, ...orders];
       setOrders(updatedOrders);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedOrders));
-      console.log("Pedido salvo com sucesso:", newOrder.id);
     } catch (error) {
       console.error("Erro ao salvar pedido:", error);
     }

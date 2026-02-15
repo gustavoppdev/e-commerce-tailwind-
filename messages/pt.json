@@ -168,6 +168,9 @@
       "productDetails": {
         "title": "Detalhes"
       },
+      "productDescription": {
+        "title": "Descrição"
+      },
       "stock": {
         "inStock": "Em estoque e pronto para envio",
         "remainingStock": "Apenas {stock} unidades restantes",
@@ -185,6 +188,7 @@
       },
       "general": {
         "addCart": "Adicionar ao Carrinho",
+        "addCartSuccess": "Produto adicionado ao carrinho!",
         "guarantee": "Garantia Vitalícia de Qualidade"
       }
     },
@@ -370,6 +374,10 @@
       "newsletter": {
         "invalidEmail": "Por favor, insira um endereço de e-mail válido"
       }
+    },
+    "alt": {
+      "productImage": "Imagem do produto",
+      "ratingStars": "Avaliação: {rating} de 5 estrelas"
     }
   },
   "Metadata": {

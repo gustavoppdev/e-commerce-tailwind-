@@ -1,10 +1,8 @@
 // Next-Intl
 import { useTranslations } from "next-intl";
 
-// Constants
+// Constantes & Icons
 import { TestimonialsArray } from "@/constants";
-
-// Icons
 import { Quote } from "lucide-react";
 
 const Testimonials = () => {

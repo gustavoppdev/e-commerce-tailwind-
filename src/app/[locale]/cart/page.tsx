@@ -2,9 +2,11 @@
 import { getTranslations } from "next-intl/server";
 
 // Auth.js
+import { auth } from "@/auth";
+
+// Components
 import CartProductList from "./components/CartProductList";
 import CartOrderSummary from "./components/CartOrderSummary";
-import { auth } from "@/auth";
 
 const CartPage = async () => {
   const t = await getTranslations("Sections.CartPage");

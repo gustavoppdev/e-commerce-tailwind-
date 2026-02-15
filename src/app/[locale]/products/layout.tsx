@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
     locale,
     canonicalPath: "/products",
     alternatePaths: {
-      pt: "/products",
+      pt: "/produtos",
       en: "/products",
     },
   });

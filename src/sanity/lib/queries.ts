@@ -27,7 +27,7 @@ export const GET_PRODUCTS_QUERY = defineQuery(`*[
     colors[] {
       _key,
       colorName,
-      colorValue,
+      "colorValue": colorValue.current,
       colorHex,
       images[] {
         _key,

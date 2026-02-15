@@ -3,7 +3,7 @@
 // Next-Intl
 import { useTranslations } from "next-intl";
 
-// Components
+// Componentes
 import {
   Accordion,
   AccordionContent,
@@ -22,7 +22,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
-// Constants & Icons
+// Constantes & Icones
 import { PRODUCT_FILTERS } from "@/constants";
 import { Plus } from "lucide-react";
 
@@ -95,7 +95,6 @@ const FilterMobile = () => {
                             onCheckedChange={() =>
                               handleFilterChange(
                                 filter.id,
-
                                 option.value as string,
                               )
                             }

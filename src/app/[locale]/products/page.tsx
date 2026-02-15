@@ -1,13 +1,18 @@
-import { useLocale, useTranslations } from "next-intl";
+// Next-Intl
+import { getLocale, getTranslations } from "next-intl/server";
+
+// Componentes
 import { Filters } from "./components/Filters";
 import { ProductList } from "./components/ProductsList";
 import { SearchInput } from "./components/SearchInput";
+
+// Tipos
 import { LocaleType } from "@/types";
 
-const ProductsPage = () => {
-  const t = useTranslations("Sections.ProductsPage");
-  const locale = useLocale() as LocaleType;
-  
+const ProductsPage = async () => {
+  const t = await getTranslations("Sections.ProductsPage");
+  const locale = (await getLocale()) as LocaleType;
+
   return (
     <main className="section-container mt-8">
       <div className="pb-10 pt-12.5 space-y-4 border-b">

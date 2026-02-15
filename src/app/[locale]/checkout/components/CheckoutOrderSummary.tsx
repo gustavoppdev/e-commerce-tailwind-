@@ -1,3 +1,5 @@
+"use client";
+
 // Hook
 import { useCartDetails } from "@/hooks/useCartDetails";
 
@@ -10,8 +12,9 @@ import CartProductSkeleton from "../../cart/components/CartProductSkeleton";
 import { Button } from "@/components/ui/button";
 import EmptyCart from "@/components/common/EmptyCart";
 import FreeShippingProgress from "@/components/common/FreeShippingProgress";
+import OrderSummaryDetails from "@/components/common/OrderSummaryDetails";
 
-// Types & Constants
+// Tipos & Constantes
 import { DeliveryMethods, LocaleType, OrderDetailsType } from "@/types";
 
 // Utils & Schemas
@@ -21,9 +24,8 @@ import { CheckoutSchema } from "../schemas";
 // React Hook Form
 import { useFormContext } from "react-hook-form";
 
-// Icons
+// Ícones
 import { Loader2 } from "lucide-react";
-import OrderSummaryDetails from "@/components/common/OrderSummaryDetails";
 
 type Props = {
   onSubmit: (data: CheckoutSchema) => void;
@@ -65,12 +67,12 @@ const CheckoutOrderSummary = ({ onSubmit, deliveryType }: Props) => {
             {/* Empty */}
             {isEmpty && <EmptyCart layout="checkout" styles="py-8 border-b" />}
 
-            {items.map((item, index) => {
+            {items.map((item) => {
               const price = formatCurrency(item.price ?? 0, locale);
 
               return (
                 <CartProduct
-                  key={`${index}-${item.id}`}
+                  key={`${item.id}-${item.variantKey}`}
                   item={item}
                   locale={locale}
                   price={price}

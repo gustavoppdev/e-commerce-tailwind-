@@ -1,10 +1,8 @@
 // Next-Intl
 import { useTranslations } from "next-intl";
 
-// Constants
+// Constantes & Utils
 import { HeroBenefits as HeroBenefitsData } from "@/constants";
-
-// Utils
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -13,8 +11,11 @@ type Props = {
 
 const HeroBenefits = ({ layout }: Props) => {
   const t = useTranslations("Sections.Hero");
+
+  // Seção de Benefícios, ex: 15% de desconto na primeira compra
+
   return (
-    <div
+    <section
       className={cn(
         "grid grid-cols-1 lg:grid-cols-3 text-center bg-white",
         layout === "mobile" ? "lg:hidden" : "hidden lg:grid",
@@ -31,7 +32,7 @@ const HeroBenefits = ({ layout }: Props) => {
           <p className="font-semibold">{t(benefit.description)}</p>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

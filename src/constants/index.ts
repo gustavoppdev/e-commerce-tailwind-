@@ -21,6 +21,7 @@ import {
 } from "@/types";
 import { ShieldCheck, Star, Zap } from "lucide-react";
 
+// Navbar
 export const NavigationLinks: NavigationLink[] = [
   {
     label: "NavigationLinks.home",
@@ -40,6 +41,23 @@ export const NavigationLinks: NavigationLink[] = [
   },
 ];
 
+// HeroBenefits
+export const HeroBenefits: HeroBenefit[] = [
+  {
+    description: "benefits.01.description",
+    subtitle: "benefits.01.subtitle",
+  },
+  {
+    description: "benefits.02.description",
+    subtitle: "benefits.02.subtitle",
+  },
+  {
+    description: "benefits.03.description",
+    subtitle: "benefits.03.subtitle",
+  },
+];
+
+// CurrencyLanguageSwitcher
 export const REGIONS: Record<string, RegionData> = {
   pt: {
     label: "Português",
@@ -57,6 +75,7 @@ export const REGIONS: Record<string, RegionData> = {
   },
 };
 
+// CollectionCard
 export const CATEGORY_SLUGS = {
   "desk-and-office": {
     pt: "mesa-e-escritorio",
@@ -72,21 +91,7 @@ export const CATEGORY_SLUGS = {
   },
 } as const;
 
-export const HeroBenefits: HeroBenefit[] = [
-  {
-    description: "benefits.01.description",
-    subtitle: "benefits.01.subtitle",
-  },
-  {
-    description: "benefits.02.description",
-    subtitle: "benefits.02.subtitle",
-  },
-  {
-    description: "benefits.03.description",
-    subtitle: "benefits.03.subtitle",
-  },
-];
-
+// Collections
 export const CollectionsArray: Collection[] = [
   {
     title: "list.deskAndOffice.title",
@@ -108,6 +113,7 @@ export const CollectionsArray: Collection[] = [
   },
 ];
 
+// Testimonials
 export const TestimonialsArray: Testimonial[] = [
   {
     quote: "list.01.quote",
@@ -123,6 +129,44 @@ export const TestimonialsArray: Testimonial[] = [
   },
 ];
 
+// ProductBenefits
+export const ProductBenefits = [
+  {
+    title: "01.title",
+    description: "01.description",
+  },
+  {
+    title: "02.title",
+    description: "02.description",
+  },
+];
+
+// RecentReviews
+export const RecentReviewsArray: RecentReview[] = [
+  {
+    rating: 5,
+    emphasis: "list.01.emphasis",
+    quote: ["list.01.quote1", "list.01.quote2"],
+    author: "list.01.author",
+    date: "list.01.date",
+  },
+  {
+    rating: 5,
+    emphasis: "list.02.emphasis",
+    quote: ["list.02.quote1", "list.02.quote2"],
+    author: "list.02.author",
+    date: "list.02.date",
+  },
+  {
+    rating: 4,
+    emphasis: "list.01.emphasis",
+    quote: ["list.03.quote1", "list.03.quote2"],
+    author: "list.03.author",
+    date: "list.03.date",
+  },
+];
+
+// Footer
 export const FooterLinks = [
   {
     title: "01.products",
@@ -162,6 +206,7 @@ export const FooterLinks = [
   },
 ];
 
+// Footer
 export const FooterLinksBottom: FooterLinkBottom[] = [
   {
     label: "links.01",
@@ -177,41 +222,7 @@ export const FooterLinksBottom: FooterLinkBottom[] = [
   },
 ];
 
-export const ProductBenefits = [
-  {
-    title: "01.title",
-    description: "01.description",
-  },
-  {
-    title: "02.title",
-    description: "02.description",
-  },
-];
-
-export const RecentReviewsArray: RecentReview[] = [
-  {
-    rating: 5,
-    emphasis: "list.01.emphasis",
-    quote: ["list.01.quote1", "list.01.quote2"],
-    author: "list.01.author",
-    date: "list.01.date",
-  },
-  {
-    rating: 5,
-    emphasis: "list.02.emphasis",
-    quote: ["list.02.quote1", "list.02.quote2"],
-    author: "list.02.author",
-    date: "list.02.date",
-  },
-  {
-    rating: 4,
-    emphasis: "list.01.emphasis",
-    quote: ["list.03.quote1", "list.03.quote2"],
-    author: "list.03.author",
-    date: "list.03.date",
-  },
-];
-
+// Products
 export const PRODUCT_FILTERS: ProductFilterGroup[] = [
   {
     id: "colors",
@@ -250,6 +261,7 @@ export const PRODUCT_FILTERS: ProductFilterGroup[] = [
   },
 ];
 
+// Login
 export const LoginBenefits = [
   {
     icon: Zap,
@@ -268,13 +280,16 @@ export const LoginBenefits = [
   },
 ];
 
+// Frete gratis
 export const FREE_DELIVERY_THRESHOLD = {
   pt: 260,
   en: 50,
 };
 
-export const TAX_RATE = 0.03; // Ex: 5%
+// Taxa padrão
+export const TAX_RATE = 0.03;
 
+// Métodos de entrega
 export const DeliveryMethodsArray: DeliveryMethodType[] = [
   {
     key: "standard",
@@ -296,12 +311,14 @@ export const DeliveryMethodsArray: DeliveryMethodType[] = [
   },
 ];
 
+// Países
 export const COUNTRIES_ARRAY: CountriesType[] = [
   "brazil",
   "unitedStates",
   "canada",
 ];
 
+// Estados por país
 export const STATES_BY_COUNTRY: StatesType = {
   brazil: {
     AC: "Acre",
@@ -398,5 +415,5 @@ export const STATES_BY_COUNTRY: StatesType = {
   },
 };
 
+// Locales
 export const LOCALES_ARRAY: LocaleType[] = ["pt", "en"];
-
