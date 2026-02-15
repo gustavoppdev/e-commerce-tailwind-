@@ -1,3 +1,10 @@
+// Next-Intl
+import { useTranslations } from "next-intl";
+
+// React Hook Form
+import { Control, Controller, FieldValues, Path } from "react-hook-form";
+
+// Componentes
 import { Field, FieldLabel } from "@/components/ui/field";
 import {
   Select,
@@ -6,15 +13,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { COUNTRIES_ARRAY } from "@/constants";
-import { useTranslations } from "next-intl";
 
-import { Control, Controller, FieldValues, Path } from "react-hook-form";
+// Constantes
+import { COUNTRIES_ARRAY } from "@/constants";
 
 interface Props<T extends FieldValues> {
   control: Control<T>;
   name: Path<T>;
-  onValueChange?: (value: string) => void; // Prop para notificar mudança
+  onValueChange?: (value: string) => void;
 }
 
 const CheckoutCountryForm = <T extends FieldValues>({
@@ -33,8 +39,8 @@ const CheckoutCountryForm = <T extends FieldValues>({
           <FieldLabel className="text-gray-600">{t("country")}</FieldLabel>
           <Select
             onValueChange={(value) => {
-              field.onChange(value); // Atualiza o hook-form
-              if (onValueChange) onValueChange(value); // Reseta o estado
+              field.onChange(value);
+              if (onValueChange) onValueChange(value);
             }}
             value={field.value}
           >

@@ -7,13 +7,13 @@ import { useLocale } from "next-intl";
 import { useCartDetails } from "@/hooks/useCartDetails";
 import { formatCurrency } from "@/lib/utils";
 
-// Components
+// Componentes
 import CartProduct from "./CartProduct";
 import CartProductSkeleton from "./CartProductSkeleton";
-
-// Types & Icons
-import { LocaleType } from "@/types";
 import EmptyCart from "@/components/common/EmptyCart";
+
+// Types
+import { LocaleType } from "@/types";
 
 const CartProductList = () => {
   const { items, isLoading, isEmpty } = useCartDetails();
@@ -37,12 +37,12 @@ const CartProductList = () => {
 
   return (
     <ul className="border-t lg:col-span-3 max-h-170 overflow-y-scroll scrollbar-minimalist">
-      {items.map((item, index) => {
+      {items.map((item) => {
         const price = formatCurrency(item.price ?? 0, locale);
 
         return (
           <CartProduct
-            key={`${index}-${item.id}`}
+            key={`${item.id}-${item.variantKey}`}
             item={item}
             locale={locale}
             price={price}

@@ -1,12 +1,6 @@
 import { COUNTRIES_ARRAY, LOCALES_ARRAY } from "@/constants";
 import { z } from "zod";
 
-/**
- * Schema de validação Zod para o formulário de Checkout.
- * Centralizado aqui para ser reutilizado tanto no hook (se criar um)
- * quanto na página e nos componentes de interface.
- */
-
 export const checkoutSchema = z.object({
   // --- Informações Pessoais ---
   firstName: z.string().min(2, "firstNameMin"),
@@ -28,10 +22,7 @@ export const checkoutSchema = z.object({
     // 1. Cartão de Crédito (Campos obrigatórios)
     z.object({
       method: z.literal("creditCard"),
-      cardNumber: z
-        .string()
-        .min(16, "cardNumberInvalid") // Idealmente use uma máscara aqui
-        .max(19),
+      cardNumber: z.string().min(16, "cardNumberInvalid").max(19),
       cardName: z.string().min(3, "cardNameMin"),
       cardExpiry: z
         .string()

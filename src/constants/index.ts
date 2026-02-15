@@ -166,6 +166,7 @@ export const RecentReviewsArray: RecentReview[] = [
   },
 ];
 
+// Footer
 export const FooterLinks = [
   {
     title: "01.products",
@@ -205,6 +206,7 @@ export const FooterLinks = [
   },
 ];
 
+// Footer
 export const FooterLinksBottom: FooterLinkBottom[] = [
   {
     label: "links.01",
@@ -220,6 +222,7 @@ export const FooterLinksBottom: FooterLinkBottom[] = [
   },
 ];
 
+// Products
 export const PRODUCT_FILTERS: ProductFilterGroup[] = [
   {
     id: "colors",
@@ -258,6 +261,7 @@ export const PRODUCT_FILTERS: ProductFilterGroup[] = [
   },
 ];
 
+// Login
 export const LoginBenefits = [
   {
     icon: Zap,
@@ -276,13 +280,16 @@ export const LoginBenefits = [
   },
 ];
 
+// Frete gratis
 export const FREE_DELIVERY_THRESHOLD = {
   pt: 260,
   en: 50,
 };
 
-export const TAX_RATE = 0.03; // Ex: 5%
+// Taxa padrão
+export const TAX_RATE = 0.03;
 
+// Métodos de entrega
 export const DeliveryMethodsArray: DeliveryMethodType[] = [
   {
     key: "standard",
@@ -304,12 +311,14 @@ export const DeliveryMethodsArray: DeliveryMethodType[] = [
   },
 ];
 
+// Países
 export const COUNTRIES_ARRAY: CountriesType[] = [
   "brazil",
   "unitedStates",
   "canada",
 ];
 
+// Estados por país
 export const STATES_BY_COUNTRY: StatesType = {
   brazil: {
     AC: "Acre",
@@ -406,4 +415,5 @@ export const STATES_BY_COUNTRY: StatesType = {
   },
 };
 
+// Locales
 export const LOCALES_ARRAY: LocaleType[] = ["pt", "en"];

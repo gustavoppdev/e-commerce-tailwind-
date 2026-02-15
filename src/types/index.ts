@@ -6,30 +6,34 @@ import {
   GET_PRODUCTS_QUERY_RESULT,
 } from "../../sanity.types";
 
+// Chave de tradução
 export type TranslationKey = string;
 
+// Links de navegação
 export type NavigationLink = {
   label: TranslationKey;
   href: Pathnames;
 };
 
-// 1. Definimos o tipo para as moedas aceitas
+// Moedas
 export type Currency = "BRL" | "USD";
 
-// 2. Definimos a estrutura de cada região
+// CurrencyLanguageSwitcher
 export interface RegionData {
   label: string;
   currency: Currency;
   symbol: string;
   flag: StaticImageData;
-  intlLocale: string; // Útil para formatação (pt-BR vs en-US)
+  intlLocale: string;
 }
 
+// Hero Benefits - Home Page
 export type HeroBenefit = {
   subtitle: TranslationKey;
   description: TranslationKey;
 };
 
+// Collections - Home Page
 export type Collection = {
   title: TranslationKey;
   description: TranslationKey;
@@ -37,11 +41,13 @@ export type Collection = {
   key: string;
 };
 
+// Testimonials - Home Page
 export type Testimonial = {
   quote: TranslationKey;
   author: TranslationKey;
 };
 
+// Footer
 export type FooterLink = {
   title: TranslationKey;
   links: {
@@ -50,15 +56,19 @@ export type FooterLink = {
   }[];
 };
 
+// Footer
 export type FooterLinkBottom = {
   label: string;
   href: string;
 };
 
+// Locales
 export type LocaleType = "pt" | "en";
 
+// Full Product
 export type FullProduct = NonNullable<GET_PRODUCT_BY_SLUG_QUERY_RESULT>;
 
+// Recent Reviews - Product Page
 export type RecentReview = {
   rating: number;
   emphasis: TranslationKey;
@@ -67,20 +77,22 @@ export type RecentReview = {
   date: TranslationKey;
 };
 
-// Extraímos o tipo base do produto
+// Product
 type Product = NonNullable<GET_PRODUCTS_QUERY_RESULT>[number];
 
-// Tipos literais extraídos do Sanity
+// Product Categories
 type CategoryValue = Product["category"];
+
+// Product Materials
 type MaterialValue = Product["material"] extends { pt?: string }
   ? NonNullable<Product["material"]["pt"]>
   : string;
 
-// Interface para as opções individuais
+// Filtros individuais
 interface FilterOption<T> {
   label: string;
   value: T;
-  hex?: string; // Opcional, usado apenas para cores
+  hex?: string;
 }
 
 // Interface para cada grupo de filtro (Categories, Materials, Colors)
@@ -96,12 +108,14 @@ export type ProductFilterGroup =
   | FilterGroup<MaterialValue>
   | FilterGroup<string>; // string para cores
 
+// Login Benefits - Login Page
 export type LoginBenefit = {
   icon: React.ReactNode;
   title: TranslationKey;
   description: TranslationKey;
 };
 
+// Metodos de envio
 export type DeliveryMethods = "standard" | "express";
 
 export type DeliveryMethodType = {
@@ -114,15 +128,17 @@ export type DeliveryMethodType = {
   };
 };
 
+// Paises, Estados - Checkout Page
 export type CountriesType = "brazil" | "unitedStates" | "canada";
 
 export type StatesType = {
   [key in CountriesType]: Record<string, string>;
 };
 
-// 3. Tipos para o Histórico de Pedidos
+// Historico de pedidos
 export type OrderStatus = "processing" | "shipped" | "delivered" | "cancelled";
 
+// Item do pedido
 export interface OrderItem {
   id: string;
   quantity: number;
@@ -141,6 +157,7 @@ export interface OrderItem {
   subtotal: number;
 }
 
+// Pedido
 export interface Order {
   id: string; // ID único do pedido (UUID)
   date: string; // Data em formato ISO

@@ -15,7 +15,7 @@ interface CartContextType {
   updateQuantity: (id: string, variantKey: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
-  isLoaded: boolean; // Útil para evitar flashes na UI
+  isLoaded: boolean;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(

@@ -7,7 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useFormContext } from "react-hook-form";
 import { CheckoutSchema } from "../schemas";
 
-// Components
+// Componentes
 import InputForm from "@/components/common/InputForm";
 import { FieldGroup } from "@/components/ui/field";
 import DeliveryMethodsForm from "./DeliveryMethodsForm";
@@ -16,7 +16,7 @@ import CheckoutCountryForm from "./CheckoutCountryForm";
 import CheckoutStatesForm from "./CheckoutStatesForm";
 import { Button } from "@/components/ui/button";
 
-// Types
+// Tipos
 import { DeliveryMethods, LocaleType } from "@/types";
 
 type Props = {

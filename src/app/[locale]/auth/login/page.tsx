@@ -5,10 +5,10 @@ import { signIn } from "@/auth";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-// Components
+// Componentes
 import { Button } from "@/components/ui/button";
 
-// Assets & Constants
+// Assets & Constantes
 import { googleIcon, loginImage } from "@/assets";
 import { LoginBenefits } from "@/constants";
 
@@ -61,7 +61,7 @@ export default function LoginPage() {
             </Button>
           </form>
 
-          {/* Seção de Benefícios - Preenche o espaço no Mobile */}
+          {/* Seção de Benefícios */}
           <div className="grid gap-6 border-t border-neutral-100 dark:border-neutral-800 pt-10">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
               {t("benefits.title")}

@@ -1,3 +1,5 @@
+"use client";
+
 // Next.js & Next-Intl
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -6,12 +8,12 @@ import { Link } from "@/i18n/navigation";
 import { ItemCartType } from "@/hooks/useCartDetails";
 import { useCart } from "@/hooks/useCart";
 
-// Components
+// Componentes
 import CartProductQuantity from "./CartProductQuantity";
 import ProductStock from "@/app/[locale]/products/[slug]/components/ProductDetails/ProductStock";
 import { Button } from "@/components/ui/button";
 
-// Types & Icons
+// Tipos & Icones
 import { LocaleType } from "@/types";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";

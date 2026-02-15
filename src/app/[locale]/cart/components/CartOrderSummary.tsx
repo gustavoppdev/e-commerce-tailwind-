@@ -2,18 +2,18 @@
 
 // Next-Intl
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 // Components
 import { Button } from "@/components/ui/button";
+import FreeShippingProgress from "@/components/common/FreeShippingProgress";
 
 // Hooks
 import { useCartDetails } from "@/hooks/useCartDetails";
 
-// Utils & Constants
+// Utils & Next Auth
 import { formatCurrency } from "@/lib/utils";
 import { Session } from "next-auth";
-import { Link } from "@/i18n/navigation";
-import FreeShippingProgress from "@/components/common/FreeShippingProgress";
 
 type Props = {
   session: Session | null;

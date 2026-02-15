@@ -1,5 +1,6 @@
 // Next.js & Next-Intl
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
 // Componentes & Assets
@@ -16,7 +17,9 @@ const Hero = () => {
           {t("headline")}
         </h1>
         <p className="text-muted-foreground text-xl">{t("paragraph")}</p>
-        <Button size={"lg"}>{t("ctaBtn")}</Button>
+        <Button size={"lg"} asChild>
+          <Link href={"/products"}>{t("ctaBtn")}</Link>
+        </Button>
       </div>
 
       {/* CTA - Imagem */}
