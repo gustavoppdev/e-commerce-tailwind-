@@ -1,5 +1,6 @@
 import {
   brazilFlag,
+  confirmationPageImage,
   deskAndOfficeImage,
   euaFlag,
   selfImprovementImage,
@@ -28,16 +29,16 @@ export const NavigationLinks: NavigationLink[] = [
     href: "/",
   },
   {
-    label: "NavigationLinks.products",
-    href: "/products",
+    label: "NavigationLinks.deskAndOffice",
+    hrefSlug: "desk-and-office",
   },
   {
-    label: "NavigationLinks.about",
-    href: "/",
+    label: "NavigationLinks.selfImprovement",
+    hrefSlug: "self-improvement",
   },
   {
-    label: "NavigationLinks.stores",
-    href: "/",
+    label: "NavigationLinks.travel",
+    hrefSlug: "travel",
   },
 ];
 
@@ -91,6 +92,9 @@ export const CATEGORY_SLUGS = {
   },
 } as const;
 
+export const CategorySlug = (collection: Collection) =>
+  CATEGORY_SLUGS[collection.key as keyof typeof CATEGORY_SLUGS]["en"];
+
 // Collections
 export const CollectionsArray: Collection[] = [
   {
@@ -110,6 +114,12 @@ export const CollectionsArray: Collection[] = [
     description: "list.travel.description",
     image: travelImage,
     key: "travel",
+  },
+  {
+    title: "list.all.title",
+    description: "list.all.description",
+    image: confirmationPageImage,
+    key: "all",
   },
 ];
 

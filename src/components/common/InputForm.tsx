@@ -41,7 +41,7 @@ const InputForm = <T extends FieldValues>({
   styles,
 }: InputFormProps<T>) => {
   const t = useTranslations("Sections.CheckoutPage.form");
-  const tErrors = useTranslations("Sections.CheckoutPage.formErrors");
+  const tErrors = useTranslations("Others.errors.checkoutFormErrors");
 
   const selectedCountry = useWatch({
     control,

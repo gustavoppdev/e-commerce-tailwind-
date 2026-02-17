@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from "react";
 // Next-Intl
 import { useTranslations } from "next-intl";
 
-// Components & Icons
+// Componentes & Icones
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 

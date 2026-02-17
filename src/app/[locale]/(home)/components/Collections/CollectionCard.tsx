@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
 // Constantes & Tipos
-import { CATEGORY_SLUGS } from "@/constants";
+import { CategorySlug } from "@/constants";
 import { Collection } from "@/types";
 
 type Props = {
@@ -14,8 +14,7 @@ type Props = {
 const CollectionCard = ({ collection }: Props) => {
   const t = useTranslations("Sections.Collections");
 
-  const slug =
-    CATEGORY_SLUGS[collection.key as keyof typeof CATEGORY_SLUGS]["en"];
+  const slug = CategorySlug(collection);
 
   return (
     <li className="flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300 relative">

@@ -16,7 +16,7 @@ export default function LoginPage() {
   const t = useTranslations("Layout.Auth.loginPage");
 
   return (
-    <main className="section-container min-h-[calc(100dvh-73px)] lg:min-h-[calc(100dvh-105px)] w-full grid lg:grid-cols-2">
+    <main className="section-container min-h-[calc(100dvh-113px)] lg:min-h-[calc(100dvh-145px)] w-full grid lg:grid-cols-2">
       {/* Lado Esquerdo - Imagem */}
       <div className="relative hidden lg:block h-full w-full">
         <Image

@@ -1,10 +1,20 @@
 {
   "Layout": {
+    "Topbar": {
+      "freeDelivery": "Get free delivery on orders over {value}"
+    },
+    "ScrollToTop": {
+      "ariaLabel": "Scroll to top"
+    },
     "NavigationLinks": {
       "home": "Home",
-      "products": "Products",
-      "about": "About",
-      "stores": "Stores"
+      "deskAndOffice": "Desk and Office",
+      "selfImprovement": "Self Improvement",
+      "travel": "Travel",
+      "signIn": "Sign In",
+      "createAccount": "Create Account",
+      "logout": "Log Out",
+      "orders": "My Orders"
     },
     "Auth": {
       "signIn": "Sign In",
@@ -136,6 +146,10 @@
         "travel": {
           "title": "Travel",
           "description": "Daily commute essentials"
+        },
+        "all": {
+          "title": "All products",
+          "description": "Explore our collections"
         }
       }
     },
@@ -304,20 +318,6 @@
         "paypal": "Paypal",
         "eTransfer": "E-Transfer"
       },
-      "formErrors": {
-        "firstNameMin": "First name must be at least 2 characters",
-        "lastNameMin": "Last name must be at least 2 characters",
-        "addressMin": "Please enter a valid address",
-        "cityMin": "City name is too short",
-        "stateInvalid": "Please select a state",
-        "zipCodeMin": "Invalid postal code",
-        "phoneMin": "Please enter a valid phone number",
-        "cardNumberInvalid": "Invalid card number",
-        "cardNameMin": "Enter the full name on the card",
-        "cardExpiryInvalid": "Invalid date (MM/YY)",
-        "cardCvcMin": "Invalid CVC",
-        "required": "This field is required"
-      },
       "deliveryMethods": {
         "standard": {
           "title": "Standard",
@@ -373,11 +373,27 @@
     "errors": {
       "newsletter": {
         "invalidEmail": "Please enter a valid email address"
+      },
+      "checkoutFormErrors": {
+        "firstNameMin": "First name must be at least 2 characters",
+        "lastNameMin": "Last name must be at least 2 characters",
+        "addressMin": "Please enter a valid address",
+        "cityMin": "City name is too short",
+        "stateInvalid": "Please select a state",
+        "zipCodeMin": "Invalid postal code",
+        "phoneMin": "Please enter a valid phone number",
+        "cardNumberInvalid": "Invalid card number",
+        "cardNameMin": "Enter the full name on the card",
+        "cardExpiryInvalid": "Invalid date (MM/YY)",
+        "cardCvcMin": "Invalid CVC",
+        "required": "This field is required"
       }
     },
     "alt": {
       "productImage": "Product Image",
-      "ratingStars": "Rating: {rating} out of 5 stars"
+      "ratingStars": "Rating: {rating} out of 5 stars",
+      "search": "Search",
+      "shoppingCart": "Shopping cart"
     }
   },
   "Metadata": {

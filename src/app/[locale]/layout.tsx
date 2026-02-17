@@ -9,6 +9,8 @@ import QueryProvider from "@/providers/QueryProvider";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { CartProvider } from "@/contexts/CartContext";
+import Topbar from "@/components/layout/NavigationBar/Topbar";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,6 +41,8 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider locale={locale}>
           <CartProvider>
+            <Topbar />
+            <ScrollToTop />
             <NavigationBar />
             <QueryProvider>
               {children}

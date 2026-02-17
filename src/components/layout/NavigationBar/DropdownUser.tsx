@@ -1,5 +1,5 @@
 // Auth.js
-import { signOut } from "@/auth";
+import { handleSignOut } from "@/actions/auth";
 
 // Next-Intl
 import { useTranslations } from "next-intl";
@@ -32,12 +32,7 @@ export function DropdownUser({ username }: Props) {
         <DropdownMenuGroup>
           <DropdownMenuItem>{t("orders")}</DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <form
-              action={async () => {
-                "use server";
-                await signOut();
-              }}
-            >
+            <form action={handleSignOut}>
               <button type="submit">{t("logout")}</button>
             </form>
           </DropdownMenuItem>
