@@ -74,7 +74,7 @@ const Newsletter = () => {
   return (
     <div className="py-12 px-6 lg:py-15 flex flex-col gap-4 max-w-md lg:max-w-sm xl:max-w-md">
       <div className="space-y-2">
-        <h3 className="font-semibold">{t("title")}</h3>
+        <h2 className="font-semibold">{t("title")}</h2>
         <p className="text-muted-foreground ">{t("description")}</p>
       </div>
 

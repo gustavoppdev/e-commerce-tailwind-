@@ -1,7 +1,7 @@
 import { defineQuery } from "next-sanity";
 import { client } from "./client";
 
-// 1. A QUERY (Apenas a lógica do GROQ)
+// Todos os produtos
 export const GET_PRODUCTS_QUERY = defineQuery(`*[
     _type == "product" && 
     (!defined($excludeId) || _id != $excludeId) &&
@@ -46,6 +46,7 @@ export const GET_PRODUCTS_QUERY = defineQuery(`*[
     reviewsCount,
   }`);
 
+// Produto por slug
 export const GET_PRODUCT_BY_SLUG_QUERY = defineQuery(`
   *[_type == "product" && (slug.pt.current == $slug || slug.en.current == $slug)][0] {
     _id,
@@ -81,6 +82,7 @@ export const GET_PRODUCT_BY_SLUG_QUERY = defineQuery(`
   }
 `);
 
+// Produtos do carrinho
 export const GET_CART_PRODUCTS_QUERY = defineQuery(`
   *[_type == "product" && _id in $ids] {
     _id,
@@ -103,7 +105,7 @@ export const GET_CART_PRODUCTS_QUERY = defineQuery(`
   }
 `);
 
-// 2. AS FUNÇÕES (Lógica de execução)
+// Funções
 export const getProducts = async (
   limit?: number,
   excludeId?: string,

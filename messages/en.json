@@ -361,6 +361,44 @@
       "endingWith": "Ending with",
       "expires": "Expires",
       "continueShopping": "Continue shopping"
+    },
+    "OrderHistory": {
+      "headline": "Order History",
+      "paragraph": "Check the status of recent orders, manage returns, and download invoices.",
+
+      "table": {
+        "orderNumber": "Order number",
+        "datePlaced": "Date placed",
+        "totalAmount": "Total amount",
+        "viewInvoice": "View Invoice",
+        "product": "Product",
+        "price": "Price",
+        "status": "Status",
+        "info": "Informations",
+        "view": "View product"
+      },
+      "status": {
+        "pending": {
+          "label": "Pending",
+          "description": "Awaiting payment confirmation."
+        },
+        "processing": {
+          "label": "Processing",
+          "description": "Your order is being prepared."
+        },
+        "shipped": {
+          "label": "Shipped",
+          "description": "Your order has left our distribution center."
+        },
+        "delivered": {
+          "label": "Delivered",
+          "description": "Order delivered to the requested address."
+        },
+        "cancelled": {
+          "label": "Cancelled",
+          "description": "The order was cancelled and refund processed."
+        }
+      }
     }
   },
   "Others": {
@@ -398,9 +436,9 @@
   },
   "Metadata": {
     "Products": {
-      "title": "Our Products",
+      "title": "Our Products | Tailwind Store",
       "description": "Explore our curated essentials for office, travel, and lifestyle. Minimalist design with a lifetime guarantee.",
-      "ogTitle": "Tailwind Store | Quality & Design",
+      "ogTitle": "Quality & Design | Tailwind Store",
       "noIndex": false
     },
     "Cart": {
@@ -425,6 +463,12 @@
       "title": "Order Confirmed | Tailwind Store",
       "description": "Thank you for your purchase! Your order has been received and is being processed.",
       "ogTitle": "Purchase Successful - Tailwind Store",
+      "noIndex": true
+    },
+    "OrderHistory": {
+      "title": "Order History | Tailwind Store",
+      "description": "Track your order status, view your purchase history, and manage your deliveries.",
+      "ogTitle": "Your Orders | Tailwind Store",
       "noIndex": true
     }
   }

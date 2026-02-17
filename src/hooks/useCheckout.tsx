@@ -77,7 +77,7 @@ export const useCheckout = (): UseCheckoutReturn => {
 
       const newOrder: Order = {
         id: uuidv4(),
-        date: new Date().toISOString(),
+        date: new Date(),
         items: items.map((item) => ({
           id: item.id,
           quantity: item.quantity,

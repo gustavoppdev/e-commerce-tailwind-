@@ -361,6 +361,45 @@
       "endingWith": "Final com",
       "expires": "Expira em",
       "continueShopping": "Continuar comprando"
+    },
+    "OrderHistory": {
+      "headline": "Histórico de Pedidos",
+      "paragraph": "Confira o status dos pedidos recentes, gerencie devoluções e baixe faturas.",
+
+      "table": {
+        "orderNumber": "Pedido",
+        "datePlaced": "Data do Pedido",
+        "totalAmount": "Total",
+
+        "viewInvoice": "Ver Fatura",
+        "product": "Produto",
+        "price": "Preço",
+        "status": "Status",
+        "info": "Informações",
+        "view": "Ver produto"
+      },
+      "status": {
+        "pending": {
+          "label": "Pendente",
+          "description": "Aguardando confirmação de pagamento."
+        },
+        "processing": {
+          "label": "Em Processamento",
+          "description": "Seu pedido está sendo preparado."
+        },
+        "shipped": {
+          "label": "Enviado",
+          "description": "O pedido já saiu do nosso centro de distribuição."
+        },
+        "delivered": {
+          "label": "Entregue",
+          "description": "Pedido entregue no endereço solicitado."
+        },
+        "cancelled": {
+          "label": "Cancelado",
+          "description": "O pedido foi cancelado e o estorno processado."
+        }
+      }
     }
   },
   "Others": {
@@ -425,6 +464,12 @@
       "title": "Pedido Confirmado | Tailwind Store",
       "description": "Obrigado pela sua compra! Seu pedido foi recebido e já está sendo processado.",
       "ogTitle": "Compra Realizada com Sucesso - Tailwind Store",
+      "noIndex": true
+    },
+    "OrderHistory": {
+      "title": "Meus Pedidos | Tailwind Store",
+      "description": "Acompanhe o status dos seus pedidos, visualize o histórico de compras e gerencie suas entregas.",
+      "ogTitle": "Histórico de Pedidos | Tailwind Store",
       "noIndex": true
     }
   }

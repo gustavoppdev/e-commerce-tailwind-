@@ -1,7 +1,7 @@
 import { createClient } from "next-sanity";
 
 export const client = createClient({
-  // O seu ID que vimos no comando lá no início
+  // ID
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
 
   // O nome do seu banco de dados

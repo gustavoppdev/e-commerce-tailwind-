@@ -7,11 +7,11 @@ import {
   FREE_DELIVERY_THRESHOLD,
   TAX_RATE,
 } from "@/constants";
-import { DeliveryMethods } from "@/types";
+import { DeliveryMethods, LocaleType } from "@/types";
 
 export const useCartDetails = () => {
   const { cart } = useCart();
-  const locale = useLocale() as "pt" | "en";
+  const locale = useLocale() as LocaleType;
 
   // Extraímos apenas os IDs para a query do Sanity
   const productIds = cart.map((item) => item.id);
