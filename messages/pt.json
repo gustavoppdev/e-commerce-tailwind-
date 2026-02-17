@@ -1,10 +1,20 @@
 {
   "Layout": {
+    "Topbar": {
+      "freeDelivery": "Aproveite o frete grátis em pedidos acima de {value}"
+    },
+    "ScrollToTop": {
+      "ariaLabel": "Voltar ao topo"
+    },
     "NavigationLinks": {
       "home": "Início",
-      "products": "Produtos",
-      "about": "Sobre nós",
-      "stores": "Lojas"
+      "deskAndOffice": "Escritório",
+      "selfImprovement": "Auto-Aperfeiçoamento",
+      "travel": "Viagem",
+      "signIn": "Entrar",
+      "createAccount": "Criar uma conta",
+      "logout": "Sair",
+      "orders": "Meus pedidos"
     },
     "Auth": {
       "signIn": "Entrar",
@@ -136,6 +146,10 @@
         "travel": {
           "title": "Viagem",
           "description": "Essenciais para o dia a dia"
+        },
+        "all": {
+          "title": "Todos os Produtos",
+          "description": "Explore nossa coleção"
         }
       }
     },
@@ -304,20 +318,6 @@
         "paypal": "Paypal",
         "eTransfer": "Transferência Bancária"
       },
-      "formErrors": {
-        "firstNameMin": "O nome deve ter pelo menos 2 caracteres",
-        "lastNameMin": "O sobrenome deve ter pelo menos 2 caracteres",
-        "addressMin": "Por favor, insira um endereço válido",
-        "cityMin": "Nome da cidade muito curto",
-        "stateInvalid": "Por favor, selecione um estado",
-        "zipCodeMin": "Código postal inválido",
-        "phoneMin": "Insira um número de telefone válido",
-        "cardNumberInvalid": "Número de cartão inválido",
-        "cardNameMin": "Insira o nome completo impresso no cartão",
-        "cardExpiryInvalid": "Data inválida (MM/AA)",
-        "cardCvcMin": "CVC inválido",
-        "required": "Este campo é obrigatório"
-      },
       "deliveryMethods": {
         "standard": {
           "title": "Padrão",
@@ -373,11 +373,27 @@
     "errors": {
       "newsletter": {
         "invalidEmail": "Por favor, insira um endereço de e-mail válido"
+      },
+      "checkoutFormErrors": {
+        "firstNameMin": "O nome deve ter pelo menos 2 caracteres",
+        "lastNameMin": "O sobrenome deve ter pelo menos 2 caracteres",
+        "addressMin": "Por favor, insira um endereço válido",
+        "cityMin": "Nome da cidade muito curto",
+        "stateInvalid": "Por favor, selecione um estado",
+        "zipCodeMin": "Código postal inválido",
+        "phoneMin": "Insira um número de telefone válido",
+        "cardNumberInvalid": "Número de cartão inválido",
+        "cardNameMin": "Insira o nome completo impresso no cartão",
+        "cardExpiryInvalid": "Data inválida (MM/AA)",
+        "cardCvcMin": "CVC inválido",
+        "required": "Este campo é obrigatório"
       }
     },
     "alt": {
       "productImage": "Imagem do produto",
-      "ratingStars": "Avaliação: {rating} de 5 estrelas"
+      "ratingStars": "Avaliação: {rating} de 5 estrelas",
+      "search": "Buscar",
+      "shoppingCart": "Carrinho de compras"
     }
   },
   "Metadata": {

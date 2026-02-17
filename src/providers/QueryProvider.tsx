@@ -20,14 +20,14 @@ export default function QueryProvider({
             staleTime: 1000 * 60 * 5, // 5 minutos
           },
         },
-      })
+      }),
   );
 
   return (
     <QueryClientProvider client={queryClient}>
       {children}
       {/* Isso aqui vai abrir um painel no canto da tela para monitorarmos as buscas */}
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 }

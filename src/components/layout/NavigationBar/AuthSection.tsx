@@ -1,5 +1,5 @@
 // Auth.js
-import { auth, signOut } from "@/auth";
+import { auth } from "@/auth";
 
 // Next.js & Next-Intl
 import { Link } from "@/i18n/navigation";

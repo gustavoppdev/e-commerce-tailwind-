@@ -12,7 +12,8 @@ export type TranslationKey = string;
 // Links de navegação
 export type NavigationLink = {
   label: TranslationKey;
-  href: Pathnames;
+  href?: Pathnames;
+  hrefSlug?: string;
 };
 
 // Moedas

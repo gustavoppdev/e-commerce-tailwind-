@@ -13,7 +13,7 @@ const CartPage = async () => {
   const session = await auth();
 
   return (
-    <main className="section-container min-h-[calc(100dvh-73px)] lg:min-h-[calc(100dvh-105px)]">
+    <main className="section-container min-h-[calc(100dvh-113px)] lg:min-h-[calc(100dvh-145px)]">
       <div className="pb-10 pt-12.5 space-y-4">
         <h1 className="font-bold text-2xl lg:text-3xl 2xl:text-4xl">
           {t("headline")}

@@ -36,7 +36,7 @@ interface Props<T extends FieldValues> {
 
 const CheckoutStatesForm = <T extends FieldValues>({ control }: Props<T>) => {
   const t = useTranslations("Sections.CheckoutPage.states");
-  const tErrors = useTranslations("Sections.CheckoutPage.formErrors");
+  const tErrors = useTranslations("Others.errors.checkoutFormErrors");
   const [open, setOpen] = useState(false);
 
   // Observa o país selecionado no formulário

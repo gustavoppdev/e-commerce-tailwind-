@@ -17,7 +17,7 @@ export const Collections = () => {
       </h2>
 
       <ul className="grid grid-cols-1 gap-10 lg:grid-cols-3">
-        {CollectionsArray.map((collection) => (
+        {CollectionsArray.slice(0, 3).map((collection) => (
           <CollectionCard key={collection.title} collection={collection} />
         ))}
       </ul>
