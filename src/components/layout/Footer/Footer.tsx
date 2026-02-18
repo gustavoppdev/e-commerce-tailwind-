@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-// Components
+// Componentes
 import Newsletter from "./Newsletter";
 import FooterBottom from "./FooterBottom";
 import Loyalty from "./Loyalty";
@@ -10,21 +10,25 @@ import Loyalty from "./Loyalty";
 // Assets
 import { tailwindLogo } from "@/assets";
 
-// Constants
+// Constantes
 import { FooterLinks } from "@/constants";
+import { Link } from "@/i18n/navigation";
 
 export const Footer = () => {
   const t = useTranslations("Layout.Footer.links");
   return (
     <footer className="mt-10 section-container">
       <div className="border-t pt-10">
-        <Image
-          src={tailwindLogo}
-          alt="Tailwind Logo"
-          width={40}
-          height={40}
-          className="object-cover"
-        />
+        <Link href={"/"}>
+          <Image
+            src={tailwindLogo}
+            alt="Tailwind Logo"
+            width={40}
+            height={40}
+            sizes="40px"
+            className="object-cover"
+          />
+        </Link>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 my-15 text-sm">
           {FooterLinks.map((section, index) => (

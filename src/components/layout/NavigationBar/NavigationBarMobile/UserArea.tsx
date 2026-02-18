@@ -37,8 +37,9 @@ const UserArea = ({ session, setOpen }: Props) => {
               size={"lg"}
               className="w-full justify-start"
               onClick={() => setOpen(false)}
+              asChild
             >
-              {t("Auth.orders")}
+              <Link href="/order-history">{t("Auth.orders")}</Link>
             </Button>
             <form action={handleSignOut}>
               <Button

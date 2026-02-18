@@ -20,7 +20,7 @@ const Loyalty = () => {
       />
       <div className="absolute inset-0 bg-indigo-600/85 z-10"></div>
       <div className="max-w-md lg:max-w-sm xl:max-w-md flex flex-col gap-4 relative z-20">
-        <h3 className="font-semibold text-2xl md:text-3xl">{t("title")}</h3>
+        <h2 className="font-semibold text-2xl md:text-3xl">{t("title")}</h2>
         <p className="text-gray-200">
           {t.rich("description", {
             emphasis: (chunks) => (

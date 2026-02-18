@@ -36,6 +36,10 @@ export const routing = defineRouting({
       pt: "/checkout/sucesso",
       en: "/checkout/success",
     },
+    "/order-history": {
+      pt: "/historico-de-pedidos",
+      en: "/order-history",
+    },
   },
 });
 

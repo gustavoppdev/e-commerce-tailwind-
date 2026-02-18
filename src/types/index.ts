@@ -161,7 +161,7 @@ export interface OrderItem {
 // Pedido
 export interface Order {
   id: string; // ID único do pedido (UUID)
-  date: string; // Data em formato ISO
+  date: Date; // Data em formato ISO
   items: OrderItem[];
   total: number;
   subtotal: number;
