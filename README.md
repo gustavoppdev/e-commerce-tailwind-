@@ -6,7 +6,7 @@
 
 _Uma plataforma de e-commerce completa construída com as melhores práticas de desenvolvimento front-end_
 
-#### [🔗 Acessar Demo](https://e-commerce-tailwind.vercel.app/)
+#### [🔗 Acessar Demo](https://e-commerce-tailwind-rosy.vercel.app)
 
 ---
 
