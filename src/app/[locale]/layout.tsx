@@ -13,6 +13,7 @@ import Topbar from "@/components/layout/NavigationBar/Topbar";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import { constructMetadata } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -54,18 +55,26 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body className={`${inter.className} antialiased`}>
-        <NextIntlClientProvider locale={locale}>
-          <CartProvider>
-            <Topbar />
-            <ScrollToTop />
-            <NavigationBar />
-            <QueryProvider>
-              {children}
-              <Footer />
-            </QueryProvider>
-            <Toaster />
-          </CartProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute={"class"}
+          defaultTheme="light"
+          forcedTheme="light"
+          disableTransitionOnChange
+          enableSystem={false}
+        >
+          <NextIntlClientProvider locale={locale}>
+            <CartProvider>
+              <Topbar />
+              <ScrollToTop />
+              <NavigationBar />
+              <QueryProvider>
+                {children}
+                <Footer />
+              </QueryProvider>
+              <Toaster />
+            </CartProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
