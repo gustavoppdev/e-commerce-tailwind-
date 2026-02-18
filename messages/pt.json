@@ -399,6 +399,11 @@
           "label": "Cancelado",
           "description": "O pedido foi cancelado e o estorno processado."
         }
+      },
+      "empty": {
+        "title": "Nenhum pedido encontrado",
+        "description": "Parece que você ainda não fez nenhum pedido. Explore nossa coleção e encontre itens essenciais para o seu dia a dia.",
+        "actionBtn": "Começar a comprar"
       }
     }
   },

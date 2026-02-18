@@ -4,8 +4,13 @@ import { useOrderHistory } from "@/hooks/useOrderHistory";
 import { OrderCard } from "./OrderCard";
 import { OrderHistorySkeleton } from "./OrderHistorySkeleton";
 import { OrderHistoryEmptyState } from "./OrderHistoryEmptyState";
+import { Session } from "next-auth";
 
-const OrderHistoryContent = () => {
+type Props = {
+  session: Session | null;
+};
+
+const OrderHistoryContent = ({ session }: Props) => {
   const { orders, isLoading } = useOrderHistory();
 
   if (isLoading) {
@@ -17,7 +22,7 @@ const OrderHistoryContent = () => {
     );
   }
 
-  if (orders.length === 0) {
+  if (orders.length === 0 || !session?.user) {
     return <OrderHistoryEmptyState />;
   }
 
