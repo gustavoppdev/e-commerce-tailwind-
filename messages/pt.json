@@ -433,44 +433,61 @@
       "ratingStars": "Avaliação: {rating} de 5 estrelas",
       "search": "Buscar",
       "shoppingCart": "Carrinho de compras"
+    },
+    "NotFound": {
+      "title": "Página não encontrada",
+      "description": "A página que você está procurando pode ter sido removida, ter tido seu nome alterado ou estar temporariamente indisponível.",
+      "button": "Voltar para o Início"
     }
   },
   "Metadata": {
+    "Home": {
+      "title": "Início",
+      "description": "Descubra uma curadoria exclusiva de produtos para seu escritório, viagens e estilo de vida. Design atemporal com garantia vitalícia e frete grátis.",
+      "ogTitle": "Início | Tailwind Store",
+      "noIndex": false
+    },
     "Products": {
       "title": "Nossos Produtos",
       "description": "Explore nossa curadoria de itens essenciais para escritório, viagens e estilo de vida. Design minimalista com garantia vitalícia.",
-      "ogTitle": "Loja Tailwind Store | Qualidade e Design",
+      "ogTitle": "Qualidade e Design | Tailwind Store",
       "noIndex": false
     },
     "Cart": {
-      "title": "Seu Carrinho | Tailwind Store",
+      "title": "Seu Carrinho",
       "description": "Revise seus itens, escolha as quantidades e finalize sua compra com segurança.",
-      "ogTitle": "Finalizar Compra - Tailwind Store",
+      "ogTitle": "Finalizar Compra | Tailwind Store",
       "noIndex": true
     },
     "Login": {
-      "title": "Acessar Conta | Tailwind Store",
+      "title": "Acessar Conta",
       "description": "Faça login em sua conta para gerenciar seus pedidos e acessar sua coleção personalizada.",
-      "ogTitle": "Login Seguro - Tailwind Store",
+      "ogTitle": "Login Seguro | Tailwind Store",
       "noIndex": true
     },
     "Checkout": {
-      "title": "Finalizar Compra Seguro | Tailwind Store",
+      "title": "Finalizar Compra Seguro",
       "description": "Complete seu pedido com segurança. Insira seus dados de entrega e pagamento para garantir seus itens essenciais.",
-      "ogTitle": "Checkout Seguro - Tailwind Store",
+      "ogTitle": "Checkout Seguro | Tailwind Store",
       "noIndex": true
     },
     "Success": {
-      "title": "Pedido Confirmado | Tailwind Store",
+      "title": "Pedido Confirmado",
       "description": "Obrigado pela sua compra! Seu pedido foi recebido e já está sendo processado.",
-      "ogTitle": "Compra Realizada com Sucesso - Tailwind Store",
+      "ogTitle": "Compra Realizada com Sucesso | Tailwind Store",
       "noIndex": true
     },
     "OrderHistory": {
-      "title": "Meus Pedidos | Tailwind Store",
+      "title": "Meus Pedidos",
       "description": "Acompanhe o status dos seus pedidos, visualize o histórico de compras e gerencie suas entregas.",
       "ogTitle": "Histórico de Pedidos | Tailwind Store",
       "noIndex": true
+    },
+    "OGImage": {
+      "title": "Tailwind Store",
+      "description": "Sua loja minimalista",
+      "newCollection": "Nova Coleção 2026",
+      "shopNow": "Comprar agora"
     }
   }
 }

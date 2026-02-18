@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: product.name?.[locale] ?? "Product",
     description,
     image: imageUrl,
+    ogTitle: product.name?.[locale] ?? "Product",
     locale,
     canonicalPath: `/products/${slug}`,
     alternatePaths: {

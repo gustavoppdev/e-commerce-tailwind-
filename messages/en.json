@@ -432,44 +432,61 @@
       "ratingStars": "Rating: {rating} out of 5 stars",
       "search": "Search",
       "shoppingCart": "Shopping cart"
+    },
+    "NotFound": {
+      "title": "Page Not Found",
+      "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+      "button": "Go Back Home"
     }
   },
   "Metadata": {
+    "Home": {
+      "title": "Home",
+      "description": "Discover an exclusive curation of products for your office, travel, and lifestyle. Timeless design with a lifetime guarantee and free shipping.",
+      "ogTitle": "Home | Tailwind Store",
+      "noIndex": false
+    },
     "Products": {
-      "title": "Our Products | Tailwind Store",
+      "title": "Our Products",
       "description": "Explore our curated essentials for office, travel, and lifestyle. Minimalist design with a lifetime guarantee.",
       "ogTitle": "Quality & Design | Tailwind Store",
       "noIndex": false
     },
     "Cart": {
-      "title": "Your Cart | Tailwind Store",
+      "title": "Your Cart",
       "description": "Review your items, manage quantities, and securely complete your purchase.",
-      "ogTitle": "Checkout - Tailwind Store",
+      "ogTitle": "Your Cart | Tailwind Store",
       "noIndex": true
     },
     "Login": {
-      "title": "Sign In | Tailwind Store",
+      "title": "Sign In",
       "description": "Log in to your account to manage your orders and access your personalized collection.",
-      "ogTitle": "Secure Login - Tailwind Store",
+      "ogTitle": "Secure Login | Tailwind Store",
       "noIndex": true
     },
     "Checkout": {
-      "title": "Secure Checkout | Tailwind Store",
+      "title": "Secure Checkout",
       "description": "Complete your order securely. Enter your shipping and payment details to secure your essential items.",
-      "ogTitle": "Secure Checkout - Tailwind Store",
+      "ogTitle": "Secure Checkout | Tailwind Store",
       "noIndex": true
     },
     "Success": {
-      "title": "Order Confirmed | Tailwind Store",
+      "title": "Order Confirmed",
       "description": "Thank you for your purchase! Your order has been received and is being processed.",
-      "ogTitle": "Purchase Successful - Tailwind Store",
+      "ogTitle": "Purchase Successful | Tailwind Store",
       "noIndex": true
     },
     "OrderHistory": {
-      "title": "Order History | Tailwind Store",
+      "title": "Order History",
       "description": "Track your order status, view your purchase history, and manage your deliveries.",
       "ogTitle": "Your Orders | Tailwind Store",
       "noIndex": true
+    },
+    "OGImage": {
+      "title": "Tailwind Store",
+      "description": "Your Minimalist Store",
+      "newCollection": "New Collection 2026",
+      "shopNow": "Shop Now"
     }
   }
 }

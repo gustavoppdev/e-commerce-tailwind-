@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: Props) {
   return constructMetadata({
     title: t("title"),
     description: t("description"),
+    ogTitle: t("ogTitle"),
     locale,
     canonicalPath: "/checkout/success",
     alternatePaths: {
