@@ -1,17 +1,17 @@
-// src/lib/seo.ts
 import { Metadata } from "next";
 
 type SEOConfig = {
   title: string;
   description: string;
   locale: string;
-  canonicalPath: string; // ex: "/products" ou "/products/slug"
+  canonicalPath: string;
   image?: string;
   noIndex?: boolean;
   alternatePaths?: {
     pt: string;
     en: string;
   };
+  ogTitle?: string;
 };
 
 export function constructMetadata({
@@ -22,27 +22,32 @@ export function constructMetadata({
   image,
   noIndex = false,
   alternatePaths,
+  ogTitle,
 }: SEOConfig): Metadata {
   const siteName = "Tailwind Store";
-  const fullTitle = `${title} | ${siteName}`;
+  const fullTitle = `${title} - ${siteName}`;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   return {
+    metadataBase: new URL(baseUrl),
     title: fullTitle,
     description,
+    keywords: ["Tailwind Store", "Store", "E-commerce", "Minimalist"],
+    authors: [{ name: siteName }],
     openGraph: {
-      title: fullTitle,
+      title: ogTitle || fullTitle,
       description,
       type: "website",
       siteName,
       locale: locale === "pt" ? "pt_BR" : "en_US",
-      images: image ? [{ url: image }] : [],
+      url: `${baseUrl}/${locale}${canonicalPath}`,
+      images: image ? [{ url: image }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: image ? [image] : [],
+      images: image ? [{ url: image }] : undefined,
     },
     alternates: {
       canonical: `${baseUrl}/${locale}${canonicalPath}`,
@@ -56,6 +61,10 @@ export function constructMetadata({
     robots: {
       index: !noIndex,
       follow: !noIndex,
+      googleBot: {
+        index: !noIndex,
+        follow: !noIndex,
+      },
     },
   };
 }
