@@ -66,9 +66,9 @@ const CartOrderSummary = ({ session }: Props) => {
         <Button
           className="w-full h-12 text-base shadow-sm"
           size="lg"
-          disabled={isEmpty || !session}
+          disabled={isEmpty}
         >
-          <Link href={"/checkout"}>
+          <Link href={session ? "/checkout" : "/auth/login"}>
             {session ? t("checkoutBtn") : t("loginToCheckout")}
           </Link>
         </Button>
