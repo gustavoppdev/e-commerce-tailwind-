@@ -1,8 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import OrderHistoryContent from "./components/OrderHistoryContent";
+import { auth } from "@/auth";
 
 const OrderHistoryPage = async () => {
   const t = await getTranslations("Sections.OrderHistory");
+  const session = await auth();
 
   return (
     <main className="section-container space-y-10">
@@ -11,7 +13,7 @@ const OrderHistoryPage = async () => {
         <p className="text-muted-foreground">{t("paragraph")}</p>
       </div>
 
-      <OrderHistoryContent />
+      <OrderHistoryContent session={session} />
     </main>
   );
 };

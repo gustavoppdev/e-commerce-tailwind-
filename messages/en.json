@@ -398,6 +398,11 @@
           "label": "Cancelled",
           "description": "The order was cancelled and refund processed."
         }
+      },
+      "empty": {
+        "title": "No orders found",
+        "description": "It looks like you haven't placed any orders yet. Explore our collection and find essential items for your daily life.",
+        "actionBtn": "Start shopping"
       }
     }
   },

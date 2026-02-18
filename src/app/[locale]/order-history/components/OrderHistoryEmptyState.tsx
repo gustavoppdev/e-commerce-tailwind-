@@ -16,7 +16,7 @@ export const OrderHistoryEmptyState = () => {
         <p className="text-muted-foreground">{t("description")}</p>
       </div>
       <Button asChild size="lg">
-        <Link href="/products">{t("action")}</Link>
+        <Link href="/products">{t("actionBtn")}</Link>
       </Button>
     </div>
   );
